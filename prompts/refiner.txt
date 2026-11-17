@@ -1,0 +1,27 @@
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+{document}
+>>>
+
+QUESTION: {question}
+
+DRAFT ANSWER:
+<<<
+{draft}
+>>>
+
+AUDIT:
+<<<
+{audit}
+>>>
+
+FINAL ANSWER:

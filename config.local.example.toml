@@ -1,0 +1,19 @@
+# Copy this file to config.local.toml (git-ignored) and adjust it for your machine.
+# It is merged over config.toml table by table, so only list what you want to change.
+
+[scan]
+# Folders to search for model files you already have (read-only scan).
+roots = ["D:/ai-models"]
+
+[download]
+# Keep downloaded .litertlm files outside the project, e.g. next to your other models.
+dir = "D:/ai-models/litert"
+# Optional dotenv file with HF_TOKEN=... (the token is never printed). Not needed for public repos.
+hf_token_file = ""
+
+[models.critic]
+# Example: run the critic on the CPU if both models do not fit in your GPU memory.
+# backend = "cpu"
+
+# [paths]
+# "gemma-4-e4b" = "D:/ai-models/litert/gemma-4-E4B-it.litertlm"

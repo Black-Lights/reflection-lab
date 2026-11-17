@@ -1,0 +1,16 @@
+# Queued 2026-11-17 by Claude (autonomous run). GPU jobs, one at a time.
+WAIT_MATRIX runs/matrix_20261117-220336/index.json
+# 2. analyst with calculator + date_add (prompts_v2_tools), 104 cases, auto-graded
+scripts/run_matrix.py --config gemma-4-e4b:gemma-4-e4b:prompts_v2_tools:tools --config qwen3-4b:qwen3-4b:prompts_v2_tools:tools
+# 3. agent benchmark: 3 models x 10 shop tools, then x 20 tools (limits)
+scripts/run_agent_bench.py --model gemma-4-e4b --tools core --name gemma-core
+scripts/run_agent_bench.py --model qwen3-4b --tools core --name qwen4b-core
+scripts/run_agent_bench.py --model qwen3-1.7b --tools core --name qwen17-core
+scripts/run_agent_bench.py --model gemma-4-e4b --tools all --name gemma-all
+scripts/run_agent_bench.py --model qwen3-4b --tools all --name qwen4b-all
+scripts/run_agent_bench.py --model qwen3-1.7b --tools all --name qwen17-all
+# 3b. agent + same-level verifier loops
+scripts/run_agent_bench.py --model gemma-4-e4b --verifier gemma-4-e4b --tools core --name gemma+gemma
+scripts/run_agent_bench.py --model gemma-4-e4b --verifier qwen3-4b --tools core --name gemma+qwen4b
+scripts/run_agent_bench.py --model qwen3-4b --verifier gemma-4-e4b --tools core --name qwen4b+gemma
+scripts/run_agent_bench.py --model qwen3-4b --verifier qwen3-4b --tools core --name qwen4b+qwen4b

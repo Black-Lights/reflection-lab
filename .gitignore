@@ -1,0 +1,22 @@
+# Large or machine-specific files stay out of git.
+.venv/
+models/*
+!models/.gitkeep
+models.local.json
+__pycache__/
+*.tmp
+*.pyc
+# Results ARE tracked (runs/, reports/) so nothing is lost; keep bulky downloads out.
+data/
+*.safetensors
+*.litertlm
+*.gguf
+*.bin
+# Machine-specific notes and settings (never public)
+CLAUDE.local.md
+config.local.toml
+reports/model_inventory.*
+reports/env_report.*
+# Public export worktree (built by scripts/export_public.py)
+.public/
+.public-blocklist

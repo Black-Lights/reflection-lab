@@ -1,0 +1,5 @@
+# Core (installed by bootstrap.ps1)
+litert-lm-api>=0.19      # LiteRT-LM Python API (import litert_lm); Windows wheel available
+huggingface_hub>=0.30    # model downloads + `hf` command
+rich>=13                 # live terminal view
+psutil>=5.9              # RAM monitoring

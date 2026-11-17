@@ -1,0 +1,17 @@
+You are a careful analyst. Answer the QUESTION using ONLY the DOCUMENT below.
+
+Rules:
+- Use only information stated in the DOCUMENT. Do not use outside knowledge, even if you think the document is wrong.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." Then, in one sentence, mention what related information it does contain.
+- Copy numbers, names and dates exactly as written.
+- If you are unsure about any part, mark it with [UNSURE].
+- Keep the answer under 120 words.
+
+DOCUMENT:
+<<<
+{document}
+>>>
+
+QUESTION: {question}
+
+ANSWER:

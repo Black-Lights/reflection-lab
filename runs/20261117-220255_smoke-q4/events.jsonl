@@ -1,0 +1,6 @@
+{"event": "load", "model": "qwen3-4b [python/gpu]", "seconds": 14.006571769714355}
+{"event": "call", "case": "fn01", "stage": 1, "model": "qwen3-4b [python/gpu]", "seconds": 3.88, "chars": 546}
+{"event": "call", "case": "ff02", "stage": 1, "model": "qwen3-4b [python/gpu]", "seconds": 1.63, "chars": 64}
+{"event": "call", "case": "fn01", "stage": 2, "model": "qwen3-4b [python/gpu]", "seconds": 3.73, "chars": 613}
+{"event": "call", "case": "ff02", "stage": 2, "model": "qwen3-4b [python/gpu]", "seconds": 1.53, "chars": 11}
+{"event": "call", "case": "fn01", "stage": 3, "model": "qwen3-4b [python/gpu]", "seconds": 3.26, "chars": 363}

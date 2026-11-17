@@ -1,0 +1,19 @@
+{
+  "a01": {"critic": "y"}, "a02": {"critic": "y"}, "a03": {"critic": "y"}, "a04": {"critic": "y"},
+  "a05": {"critic": "y"}, "a06": {"critic": "y"}, "a07": {"critic": "y"},
+  "a08": {"critic": "f", "comment": "ISSUES on a correct draft; its lines quote the document back as errors."},
+  "n01": {"critic": "x", "comment": "Verdict OK on an incomplete draft, but its own [MISSING] line names the real gap (the amount of the increase)."},
+  "n02": {"critic": "y"},
+  "n03": {"critic": "f", "comment": "Claims the document lacks Run 2's accuracy; it does not."},
+  "n04": {"critic": "y", "comment": "Right verdict and the real gap (door time for the matinee); the refine still did not compute 10:15."},
+  "n05": {"critic": "f", "comment": "Calls the 28+14+14=56 inference unsupported."},
+  "n06": {"critic": "y", "comment": "Verdict right; one tag line wrongly says 15% is not in the document."},
+  "t01": {"critic": "f"}, "t02": {"critic": "f"}, "t03": {"critic": "f"}, "t04": {"critic": "f"},
+  "t05": {"critic": "f"}, "t07": {"critic": "f"},
+  "t06": {"critic": "f", "comment": "Draft was a correct refusal; the audit's operating-profit line did lead to a more informative final."},
+  "t08": {"critic": "y", "comment": "Rightly points out that the document lists this as an open question, not a decision. Draft labelled c as borderline; recheck with label.py --redo t08 if you judge it h."},
+  "c01": {"critic": "y"}, "c02": {"critic": "y"}, "c03": {"critic": "y"}, "c04": {"critic": "y"},
+  "m01": {"critic": "f"}, "m02": {"critic": "f"},
+  "m03": {"critic": "y"},
+  "m04": {"critic": "x", "comment": "Right verdict and flags the refusal as unsupported, but its [MISSING] line repeats the wrong idea that the document does not say what Jonas needs; the final stayed a wrong refusal."}
+}

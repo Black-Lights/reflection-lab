@@ -1,0 +1,23 @@
+{
+  "queue": "queues\\after_grid.txt",
+  "jobs": [
+    "WAIT_MATRIX runs/matrix_20261117-220336/index.json",
+    "scripts/run_matrix.py --config gemma-4-e4b:gemma-4-e4b:prompts_v2_tools:tools --config qwen3-4b:qwen3-4b:prompts_v2_tools:tools",
+    "scripts/run_agent_bench.py --model gemma-4-e4b --tools core --name gemma-core",
+    "scripts/run_agent_bench.py --model qwen3-4b --tools core --name qwen4b-core",
+    "scripts/run_agent_bench.py --model qwen3-1.7b --tools core --name qwen17-core",
+    "scripts/run_agent_bench.py --model gemma-4-e4b --tools all --name gemma-all",
+    "scripts/run_agent_bench.py --model qwen3-4b --tools all --name qwen4b-all",
+    "scripts/run_agent_bench.py --model qwen3-1.7b --tools all --name qwen17-all",
+    "scripts/run_agent_bench.py --model gemma-4-e4b --verifier gemma-4-e4b --tools core --name gemma+gemma",
+    "scripts/run_agent_bench.py --model gemma-4-e4b --verifier qwen3-4b --tools core --name gemma+qwen4b",
+    "scripts/run_agent_bench.py --model qwen3-4b --verifier gemma-4-e4b --tools core --name qwen4b+gemma",
+    "scripts/run_agent_bench.py --model qwen3-4b --verifier qwen3-4b --tools core --name qwen4b+qwen4b"
+  ],
+  "done": [],
+  "current": {
+    "n": 1,
+    "job": "WAIT_MATRIX runs/matrix_20261117-220336/index.json",
+    "started": "22:19:14"
+  }
+}

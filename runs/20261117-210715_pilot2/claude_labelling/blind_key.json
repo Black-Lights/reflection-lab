@@ -1,0 +1,212 @@
+{
+ "a01": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": true
+ },
+ "a02": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": true
+ },
+ "a03": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "a04": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "a05": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "a06": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "a07": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": true
+ },
+ "a08": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": true
+ },
+ "n01": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "n02": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "n03": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": false
+ },
+ "n04": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": false
+ },
+ "n05": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": false
+ },
+ "n06": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "t01": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "t02": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "t03": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "t04": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "t05": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "t06": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": false
+ },
+ "t07": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": true
+ },
+ "t08": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": false
+ },
+ "c01": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": true
+ },
+ "c02": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "c03": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "c04": {
+  "order": [
+   "final",
+   "baseline"
+  ],
+  "identical": true
+ },
+ "m01": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": true
+ },
+ "m02": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": false
+ },
+ "m03": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": true
+ },
+ "m04": {
+  "order": [
+   "baseline",
+   "final"
+  ],
+  "identical": true
+ }
+}

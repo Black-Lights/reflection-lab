@@ -1,0 +1,35 @@
+{
+  "runtime": "python",
+  "mode": "swap",
+  "generation": {
+    "max_output_tokens": 512,
+    "max_num_tokens": 4096,
+    "greedy": true,
+    "seed": 0,
+    "stream": true,
+    "enable_thinking": false,
+    "strip_think_tags": true,
+    "skip_refine_if_ok": true
+  },
+  "cases_file": ".\\tests\\cases.jsonl",
+  "case_ids": [
+    "a01",
+    "a02"
+  ],
+  "started": "2026-11-17 20:56:32",
+  "roles": {
+    "analyst": {
+      "key": "gemma-4-e4b",
+      "backend": "gpu",
+      "path": "<models>\\gemma-4-E4B-it.litertlm"
+    },
+    "critic": {
+      "key": "qwen3-1.7b",
+      "backend": "gpu",
+      "path": "<models>\\Qwen3_1.7B.litertlm"
+    }
+  },
+  "finished": "2026-11-17 20:57:20",
+  "peak_vram_mb": 3063.0,
+  "peak_ram_used_gb": 12.83
+}

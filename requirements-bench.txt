@@ -1,0 +1,12 @@
+# Optional: the standard benchmarks (scripts/bench_*.py: HHEM, RAGTruth, lm-eval, FACTS).
+# Install after requirements.txt. A CPU build of torch is enough (the HHEM judge runs on the CPU):
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements-bench.txt
+# Versions are the ones the benchmarks were tested with (November 2026).
+transformers>=5.23
+datasets>=5.2
+lm_eval[ifeval]>=0.4.13
+evaluate>=0.4.6
+mdit-plain>=1.0.1
+pandas>=3.1
+scikit-learn>=1.9

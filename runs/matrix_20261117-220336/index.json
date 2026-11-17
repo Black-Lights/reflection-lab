@@ -1,0 +1,32 @@
+{
+  "created": "2026-11-17 22:03:36",
+  "sets": [
+    "tests/cases.jsonl",
+    "tests/cases_hard.jsonl",
+    "tests/cases_fresh.jsonl"
+  ],
+  "configs": [
+    "gemma-4-e4b:gemma-4-e4b:prompts",
+    "gemma-4-e4b:qwen3-4b:prompts",
+    "qwen3-4b:gemma-4-e4b:prompts",
+    "qwen3-4b:qwen3-4b:prompts",
+    "gemma-4-e4b:qwen3-1.7b:prompts",
+    "qwen3-1.7b:gemma-4-e4b:prompts",
+    "gemma-4-e4b:gemma-4-e4b:prompts_v2",
+    "gemma-4-e4b:qwen3-4b:prompts_v2",
+    "qwen3-4b:gemma-4-e4b:prompts_v2",
+    "qwen3-4b:qwen3-4b:prompts_v2",
+    "gemma-4-e4b:qwen3-1.7b:prompts_v2",
+    "qwen3-1.7b:gemma-4-e4b:prompts_v2"
+  ],
+  "runs": {
+    "gemma-4-e4b:gemma-4-e4b:prompts": ".\\runs\\20261117-220336_mx-gemma-4-e4b+gemma-4-e4b-prompts",
+    "gemma-4-e4b:qwen3-4b:prompts": ".\\runs\\20261117-220649_mx-gemma-4-e4b+qwen3-4b-prompts",
+    "qwen3-4b:gemma-4-e4b:prompts": ".\\runs\\20261117-221418_mx-qwen3-4b+gemma-4-e4b-prompts"
+  },
+  "minutes": {
+    "gemma-4-e4b:gemma-4-e4b:prompts": 3.2,
+    "gemma-4-e4b:qwen3-4b:prompts": 7.5,
+    "qwen3-4b:gemma-4-e4b:prompts": 7.2
+  }
+}

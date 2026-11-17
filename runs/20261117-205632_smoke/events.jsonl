@@ -1,0 +1,9 @@
+{"event": "load", "model": "gemma-4-e4b [python/gpu]", "seconds": 17.480695962905884}
+{"event": "call", "case": "a01", "stage": 1, "model": "gemma-4-e4b [python/gpu]", "seconds": 4.59, "chars": 140}
+{"event": "call", "case": "a02", "stage": 1, "model": "gemma-4-e4b [python/gpu]", "seconds": 0.33, "chars": 30}
+{"event": "load", "model": "qwen3-1.7b [python/gpu]", "seconds": 11.54783296585083}
+{"event": "call", "case": "a01", "stage": 2, "model": "qwen3-1.7b [python/gpu]", "seconds": 2.06, "chars": 485}
+{"event": "call", "case": "a02", "stage": 2, "model": "qwen3-1.7b [python/gpu]", "seconds": 0.69, "chars": 104}
+{"event": "load", "model": "gemma-4-e4b [python/gpu]", "seconds": 4.129271507263184}
+{"event": "call", "case": "a01", "stage": 3, "model": "gemma-4-e4b [python/gpu]", "seconds": 3.18, "chars": 140}
+{"event": "call", "case": "a02", "stage": 3, "model": "gemma-4-e4b [python/gpu]", "seconds": 0.49, "chars": 30}

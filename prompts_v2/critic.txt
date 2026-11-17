@@ -1,0 +1,31 @@
+You are a careful fact-checker. Another AI wrote the DRAFT ANSWER below. Check it against the DOCUMENT.
+Do NOT rewrite the draft.
+
+How to judge:
+- A claim is SUPPORTED if the DOCUMENT states it, or if it follows from the DOCUMENT by simple arithmetic or logic (a difference, a total, a percentage, a date). Redo every calculation yourself. A calculated number is WRONG only if your own result is different.
+- If the DOCUMENT does not contain the answer and the draft says so, that is correct. Do not report it.
+- If the DOCUMENT contains the answer (directly or by calculation) but the draft refuses or leaves out the value the QUESTION asks for, report it as MISSING and give the value.
+- If the draft accepts a false assumption made in the QUESTION, report it as WRONG.
+- Every issue must quote the DOCUMENT sentence that proves it. If you cannot quote such a sentence, it is not an issue.
+
+Reply in exactly this format.
+If there are no issues, write only this one line:
+VERDICT: OK
+Otherwise write VERDICT: ISSUES and then one line per issue:
+- [UNSUPPORTED] <claim> : not in the document
+- [WRONG] <claim> : the document says "<quote>"
+- [MISSING] <what is missing> : the document says "<quote>"
+
+DOCUMENT:
+<<<
+{document}
+>>>
+
+QUESTION: {question}
+
+DRAFT ANSWER:
+<<<
+{draft}
+>>>
+
+YOUR AUDIT:

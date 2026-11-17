@@ -1,0 +1,42 @@
+{
+  "a01": {
+    "id": "a01",
+    "category": "answerable",
+    "question": "How will the library project be funded?",
+    "reference": "Mainly by a regional culture grant; the rest from selling two council-owned parking lots.",
+    "note": "",
+    "timings": {
+      "stage1": 4.59,
+      "stage2": 2.06,
+      "stage3": 3.18
+    },
+    "baseline": "The library project is funded mainly by a regional culture grant, with the remainder coming from the sale of two council-owned parking lots.",
+    "models_analyst": "gemma-4-e4b [python/gpu]",
+    "audit": "VERDICT: OK\n\n- [MISSING] : The document does not mention the timeline for construction, but the question is about funding, which is addressed in the draft.\n- [WRONG] : The document says \"the remainder coming from the sale of two council-owned parking lots,\" but the draft says \"the remainder coming from the sale of two council-owned parking lots.\" This is a minor repetition but not a factual error.\n- [UNSUPPORTED] : There is no claim in the draft that is not stated in the document.",
+    "audit_verdict": "ISSUES",
+    "audit_issues": 3,
+    "models_critic": "qwen3-1.7b [python/gpu]",
+    "final": "The library project is funded mainly by a regional culture grant, with the remainder coming from the sale of two council-owned parking lots.",
+    "refined": true
+  },
+  "a02": {
+    "id": "a02",
+    "category": "answerable",
+    "question": "Who is responsible for the migration script?",
+    "reference": "Rui.",
+    "note": "",
+    "timings": {
+      "stage1": 0.33,
+      "stage2": 0.69,
+      "stage3": 0.49
+    },
+    "baseline": "Rui owns the migration script.",
+    "models_analyst": "gemma-4-e4b [python/gpu]",
+    "audit": "VERDICT: OK\n\n- [WRONG] Rui owns the migration script : the document says \"Rui owns the migration script\"",
+    "audit_verdict": "ISSUES",
+    "audit_issues": 1,
+    "models_critic": "qwen3-1.7b [python/gpu]",
+    "final": "Rui owns the migration script.",
+    "refined": true
+  }
+}
