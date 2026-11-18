@@ -1,6 +1,6 @@
 # Time and compute
 
-Generated 2026-11-18 04:51 by `scripts/compute_report.py`. Every model run used one laptop GPU (one model loaded at a time), so GPU time equals the runs' wall time.
+Generated 2026-11-18 20:49 by `scripts/compute_report.py`. Every model run used one laptop GPU (one model loaded at a time), so GPU time equals the runs' wall time.
 
 ## Totals
 
@@ -65,16 +65,16 @@ Seconds of model time per question. One model = the analyst's draft only; loop =
 | | Main session | Subagents |
 |---|---|---|
 | Sessions / agents | 1 | 6 |
-| First to last message | 2026-11-17 20:24:30 to 2026-11-18 04:51:51 (8.5 h) | |
-| Active time (gaps over 5 min left out) | 3.9 h | 1.0 h |
-| API responses | 404 | 155 |
-| Tool calls | 504 | 168 |
-| Input tokens (uncached) | 0.9 k | 0.3 k |
-| Input tokens written to cache | 1.09 M | 929.4 k |
-| Input tokens read from cache | 151.65 M | 18.86 M |
-| Output tokens | 615.7 k | 261.7 k |
+| First to last message | 2026-11-17 20:24:30 to 2026-11-18 20:49:42 (24.4 h) | |
+| Active time (gaps over 5 min left out) | 4.4 h | 1.0 h |
+| API responses | 438 | 155 |
+| Tool calls | 559 | 168 |
+| Input tokens (uncached) | 1.0 k | 0.3 k |
+| Input tokens written to cache | 1.22 M | 929.4 k |
+| Input tokens read from cache | 157.23 M | 18.86 M |
+| Output tokens | 661.2 k | 261.7 k |
 
-Models: claude-opus-5-5 (559 responses).
+Models: claude-opus-5-5 (593 responses).
 
 ## Every run
 

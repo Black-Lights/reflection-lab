@@ -8,19 +8,19 @@
   },
   "claude": {
     "main": {
-      "tool_calls": 504,
-      "responses": 404,
-      "input_tokens": 884,
-      "output_tokens": 615748,
-      "cache_creation_input_tokens": 1087748,
-      "cache_read_input_tokens": 151654402,
+      "tool_calls": 559,
+      "responses": 438,
+      "input_tokens": 956,
+      "output_tokens": 661191,
+      "cache_creation_input_tokens": 1215110,
+      "cache_read_input_tokens": 157226700,
       "models": {
-        "claude-opus-5-5": 404
+        "claude-opus-5-5": 438
       },
-      "active_h": 3.923306388888889,
-      "span_h": 8.455676944444445,
+      "active_h": 4.4226391666666665,
+      "span_h": 24.41997361111111,
       "first": "2026-11-17 20:24:30",
-      "last": "2026-11-18 04:51:51"
+      "last": "2026-11-18 20:49:42"
     },
     "subagents": {
       "tool_calls": 168,

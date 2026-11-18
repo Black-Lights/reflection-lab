@@ -67,6 +67,8 @@ scripts/run_agent_bench.py  tool-use benchmark, --tools core|all, optional --ver
 scripts/compute_logger.py  GPU power/load, VRAM, CPU, RAM every 5 s -> runs/compute/samples.csv (own window, Ctrl+C)
 scripts/compute_report.py  time + compute per run, per experiment, per model, loop cost per question, GPU energy
                          (measured where the logger ran, else estimated), Claude session tokens -> reports/compute.md
+scripts/facts_numbers.py   numbers in FACTS outputs that are in none of the call's inputs, by stage and prompt length
+                         (no model) -> reports/facts_numbers.md
 lab/common.py            config, paths, console, json helpers (stdlib-only)
 lab/llm.py               runtimes: python (litert_lm), cli (litert-lm command), fake (no model)
 lab/monitor.py           RAM / VRAM / GPU temperature sampler for the live view

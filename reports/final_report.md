@@ -69,6 +69,12 @@ to +2. On 104 questions none of these differences is statistically significant o
 0.45 and 1.0). The one significant reduction is a strong critic checking a weak analyst: Qwen3 1.7B
 checked by Gemma went from 14 hallucinations to 8 (6 removed, none added, p = 0.031).
 
+These p-values are per comparison and not corrected for multiple testing. The grid makes 14
+single-versus-loop comparisons on correct answers and 14 on hallucinations. After a Holm correction over
+all 28, none of the differences is significant, including this one and the two losses below (the smallest
+p, 0.008, would need to be under 0.002). The direction is the steadier result: the loop lowered the
+hallucination count in 12 of the 14 setups and raised it in none, by 1 to 6 answers.
+
 ### When the loop hurts
 
 With the first prompts, a critic that does not match the analyst made answers significantly worse.
@@ -202,11 +208,20 @@ The loop made Gemma's long answers worse. The critic flagged 16 of 50 answers, a
 and broke 5 (p = 0.22). Most of the breaks are corrupted numbers, with digits doubled or dropped: "grew
 4444.7%" for 44.7 %, "$23333.6 billion" for $233.6 billion, "about 10 0 million" for 100 million. Seven
 of the 16 rewrites contain such a number, against 2 of the 50 first drafts; Qwen3 4B produced none, and
-Gemma's HHEM summaries show 1 in 200. The corrupted rewrites are not the longest inputs (some are under
-2,000 tokens), so the cause is still open. It is the first thing to check on the phone runtime, because
-a corrupted number reads as a hallucination. The judges were strict about numbers: counting the two
-answers whose only fault is a digit slip as correct raises both Gemma scores by 2 points and changes no
-ranking.
+Gemma's HHEM summaries show 1 in 200. The judges were strict about numbers: counting the two answers
+whose only fault is a digit slip as correct raises both Gemma scores by 2 points and changes no ranking.
+
+The corruption also appears outside the rewrite. `scripts/facts_numbers.py` lists every number in an
+output that appears in none of the texts that call was given (`reports/facts_numbers.md`). Gemma's critic
+misquotes numbers as well ("£149.9.95" for £149.95, "P < 0.00001" for P < 0.001), and so do the first
+drafts ("since May 20202"). The rate rises with prompt length: below 8,000 characters (about 2,000
+tokens) 2 of the 129 numbers Gemma wrote were corrupted, above it 17 of 112. Qwen3 4B wrote 105 numbers
+from the same documents and corrupted none. The rewrite gets the longest prompts (document, draft and
+audit, median 11,250 characters) and copies the most numbers, so it suffers most; with 16 rewrites the
+data cannot tell whether rewriting adds anything beyond the length. The count misses dropped digits that
+split a number ("10 0 million"), so these figures are lower bounds. Whether the GPU runtime or the model
+file causes it is still open, and rerunning the corrupted calls on the CPU backend would tell. A
+corrupted number reads as a hallucination, so this is the first thing to check on the phone.
 
 ## Time and compute
 
@@ -266,7 +281,9 @@ significant reduction in hallucinations, Qwen3 1.7B checked by Gemma, took three
 - A critic pays off most behind a weak analyst: Gemma checking Qwen3 1.7B removed 6 of its 14
   hallucinations.
 - Check the numbers in every rewrite. On long answers the rewrite corrupted numbers, so a rewrite should
-  only be accepted if every number in it appears in the document or the draft.
+  only be accepted if every number in it appears in the document or the draft. Keep Gemma's prompts
+  short where numbers matter: its copying errors rose from under 2 % to 15 % of the numbers it wrote
+  once the prompt passed about 2,000 tokens.
 - For agents, a verifier needs the tools. A rewrite from the log fixed nothing; a retry with the tools
   fixed a few tasks and broke one.
 
@@ -279,12 +296,14 @@ significant reduction in hallucinations, Qwen3 1.7B checked by Gemma, took three
 - Fine-tune a small critic (LoRA) on hallucination-detection data. The fine-tuned 13B detector in the
   RAGTruth paper reached F1 79; a 1.7B critic with similar skill would be cheap to run on a phone.
 - A rule-based number check after the rewrite, as described above.
+- Rerun the FACTS calls with corrupted numbers on the CPU backend, to tell a fault in the GPU runtime
+  from one in the model file.
 - Trace inside Qwen3 (circuit tracing) why it flags nearly every answer.
 
 ## Limitations
 
 The sets are small: 104 grounded questions and 30 agent tasks, so differences of one to three answers
-are within chance. Labels come from an AI labeller and from rules written by the same author; the rules
+are within chance, and the p-values are per comparison, not corrected for multiple testing. Labels come from an AI labeller and from rules written by the same author; the rules
 were checked against the blind manual labels and an independent review, and the changed answers were
 read one by one. Everything ran on one laptop GPU with greedy decoding, so a phone may produce slightly
 different text. All prompts and documents are in English.

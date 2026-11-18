@@ -150,8 +150,10 @@ Run on 17 and 18 November 2026. The full write-up with every table is
   Qwen3 4B rarely called the tools.
 - **The loop helped a little.** With v2 prompts every loop removed at least as many hallucinations as
   it added (Gemma checked by Qwen3 4B: 6 to 3) and correct answers moved by 0 to +2. On 104 questions
-  none of these differences is significant. The one significant reduction is Gemma checking the weaker
-  Qwen3 1.7B: 14 hallucinations to 8 (p = 0.031).
+  none of these differences is significant. The largest reduction is Gemma checking the weaker
+  Qwen3 1.7B: 14 hallucinations to 8 (p = 0.031 on its own, not significant after a Holm correction
+  for the 28 comparisons in the grid). The loop lowered hallucinations in 12 of the 14 setups and
+  raised them in none.
 - **A mismatched critic can hurt.** With the first prompts, Gemma checked by Qwen3 1.7B lost 8 correct
   answers (89 to 81, p = 0.008): the critic called correct calculated numbers unsupported and the
   rewrite deleted them. Prompt v2, which makes the critic redo the arithmetic and quote the document,
@@ -191,8 +193,11 @@ Gemma from 21 to 22 (Qwen3 4B as verifier) and Qwen3 4B from 9 to 13.
 
 Small samples: the standard error is 5 to 10 points on the lm-eval tasks. Each request was one chat
 message with thinking off, so these are not leaderboard numbers. On FACTS the loop broke five of
-Gemma's long answers, mostly by corrupting numbers in the rewrite ("4444.7%" for 44.7 %); the cause is
-still open and is the first thing to check on the phone runtime.
+Gemma's long answers, mostly by corrupting numbers in the rewrite ("4444.7%" for 44.7 %). Gemma's
+critic and first drafts do it too, and the rate rises with prompt length: 2 of 129 numbers were
+corrupted below about 2,000 prompt tokens, 17 of 112 above; Qwen3 4B corrupted none
+([`facts_numbers.py`](scripts/facts_numbers.py)). Whether the GPU runtime or the model file causes it
+is still open, and it is the first thing to check on the phone runtime.
 
 ### Time and compute
 
@@ -267,8 +272,14 @@ docs/img/       illustrations used in this README
 ## Limitations
 
 The sets are small: 104 grounded questions, 30 agent tasks and 28 to 300 items per standard benchmark,
-so a difference of a few answers is within chance. Labels come from an AI labeller (Claude) working
+so a difference of a few answers is within chance, and the p-values are per comparison, not corrected
+for multiple testing. Labels come from an AI labeller (Claude) working
 blind and from grading rules written by the same author; the rules were checked against the blind
 labels and an independent review, and every changed answer was read. Everything ran on one laptop GPU
 with greedy decoding, so a phone may produce slightly different text. All prompts and documents are in
 English.
+
+## Licence
+
+MIT, see [LICENSE](LICENSE). Text taken from public benchmarks (the FACTS Grounding subset in `tests/`
+and the documents and responses in the `runs/bench_*` folders) keeps the licence of its source dataset.
