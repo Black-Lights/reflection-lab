@@ -1,0 +1,42 @@
+{
+ "t06": {
+  "baseline": "c",
+  "final": "c"
+ },
+ "hn02": {
+  "baseline": "h",
+  "final": "c"
+ },
+ "fa04": {
+  "baseline": "h",
+  "final": "c"
+ },
+ "hn04": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "hn05": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "hm01": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "fn01": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "fn04": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "fm01": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "fm02": {
+  "baseline": "h",
+  "final": "h"
+ }
+}

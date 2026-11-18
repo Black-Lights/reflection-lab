@@ -1,0 +1,5 @@
+# Follow-ups queued 2026-11-18 (autonomous run). Starts after queues/benchmarks.txt has finished.
+WAIT_QUEUE benchmarks
+# agent + verifier where the agent REDOES the task with tools on ISSUES (the rewrite-only loop fixed nothing)
+scripts/run_agent_bench.py --model gemma-4-e4b --verifier qwen3-4b --retry --tools core --name gemma+qwen4b-retry
+scripts/run_agent_bench.py --model qwen3-4b --verifier qwen3-4b --retry --tools core --name qwen4b+qwen4b-retry

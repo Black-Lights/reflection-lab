@@ -17,16 +17,39 @@
     "qwen3-4b:gemma-4-e4b:prompts_v2",
     "qwen3-4b:qwen3-4b:prompts_v2",
     "gemma-4-e4b:qwen3-1.7b:prompts_v2",
-    "qwen3-1.7b:gemma-4-e4b:prompts_v2"
+    "qwen3-1.7b:gemma-4-e4b:prompts_v2",
+    "gemma-4-e4b:gemma-4-e4b:prompts_v2_tools:tools",
+    "qwen3-4b:qwen3-4b:prompts_v2_tools:tools"
   ],
   "runs": {
     "gemma-4-e4b:gemma-4-e4b:prompts": ".\\runs\\20261117-220336_mx-gemma-4-e4b+gemma-4-e4b-prompts",
     "gemma-4-e4b:qwen3-4b:prompts": ".\\runs\\20261117-220649_mx-gemma-4-e4b+qwen3-4b-prompts",
-    "qwen3-4b:gemma-4-e4b:prompts": ".\\runs\\20261117-221418_mx-qwen3-4b+gemma-4-e4b-prompts"
+    "qwen3-4b:gemma-4-e4b:prompts": ".\\runs\\20261117-221418_mx-qwen3-4b+gemma-4-e4b-prompts",
+    "qwen3-4b:qwen3-4b:prompts": ".\\runs\\20261117-222129_mx-qwen3-4b+qwen3-4b-prompts",
+    "gemma-4-e4b:qwen3-1.7b:prompts": ".\\runs\\20261117-223147_mx-gemma-4-e4b+qwen3-1.7b-prompts",
+    "qwen3-1.7b:gemma-4-e4b:prompts": ".\\runs\\20261117-223741_mx-qwen3-1.7b+gemma-4-e4b-prompts",
+    "gemma-4-e4b:gemma-4-e4b:prompts_v2": ".\\runs\\20261117-224220_mx-gemma-4-e4b+gemma-4-e4b-prompts_v2",
+    "gemma-4-e4b:qwen3-4b:prompts_v2": ".\\runs\\20261117-224537_mx-gemma-4-e4b+qwen3-4b-prompts_v2",
+    "qwen3-4b:gemma-4-e4b:prompts_v2": ".\\runs\\20261117-225449_mx-qwen3-4b+gemma-4-e4b-prompts_v2",
+    "qwen3-4b:qwen3-4b:prompts_v2": ".\\runs\\20261117-230049_mx-qwen3-4b+qwen3-4b-prompts_v2",
+    "gemma-4-e4b:qwen3-1.7b:prompts_v2": ".\\runs\\20261117-231226_mx-gemma-4-e4b+qwen3-1.7b-prompts_v2",
+    "qwen3-1.7b:gemma-4-e4b:prompts_v2": ".\\runs\\20261117-231809_mx-qwen3-1.7b+gemma-4-e4b-prompts_v2",
+    "gemma-4-e4b:gemma-4-e4b:prompts_v2_tools:tools": "runs/20261117-232245_mx-gemma-4-e4b+gemma-4-e4b-prompts_v2_tools-tools",
+    "qwen3-4b:qwen3-4b:prompts_v2_tools:tools": "runs/20261117-232634_mx-qwen3-4b+qwen3-4b-prompts_v2_tools-tools"
   },
   "minutes": {
     "gemma-4-e4b:gemma-4-e4b:prompts": 3.2,
     "gemma-4-e4b:qwen3-4b:prompts": 7.5,
-    "qwen3-4b:gemma-4-e4b:prompts": 7.2
-  }
+    "qwen3-4b:gemma-4-e4b:prompts": 7.2,
+    "qwen3-4b:qwen3-4b:prompts": 10.3,
+    "gemma-4-e4b:qwen3-1.7b:prompts": 5.9,
+    "qwen3-1.7b:gemma-4-e4b:prompts": 4.6,
+    "gemma-4-e4b:gemma-4-e4b:prompts_v2": 3.3,
+    "gemma-4-e4b:qwen3-4b:prompts_v2": 9.2,
+    "qwen3-4b:gemma-4-e4b:prompts_v2": 6.0,
+    "qwen3-4b:qwen3-4b:prompts_v2": 11.6,
+    "gemma-4-e4b:qwen3-1.7b:prompts_v2": 5.7,
+    "qwen3-1.7b:gemma-4-e4b:prompts_v2": 4.3
+  },
+  "note": "the two ':tools' configs ran later in their own matrix (queue after_grid) and were added here"
 }

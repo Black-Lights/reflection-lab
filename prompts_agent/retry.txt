@@ -1,0 +1,10 @@
+{task}
+
+A reviewer checked your previous attempt at this task and reported these problems:
+{audit}
+
+Your previous answer was:
+{answer}
+
+Do the task again from the start. Use the tools to look up everything you need, including the shop policy (discounts, free shipping, returns, backorders), and use the calculator and date_add for every number and date. If a tool fails, try it again. These actions were already completed in the previous attempt; do not repeat them:
+{done}

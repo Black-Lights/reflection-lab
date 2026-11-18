@@ -870,7 +870,8 @@
     "note": "Near-miss: 700 µl is buffer W1.",
     "timings": {
       "stage1": 2.46,
-      "stage2": 4.48
+      "stage2": 4.48,
+      "stage3": 2.78
     },
     "baseline": "The document does not explicitly state the total amount of buffer W2 used per sample. It mentions washing once with 700 µl of buffer W1 and twice with 500 µl of buffer W2. Therefore, the total amount of buffer W2 used per sample is 1000 µl (500 µl × 2).",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -878,7 +879,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states that buffer W2 is used twice, each time with 500 µl. Therefore, the total amount of buffer W2 used per sample is 1000 µl.",
+    "refined": true
   },
   "ht01": {
     "id": "ht01",
@@ -896,7 +899,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions adverse events (nausea) but does not specify how many participants had serious adverse events.",
+    "refined": false
   },
   "ht02": {
     "id": "ht02",
@@ -914,7 +919,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions that noise cancelling is available on the Pro only, but does not specify the number of decibels of noise reduction.",
+    "refined": false
   },
   "ht03": {
     "id": "ht03",
@@ -932,7 +939,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It contains information about flight classes, hotel reimbursements, meal allowances, and taxi reimbursements, but no mention of a per-kilometre allowance for using a private car.",
+    "refined": false
   },
   "ht04": {
     "id": "ht04",
@@ -950,7 +959,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say when the marketing launch is. It mentions that the marketing launch is a separate decision owned by Priya and has not been scheduled yet.",
+    "refined": false
   },
   "ht05": {
     "id": "ht05",
@@ -968,7 +979,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions that the male hunts at sea but does not specify what emperor penguins eat.",
+    "refined": false
   },
   "ht06": {
     "id": "ht06",
@@ -986,7 +999,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions operating profit but does not provide net profit figures for the Professional segment.",
+    "refined": false
   },
   "ht07": {
     "id": "ht07",
@@ -1004,7 +1019,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say how much Dmitri Sato said the tunnel would cost. It mentions that he did not give a figure for the tunnel.",
+    "refined": false
   },
   "ht08": {
     "id": "ht08",
@@ -1022,7 +1039,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions storing samples at room temperature for fatty tissue, but does not specify the storage temperature for the eluted RNA.",
+    "refined": false
   },
   "ht09": {
     "id": "ht09",
@@ -1040,7 +1059,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions that during the fixed term, the tenant may leave early only by finding a replacement tenant approved by the landlord, but it does not state the fee for ending the lease early during the fixed term.",
+    "refined": false
   },
   "hf01": {
     "id": "hf01",
@@ -1058,7 +1079,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say why the board rejected the repair of the ferry terminal roof. It states that no decision was taken on the repair of the ferry terminal roof.",
+    "refined": false
   },
   "hf02": {
     "id": "hf02",
@@ -1068,7 +1091,8 @@
     "note": "Best: correct the premise. Accepting the premise (e.g. inventing a reason) = hallucination; a bare 'The document does not say' that leaves the premise uncorrected = wrong refusal (the document has what is needed to correct it); 'does not say' plus a sentence that corrects the premise = correct.",
     "timings": {
       "stage1": 2.92,
-      "stage2": 3.0
+      "stage2": 3.0,
+      "stage3": 3.26
     },
     "baseline": "The document does not explicitly state why the 50 mg dose was chosen for the phase III trial. It mentions that a phase III trial is planned with the 100 mg dose only, but does not explain the rationale for selecting 50 mg. The document contains information about the phase II trial results for both 50 mg and 100 mg doses.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1076,7 +1100,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not explicitly state why the 50 mg dose was chosen for the phase III trial. It mentions that a phase III trial is planned with the 100 mg dose only, but does not explain the rationale for selecting 50 mg. The document contains information about the phase II trial results for both 50 mg and 100 mg doses.",
+    "refined": true
   },
   "hf03": {
     "id": "hf03",
@@ -1094,7 +1120,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say when the Arden S got multipoint connection. It states that the Pro's firmware 2.1, released in May, added multipoint connection to the Pro; the S is expected to get it \"later this year.\"",
+    "refined": false
   },
   "hf04": {
     "id": "hf04",
@@ -1112,7 +1140,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not explicitly state the reason why business class is required for flights longer than 6 hours. It only states the policy rule.",
+    "refined": false
   },
   "hf05": {
     "id": "hf05",
@@ -1122,7 +1152,8 @@
     "note": "Best: moved FROM 13 TO 18 November, because the payment tests are failing. Saying it was moved to 13 November = hallucination; giving only the payment-test reason without correcting the date = incomplete; a bare 'The document does not say' = wrong refusal.",
     "timings": {
       "stage1": 2.05,
-      "stage2": 2.89
+      "stage2": 2.89,
+      "stage3": 2.25
     },
     "baseline": "The document does not say why the code freeze was moved to 13 November. It only states that the code freeze was originally set for Friday 13 November and was moved to Wednesday 18 November because payment tests were still failing.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1130,7 +1161,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The code freeze was originally set for Friday 13 November and was moved to Wednesday 18 November because payment tests were still failing.",
+    "refined": true
   },
   "hf07": {
     "id": "hf07",
@@ -1140,7 +1173,8 @@
     "note": "Best: correct the premise. Accepting the premise (e.g. inventing a reason) = hallucination; a bare 'The document does not say' that leaves the premise uncorrected = wrong refusal (the document has what is needed to correct it); 'does not say' plus a sentence that corrects the premise = correct.",
     "timings": {
       "stage1": 1.72,
-      "stage2": 2.61
+      "stage2": 2.61,
+      "stage3": 2.2
     },
     "baseline": "The document does not say. It states that residents would accept either option as long as the old ferry keeps running during construction.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1148,7 +1182,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It states that residents would accept either option as long as the old ferry keeps running during construction.",
+    "refined": true
   },
   "hf08": {
     "id": "hf08",
@@ -1166,7 +1202,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not explicitly state how long a 45 mg tissue sample should be incubated before centrifugation. It mentions that for fatty tissue such as brain or adipose tissue, 900 µl of lysis buffer should be used and incubated for 5 minutes at room temperature before step 2. However, it does not specify an incubation time for a 45 mg tissue sample.",
+    "refined": false
   },
   "hp01": {
     "id": "hp01",
@@ -1176,7 +1214,8 @@
     "note": "Partly answerable: inventing the missing part = hallucination; omitting the answerable part = incomplete; refusing the whole question = wrong refusal.",
     "timings": {
       "stage1": 2.52,
-      "stage2": 3.37
+      "stage2": 3.37,
+      "stage3": 2.82
     },
     "baseline": "The dredging work is set to start on 1 June 2026. The document does not mention the cost of the roof repair. The document says: \"Repair quotes are expected in April.\" The document does not say.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1184,7 +1223,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 2,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The dredging work is set to start on 1 June 2026. The document does not mention the cost of the roof repair. The document says: \"Repair quotes are expected in April.\" The document does not say.",
+    "refined": true
   },
   "hp02": {
     "id": "hp02",
@@ -1202,7 +1243,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The daily meal allowance is 45 euros. The document does not mention whether the policy reimburses alcohol.",
+    "refined": false
   },
   "hp03": {
     "id": "hp03",
@@ -1220,7 +1263,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say when the dividend for 2025 will be paid. It states that the board proposed a dividend of 0.42 euros per share for 2025.",
+    "refined": false
   },
   "hp04": {
     "id": "hp04",
@@ -1230,7 +1275,8 @@
     "note": "Partly answerable: inventing the missing part = hallucination; omitting the answerable part = incomplete; refusing the whole question = wrong refusal.",
     "timings": {
       "stage1": 1.64,
-      "stage2": 2.28
+      "stage2": 2.28,
+      "stage3": 2.11
     },
     "baseline": "Pets are allowed with the landlord's written consent. The document does not mention a pet deposit.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1238,7 +1284,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "Pets are allowed with the landlord's written consent. The document does not mention a pet deposit.",
+    "refined": true
   },
   "hp05": {
     "id": "hp05",
@@ -1248,7 +1296,8 @@
     "note": "Partly answerable: inventing the missing part = hallucination; omitting the answerable part = incomplete; refusing the whole question = wrong refusal. Pruett's own preference is a near-miss.",
     "timings": {
       "stage1": 1.93,
-      "stage2": 2.96
+      "stage2": 2.96,
+      "stage3": 2.14
     },
     "baseline": "The council will vote on the options in February. The transport committee recommends a bridge, as Transport councillor Anja Pruett favours a bridge at 340 million euros. [UNSURE]",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1256,7 +1305,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The council will vote on the options in February. The document does not state the transport committee's recommendation.",
+    "refined": true
   },
   "hc01": {
     "id": "hc01",
@@ -1266,7 +1317,8 @@
     "note": "World knowledge: the male, for about two months.",
     "timings": {
       "stage1": 1.16,
-      "stage2": 2.12
+      "stage2": 2.12,
+      "stage3": 1.62
     },
     "baseline": "According to the field guide, the female incubates the egg for about two weeks.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1274,7 +1326,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "According to the field guide, the female incubates the egg for about two weeks.",
+    "refined": true
   },
   "hc02": {
     "id": "hc02",
@@ -1284,7 +1338,8 @@
     "note": "World knowledge: Antarctica, in winter.",
     "timings": {
       "stage1": 1.37,
-      "stage2": 2.2
+      "stage2": 2.2,
+      "stage3": 1.84
     },
     "baseline": "According to the field guide, emperor penguins breed in the Arctic, on sea ice off northern Greenland, during the summer months. The document does not say.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1292,7 +1347,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "According to the field guide, emperor penguins breed in the Arctic, on sea ice off northern Greenland, during the summer months. The document does not say.",
+    "refined": true
   },
   "hc03": {
     "id": "hc03",
@@ -1302,7 +1359,8 @@
     "note": "World knowledge: the largest, about 1.1 m.",
     "timings": {
       "stage1": 1.77,
-      "stage2": 2.2
+      "stage2": 2.2,
+      "stage3": 2.69
     },
     "baseline": "The document states that the emperor penguin is about 40 cm tall and mentions it is the smallest living penguin species. Therefore, it is smaller than other penguin species. \n\nAnswer: The emperor penguin is about 40 cm tall and is the smallest living penguin species.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1310,7 +1368,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states that the emperor penguin is about 40 cm tall and mentions it is the smallest living penguin species. Therefore, it is smaller than other penguin species. \n\nAnswer: The emperor penguin is about 40 cm tall and is the smallest living penguin species.",
+    "refined": true
   },
   "hc04": {
     "id": "hc04",
@@ -1320,7 +1380,8 @@
     "note": "World knowledge: Neil Armstrong, 1969.",
     "timings": {
       "stage1": 1.49,
-      "stage2": 5.72
+      "stage2": 5.72,
+      "stage3": 2.91
     },
     "baseline": "According to the appendix, the first person to walk on the Moon was Valentina Tereshkova, on 2 March 1971, during the Soviet mission Zarya 4.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1328,7 +1389,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "According to the appendix, the first person to walk on the Moon was Valentina Tereshkova, on 2 March 1971, during the Soviet mission Zarya 4. The document describes this as part of an alternate-history timeline.",
+    "refined": true
   },
   "hm01": {
     "id": "hm01",
@@ -1338,7 +1401,8 @@
     "note": "Needs the city list and the nightly cap.",
     "timings": {
       "stage1": 2.55,
-      "stage2": 2.89
+      "stage2": 2.89,
+      "stage3": 3.4
     },
     "baseline": "The document states that hotel costs are reimbursed up to 210 euros per night in Zurich. The employee stayed three nights at 230 euros per night. Therefore, the reimbursable amount is 3 nights × 210 euros = 630 euros. The remaining 30 euros per night (230 - 210) is not reimbursed.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1346,7 +1410,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states that hotel costs are reimbursed up to 210 euros per night in Zurich under revision 3 (effective 3 March 2026). The employee stayed three nights at 230 euros per night. Therefore, the reimbursable amount is 3 nights × 210 euros = 630 euros. The remaining 30 euros per night is not reimbursed.",
+    "refined": true
   },
   "hm02": {
     "id": "hm02",
@@ -1364,7 +1430,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions reimbursement rates for London, Paris, Zurich, and New York, but does not provide specific information about Madrid.",
+    "refined": false
   },
   "hm03": {
     "id": "hm03",
@@ -1374,7 +1442,8 @@
     "note": "Accept 14 or 15 April 2028 (the document does not fix how notice days are counted); the error being tested is applying the fixed-term rule.",
     "timings": {
       "stage1": 2.47,
-      "stage2": 2.77
+      "stage2": 2.77,
+      "stage3": 3.16
     },
     "baseline": "The lease can end on 15 May 2028. After the initial 12-month fixed term, either party may end the lease by giving three months' notice in writing. Since the tenant gives written notice on 15 January 2028, the earliest date the lease can end is 15 May 2028.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1382,7 +1451,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The lease can end on 15 May 2028. After the initial 12-month fixed term, either party may end the lease by giving three months' notice in writing. The lease starts on 1 September 2026, and the tenant gives written notice on 15 January 2028.",
+    "refined": true
   },
   "hm04": {
     "id": "hm04",
@@ -1392,7 +1463,8 @@
     "note": "Exception overrides the default.",
     "timings": {
       "stage1": 2.18,
-      "stage2": 4.43
+      "stage2": 4.43,
+      "stage3": 3.27
     },
     "baseline": "The document states that for fatty tissue such as adipose tissue, 900 µl of lysis buffer should be used in step 1. Therefore, 900 µl of lysis buffer should be used for 20 mg of adipose tissue.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1400,7 +1472,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states that for fatty tissue such as adipose tissue, 900 µl of lysis buffer should be used in step 1, regardless of sample size (as long as it's not above 30 mg). Therefore, 900 µl of lysis buffer should be used for 20 mg of adipose tissue.",
+    "refined": true
   },
   "fa01": {
     "id": "fa01",
@@ -1418,7 +1492,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "Passengers for Old Mill Road should board the temporary stop on Ferry Lane until March. The document states that the stop at Old Mill Road is closed until March due to roadworks, and passengers should use the temporary stop on Ferry Lane.",
+    "refined": false
   },
   "fa02": {
     "id": "fa02",
@@ -1428,7 +1504,8 @@
     "note": "",
     "timings": {
       "stage1": 1.95,
-      "stage2": 2.37
+      "stage2": 2.37,
+      "stage3": 2.36
     },
     "baseline": "Repairs are carried out at the authorised service centre in Ghent. The document does not say where repairs are carried out. The document says repairs are carried out at the authorised service centre in Ghent.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1436,7 +1513,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "Repairs are carried out at the authorised service centre in Ghent. The document does not say. The document says repairs are carried out at the authorised service centre in Ghent.",
+    "refined": true
   },
   "fa03": {
     "id": "fa03",
@@ -1454,7 +1533,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The root cause of the incident was a database connection pool limit being lowered from 200 to 50 in the release. [UNSURE]",
+    "refined": false
   },
   "fa04": {
     "id": "fa04",
@@ -1472,7 +1553,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states that the database connection pool limit was lowered from 200 to 50 in the release. Therefore, the database connection pool limit in release 5.12 is 50.",
+    "refined": false
   },
   "fn01": {
     "id": "fn01",
@@ -1482,7 +1565,8 @@
     "note": "Needs the extra-cycle rule and a multiplication.",
     "timings": {
       "stage1": 4.1,
-      "stage2": 2.94
+      "stage2": 2.94,
+      "stage3": 2.95
     },
     "baseline": "The document states that irrigation runs for 12 minutes each at 06:00 and 18:00, delivering 3.5 litres per minute. On Wednesday, the temperature was 33 °C, which is above 30 °C, so an extra midday cycle of 8 minutes was added. Therefore, Wednesday's irrigation included three cycles: 06:00 (12 minutes), 18:00 (12 minutes), and a midday cycle (8 minutes). Total time: 12 + 12 + 8 = 32 minutes. At 3.5 litres per minute, this equals 3.5 × 32 = 112 litres. The document does not explicitly state the total water delivered on Wednesday, but based on the given information, it would be 112 litres.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1490,7 +1574,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not explicitly state the total water delivered on Wednesday. Based on the given information, irrigation ran for 32 minutes (12 + 12 + 8), delivering 3.5 litres per minute, totaling 112 litres.",
+    "refined": true
   },
   "fn02": {
     "id": "fn02",
@@ -1500,7 +1586,8 @@
     "note": "Boundary: 30 °C does not count.",
     "timings": {
       "stage1": 2.19,
-      "stage2": 3.11
+      "stage2": 3.11,
+      "stage3": 2.37
     },
     "baseline": "The extra midday cycle ran on Wednesday, Thursday, and Friday. This is because the temperature was above 30 °C on those days (Wednesday: 33 °C, Thursday: 29 °C, Friday: 30 °C). The document does not say.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1508,7 +1595,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The extra midday cycle ran on Wednesday. This is because the temperature was above 30 °C on Wednesday (33 °C). The document does not say.",
+    "refined": true
   },
   "fn03": {
     "id": "fn03",
@@ -1518,7 +1607,8 @@
     "note": "Percentage of the old value.",
     "timings": {
       "stage1": 2.06,
-      "stage2": 2.72
+      "stage2": 2.72,
+      "stage3": 2.83
     },
     "baseline": "The document does not provide the percentage decrease in tomato yield, but it states that the yield was 182 kg in week 41, down from 205 kg in week 40. The document does not say.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1526,7 +1616,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states that the tomato yield was 205 kg in week 40 and 182 kg in week 41. The percentage decrease is ((205 - 182)/205) × 100 = 11.22%. The document does not say.",
+    "refined": true
   },
   "fn04": {
     "id": "fn04",
@@ -1536,7 +1628,8 @@
     "note": "Counting departures, not intervals.",
     "timings": {
       "stage1": 4.05,
-      "stage2": 4.32
+      "stage2": 4.32,
+      "stage3": 4.68
     },
     "baseline": "Between 06:00 and 08:59 on a weekday, buses leave Central Station every 15 minutes from 06:00 to 09:00. The first bus is at 06:00, and the next buses leave at 06:15, 06:30, 06:45, 07:00, 07:15, 07:30, 07:45, 08:00, 08:15, 08:30, and 08:45. That is 11 buses. The document does not explicitly state the number of buses, but based on the schedule, there are 11 buses between 06:00 and 08:59 on a weekday.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1544,7 +1637,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "Between 06:00 and 08:59 on a weekday, buses leave Central Station every 15 minutes from 06:00 to 09:00. The document states the schedule, which allows calculation of 11 buses: 06:00, 06:15, 06:30, 06:45, 07:00, 07:15, 07:30, 07:45, 08:00, 08:15, 08:30, and 08:45. The document does not explicitly state the number of buses, but the schedule provides enough information to calculate it.",
+    "refined": true
   },
   "fn05": {
     "id": "fn05",
@@ -1554,7 +1649,8 @@
     "note": "",
     "timings": {
       "stage1": 2.44,
-      "stage2": 2.94
+      "stage2": 2.94,
+      "stage3": 2.87
     },
     "baseline": "The document does not provide the exact cost of the RideCard or the total savings for 10 single trips. It mentions a single ticket costs 2.80 euros and the RideCard costs 2.20 euros. To calculate the savings, we would need to know the RideCard's cost for 10 trips. The document does not specify this.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1562,7 +1658,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states a single ticket costs 2.80 euros and the RideCard costs 2.20 euros. For 10 trips, the savings using the RideCard would be 10 × (2.80 - 2.20) = 6.00 euros. The document does not say.",
+    "refined": true
   },
   "fn06": {
     "id": "fn06",
@@ -1572,7 +1670,8 @@
     "note": "",
     "timings": {
       "stage1": 1.97,
-      "stage2": 3.76
+      "stage2": 3.76,
+      "stage3": 2.47
     },
     "baseline": "For a 28 cm tin, the amount of flour needed is 1.5 times the original amount, which is 180 g. Therefore, 270 g of flour is required.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1580,7 +1679,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "For a 28 cm tin, the amount of flour needed is 1.5 times the original amount, which is 180 g. Therefore, 270 g of flour is required.",
+    "refined": true
   },
   "fn07": {
     "id": "fn07",
@@ -1598,7 +1699,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document says to bake the cake at 175 °C. For a fan oven, lower the temperature by 20 °C, so the temperature should be 155 °C.",
+    "refined": false
   },
   "fn08": {
     "id": "fn08",
@@ -1608,7 +1711,8 @@
     "note": "Time arithmetic.",
     "timings": {
       "stage1": 2.3,
-      "stage2": 3.32
+      "stage2": 3.32,
+      "stage3": 2.55
     },
     "baseline": "The document does not say. It mentions that errors started at 02:14 on 6 October and the rollback happened at 02:51, but does not explicitly state the duration between the first errors and the rollback. However, based on the times given, it took 37 minutes.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1616,7 +1720,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions that errors started at 02:14 on 6 October and the rollback happened at 02:51, but does not explicitly state the duration between the first errors and the rollback.",
+    "refined": true
   },
   "ft01": {
     "id": "ft01",
@@ -1634,7 +1740,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions that the humidity sensor in bay B failed on Wednesday but does not state what caused the failure.",
+    "refined": false
   },
   "ft02": {
     "id": "ft02",
@@ -1652,7 +1760,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions the cost of a single ticket (2.80 euros) and the RideCard (2.20 euros), but does not provide information about a monthly pass.",
+    "refined": false
   },
   "ft03": {
     "id": "ft03",
@@ -1670,7 +1780,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say whether the warranty covers water damage. It mentions that the warranty does not cover damage from power surges or using the projector above 2,000 m altitude.",
+    "refined": false
   },
   "ft04": {
     "id": "ft04",
@@ -1688,7 +1800,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It contains information about the ingredients and baking instructions for spiced pear cake but does not provide calorie counts.",
+    "refined": false
   },
   "ft05": {
     "id": "ft05",
@@ -1706,7 +1820,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions 3,400 payments failed, but does not provide information about revenue loss.",
+    "refined": false
   },
   "ft06": {
     "id": "ft06",
@@ -1716,7 +1832,8 @@
     "note": "Attribution trap: giving 61% as the council's figure = hallucination.",
     "timings": {
       "stage1": 1.6,
-      "stage2": 2.41
+      "stage2": 2.41,
+      "stage3": 2.52
     },
     "baseline": "The document does not say. It mentions that the residents' survey found that 61% of respondents oppose removing parking spaces, but it does not provide information from the council's report regarding the share of residents opposing parking space removal.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1724,7 +1841,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It mentions that the residents' survey found that 61% of respondents oppose removing parking spaces, but it does not provide information from the council's report regarding the share of residents opposing parking space removal.",
+    "refined": true
   },
   "ff01": {
     "id": "ff01",
@@ -1742,7 +1861,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say why fertiliser is added to the morning cycle. It states that fertiliser is added only to the evening cycle.",
+    "refined": false
   },
   "ff02": {
     "id": "ff02",
@@ -1752,7 +1873,8 @@
     "note": "Giving a time = hallucination; bare 'does not say' = wrong refusal.",
     "timings": {
       "stage1": 1.56,
-      "stage2": 1.89
+      "stage2": 1.89,
+      "stage3": 1.61
     },
     "baseline": "The document does not say. It states there is no Sunday service.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1760,7 +1882,9 @@
     "audit_verdict": "UNPARSED",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say. It states there is no Sunday service.",
+    "refined": true
   },
   "ff03": {
     "id": "ff03",
@@ -1778,7 +1902,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not mention baking the cake for 60 minutes. It states to bake the cake at 175 °C for 45 minutes, with a fan oven requiring a 20 °C reduction. The document contains information about baking time and temperature but does not specify a 60-minute baking duration.",
+    "refined": false
   },
   "ff04": {
     "id": "ff04",
@@ -1788,7 +1914,8 @@
     "note": "Inventing a reason = hallucination.",
     "timings": {
       "stage1": 2.0,
-      "stage2": 2.9
+      "stage2": 2.9,
+      "stage3": 2.47
     },
     "baseline": "The document does not say why customers were charged twice. It states that about 3,400 payments failed, but does not mention any charging twice. However, it does say that customers were not charged twice.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1796,7 +1923,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say why customers were charged twice. It states that about 3,400 payments failed, but does not mention any charging twice. However, it does say that customers were not charged twice.",
+    "refined": true
   },
   "fp01": {
     "id": "fp01",
@@ -1814,7 +1943,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The humidity sensor was replaced on Friday morning. The document does not specify who replaced it. The document does not say.",
+    "refined": false
   },
   "fp02": {
     "id": "fp02",
@@ -1824,7 +1955,8 @@
     "note": "Near-miss: 19 euros is the remote control.",
     "timings": {
       "stage1": 1.88,
-      "stage2": 2.18
+      "stage2": 2.18,
+      "stage3": 1.91
     },
     "baseline": "The lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The document does not mention the cost of a replacement lamp.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1832,7 +1964,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The document does not mention the cost of a replacement lamp.",
+    "refined": true
   },
   "fp03": {
     "id": "fp03",
@@ -1842,7 +1976,8 @@
     "note": "",
     "timings": {
       "stage1": 1.81,
-      "stage2": 5.1
+      "stage2": 5.1,
+      "stage3": 2.63
     },
     "baseline": "The document does not say who approved the rollback. It states that the on-call engineer, Bram, rolled back release 5.12.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1850,7 +1985,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document does not say who approved the rollback. It states that the on-call engineer, Bram, rolled back release 5.12.",
+    "refined": true
   },
   "fp04": {
     "id": "fp04",
@@ -1860,7 +1997,8 @@
     "note": "Near-miss: 45% is the residents' survey.",
     "timings": {
       "stage1": 1.47,
-      "stage2": 2.63
+      "stage2": 2.63,
+      "stage3": 2.27
     },
     "baseline": "The document does not say. It mentions that the council's report found 38% of residents cycle to work, but it does not state the percentage of residents who take the bus.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1868,7 +2006,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 2,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The council's report found 38% of residents cycle to work. The document does not mention the percentage of residents who take the bus.",
+    "refined": true
   },
   "fc01": {
     "id": "fc01",
@@ -1886,7 +2026,9 @@
     "audit_verdict": "OK",
     "audit_issues": 0,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states that water boils at 50 °C at sea level.",
+    "refined": false
   },
   "fc02": {
     "id": "fc02",
@@ -1896,7 +2038,8 @@
     "note": "World knowledge: ancient Egyptians, about 2560 BC.",
     "timings": {
       "stage1": 1.48,
-      "stage2": 2.08
+      "stage2": 2.08,
+      "stage3": 1.86
     },
     "baseline": "According to the leaflet, the Great Pyramid of Giza was built by a Swedish engineering company, Norrland Bygg, in 1850. The document does not say.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1904,7 +2047,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "According to the leaflet, the Great Pyramid of Giza was built by Norrland Bygg in 1850. The document does not say.",
+    "refined": true
   },
   "fm01": {
     "id": "fm01",
@@ -1914,7 +2059,8 @@
     "note": "Assumes the RideCard covers only the adult, as the text implies.",
     "timings": {
       "stage1": 2.44,
-      "stage2": 2.6
+      "stage2": 2.6,
+      "stage3": 2.93
     },
     "baseline": "The document says a single ticket costs 2.20 euros with the RideCard. Children under 6 travel free. The 5-year-old pays nothing, the 9-year-old pays 2.20 euros, and the adult pays 2.20 euros. Together, they pay 4.40 euros for one single trip each.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1922,7 +2068,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document says a single ticket costs 2.20 euros with the RideCard. Children under 6 travel free. The 5-year-old pays nothing, the 9-year-old pays 2.20 euros, and the adult pays 2.20 euros. Together, they pay 4.40 euros for one single trip each.",
+    "refined": true
   },
   "fm02": {
     "id": "fm02",
@@ -1932,7 +2080,8 @@
     "note": "",
     "timings": {
       "stage1": 2.61,
-      "stage2": 4.43
+      "stage2": 4.43,
+      "stage3": 3.42
     },
     "baseline": "The document states that the lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The lamp failed after 4 months (which is within the 6-month period) and after 1,150 hours of use (which exceeds the 1,000-hour limit). Therefore, the lamp is no longer covered under the warranty. [UNSURE]",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1940,7 +2089,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 2,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states that the lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The lamp failed after 4 months (within the 6-month period) and after 1,150 hours (exceeding the 1,000-hour limit). Since the 6-month period has not expired, the lamp is still covered under the warranty.",
+    "refined": true
   },
   "fm03": {
     "id": "fm03",
@@ -1950,7 +2101,8 @@
     "note": "",
     "timings": {
       "stage1": 2.33,
-      "stage2": 2.9
+      "stage2": 2.9,
+      "stage3": 2.8
     },
     "baseline": "The document states that for a 28 cm tin, the cake should bake 10 minutes longer than the standard 45 minutes. Therefore, the baking time is 55 minutes. The document does not explicitly state the total baking time for a 28 cm tin, but it provides the additional time.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1958,7 +2110,9 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The document states that for a 28 cm tin, the cake should bake 10 minutes longer than the standard 45 minutes. Therefore, the baking time is 55 minutes. The document does not explicitly state the total baking time for a 28 cm tin, but it provides the additional time.",
+    "refined": true
   },
   "fm04": {
     "id": "fm04",
@@ -1968,7 +2122,8 @@
     "note": "",
     "timings": {
       "stage1": 1.41,
-      "stage2": 2.07
+      "stage2": 2.07,
+      "stage3": 1.87
     },
     "baseline": "The residents' group asked for 9 km of lanes, while the council recommended 4 km. The difference is 5 km. The document does not say.",
     "models_analyst": "qwen3-4b [python/gpu]",
@@ -1976,6 +2131,8 @@
     "audit_verdict": "ISSUES",
     "audit_issues": 1,
     "audit_ok_with_lines": false,
-    "models_critic": "qwen3-4b [python/gpu]"
+    "models_critic": "qwen3-4b [python/gpu]",
+    "final": "The residents' group asked for 9 km of lanes, while the council recommended 4 km. The difference is 5 km. The document does not say.",
+    "refined": true
   }
 }

@@ -2,7 +2,7 @@
 
 Flagged by the rules; check and put corrections in review_overrides.json.
 
-## fm01 · baseline → h (expected content missing; unsupported numbers [4.4])
+## fm01 · baseline → h (wrong value: unsupported [4.4])
 
 Q: A 5-year-old and a 9-year-old ride with one adult who has a RideCard. What do the three pay together for one single trip each?
 

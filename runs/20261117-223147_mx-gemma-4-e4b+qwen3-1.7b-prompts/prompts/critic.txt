@@ -1,0 +1,29 @@
+You are a strict fact-checker. Another AI wrote the DRAFT ANSWER below. Check it against the DOCUMENT.
+Do NOT answer the question yourself. Do NOT rewrite the draft. Only report problems.
+
+Check:
+1. Is every claim in the draft stated in, or directly implied by, the DOCUMENT?
+2. Are numbers, names and dates copied correctly?
+3. Does the draft miss information in the DOCUMENT that the QUESTION asks for?
+4. If the DOCUMENT does not contain the answer, did the draft say so instead of guessing?
+
+Reply in exactly this format.
+First line: VERDICT: OK  or  VERDICT: ISSUES
+Then, only if there are issues, one line per issue:
+- [UNSUPPORTED] <claim> : not in the document
+- [WRONG] <claim> : the document says <what it says>
+- [MISSING] <what is missing>
+
+DOCUMENT:
+<<<
+{document}
+>>>
+
+QUESTION: {question}
+
+DRAFT ANSWER:
+<<<
+{draft}
+>>>
+
+YOUR AUDIT:

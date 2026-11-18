@@ -1,0 +1,47 @@
+{
+  "bench": "hhem",
+  "args": {
+    "runtime": "python",
+    "n": 200,
+    "seed": 0,
+    "max_num_tokens": 0,
+    "model": "qwen3-1.7b",
+    "backend": "gpu",
+    "critic": null,
+    "critic_backend": "gpu",
+    "prompts": "prompts",
+    "prompt_version": "legacy",
+    "dataset": "leaderboard_dataset.csv",
+    "no_score": false,
+    "score_only": null,
+    "hhem_threads": 0,
+    "critic_default": false
+  },
+  "generation": {
+    "max_output_tokens": 512,
+    "max_num_tokens": 4096,
+    "greedy": true,
+    "seed": 0,
+    "stream": true,
+    "enable_thinking": false,
+    "strip_think_tags": true,
+    "skip_refine_if_ok": true,
+    "verdict_source": "verdict_line"
+  },
+  "started": "2026-11-18 02:17:01",
+  "hhem_revision": "de9a5e6ba9ba49531a022dba17e35ffeb2a6fad8",
+  "metrics": {
+    "baseline": {
+      "n": 200,
+      "valid": 200,
+      "scored": 200,
+      "answer_rate": 100.0,
+      "fcr": 97.0,
+      "hr": 3.0,
+      "avg_words": 69.22,
+      "mean_score": 0.875198,
+      "errors": 0
+    }
+  },
+  "finished": "2026-11-18 02:22:56"
+}

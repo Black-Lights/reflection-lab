@@ -78,7 +78,9 @@ The starter and hard runs were labelled blind: answers were shuffled into A and 
 then was the critic's audit shown. For the larger grid, [`scripts/autoscore.py`](scripts/autoscore.py)
 applies per-case rules (the value the answer must contain, whether it must say "not stated", world
 knowledge that marks a hallucination, and any number that appears nowhere in the document). It agreed
-with all 144 manual labels on those two runs. Answers it is unsure about go to a review sheet.
+with all 144 manual labels on those two runs. On the grid, every answer it flagged, every answer the
+loop changed and every hallucination (133 answers) was then read one by one by a separate review pass,
+which corrected the rules where they were wrong; reviewed answers carry the reviewed label.
 
 ```mermaid
 flowchart LR
@@ -89,25 +91,6 @@ flowchart LR
     G --> M["matrix_report.py<br/>single vs loop, McNemar"]
     L --> M
 ```
-
-## Results so far
-
-Status on 17 November 2026. The combination grid, the agent benchmark and the standard benchmarks are
-still running.
-
-| Run | Analyst | Critic | Prompts | Correct, one model | Correct, with loop | Fixed | Broken |
-|---|---|---|---|---|---|---|---|
-| starter set | Gemma 4 E4B | Qwen3 1.7B | v1 | 27 / 30 | 27 / 30 | 0 | 0 |
-| hard set | Gemma 4 E4B | Qwen3 1.7B | v1 | 34 / 42 | 30 / 42 | 0 | 4 |
-| all 104 cases | Gemma 4 E4B | Gemma 4 E4B | v1 | 88 / 104 | 89 / 104 | 3 | 2 |
-
-Gemma 4 E4B rarely hallucinates on these documents: one invented fact in the 42 hard cases. It handled
-every trap, false premise and counterfactual. Its mistakes are calculations it leaves unfinished. It
-quotes "385 million and 412 million" but never says "27 million", or it answers "the document does not
-say" when the answer takes one subtraction. The Qwen3 1.7B critic made this worse, because it treats a
-calculated number as unsupported. In four hard cases it called a correct difference wrong and the
-rewrite deleted it. Gemma checking itself was neutral overall: it finished some calculations and
-deleted others.
 
 ## Agent benchmark
 
@@ -147,8 +130,83 @@ tools, alone or with a verifier that checks the answer against the tool log.
 |---|---|---|
 | [Vectara HHEM leaderboard](https://github.com/vectara/hallucination-leaderboard) | hallucination rate of summaries of the leaderboard's public documents, scored by HHEM-2.1-open on the CPU | [`bench_hhem.py`](scripts/bench_hhem.py) |
 | [RAGTruth](https://arxiv.org/abs/2401.00396) | how well each critic detects hallucinated responses (precision, recall, F1) | [`bench_ragtruth.py`](scripts/bench_ragtruth.py) |
-| [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) | GSM8K (chain of thought), IFEval and MMLU-Pro, 50 questions each, through a LiteRT-LM model class | [`bench_lmeval.py`](scripts/bench_lmeval.py) |
-| [FACTS Grounding](https://huggingface.co/datasets/google/FACTS-grounding-public) | 50 public examples that fit a 4k context, judged blind by hand against the FACTS criteria | [`bench_facts.py`](scripts/bench_facts.py) |
+| [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness) | GSM8K (chain of thought) and IFEval, 50 questions each, MMLU-Pro 28, through a LiteRT-LM model class | [`bench_lmeval.py`](scripts/bench_lmeval.py) |
+| [FACTS Grounding](https://huggingface.co/datasets/google/FACTS-grounding-public) | 50 public examples that fit a 4k context, judged blind against the FACTS criteria | [`bench_facts.py`](scripts/bench_facts.py) |
+
+## Results
+
+Run on 17 and 18 November 2026. The full write-up with every table is
+[`reports/final_report.md`](reports/final_report.md); every number comes from a folder in [`runs/`](runs).
+
+### One model against the loop
+
+104 grounded questions (the three sets above), each answered by the analyst alone and by the loop.
+
+![One model against the critic loop on 104 questions](docs/img/grid.svg)
+
+- **The analyst prompt mattered most.** Prompt v2 says that a calculation from the document counts as
+  supported and asks for the result. Gemma alone went from 89 to 97 correct, Qwen3 1.7B from 74 to 90.
+- **A calculator helped Gemma further:** 101 of 104 correct with 2 hallucinations, the best result.
+  Qwen3 4B rarely called the tools.
+- **The loop helped a little.** With v2 prompts every loop removed at least as many hallucinations as
+  it added (Gemma checked by Qwen3 4B: 6 to 3) and correct answers moved by 0 to +2. On 104 questions
+  none of these differences is significant. The one significant reduction is Gemma checking the weaker
+  Qwen3 1.7B: 14 hallucinations to 8 (p = 0.031).
+- **A mismatched critic can hurt.** With the first prompts, Gemma checked by Qwen3 1.7B lost 8 correct
+  answers (89 to 81, p = 0.008): the critic called correct calculated numbers unsupported and the
+  rewrite deleted them. Prompt v2, which makes the critic redo the arithmetic and quote the document,
+  removed this.
+- **The loop costs 1.5 to 4.7 times the model time** of one model per question, depending on how
+  often the critic objects.
+
+### Critic quality
+
+![RAGTruth: precision, recall and F1 per critic](docs/img/critics.svg)
+
+On 300 responses from the RAGTruth test set, both Qwen3 models flag almost everything, so they cannot
+tell a good answer from a bad one. Gemma 4 E4B flags about half and is right three times in four; its
+estimated F1 of 74 is above the prompted GPT-4-turbo baseline in the RAGTruth paper (63). This explains
+the grid: Qwen critics objected to most of Gemma's correct drafts.
+
+### Tool-use agents
+
+![Tool-use benchmark](docs/img/agent.svg)
+
+Gemma 4 E4B solved 21 of 30 tasks (19 with ten extra distractor tools), Qwen3 4B and Qwen3 1.7B 9 each.
+Gemma solved every lookup and two-step chain and failed where the shop policy mattered without being
+named (member discounts, free shipping, backorder dates). A verifier that only lets the agent rewrite
+its answer fixed nothing. Letting the agent redo the task with its tools after an ISSUES verdict took
+Gemma from 21 to 22 (Qwen3 4B as verifier) and Qwen3 4B from 9 to 13.
+
+### Benchmark scores
+
+| Benchmark (items) | Gemma 4 E4B | Qwen3 4B | Qwen3 1.7B |
+|---|---|---|---|
+| GSM8K, chain of thought (50) | 70 % | 62 % | 56 % |
+| IFEval, prompt level strict (50) | 86 % | 86 % | 74 % |
+| MMLU-Pro (28) | 61 % | 61 % | 43 % |
+| HHEM hallucination rate, summaries (200) | 0.5 % | 3.0 % | 3.0 % |
+| RAGTruth, F1 as a critic (300) | 74 | 52 | 53 |
+| FACTS Grounding, judged blind (50) | 82 % (74 % with the loop) | 42 % | not run |
+
+Small samples: the standard error is 5 to 10 points on the lm-eval tasks. Each request was one chat
+message with thinking off, so these are not leaderboard numbers. On FACTS the loop broke five of
+Gemma's long answers, mostly by corrupting numbers in the rewrite ("4444.7%" for 44.7 %); the cause is
+still open and is the first thing to check on the phone runtime.
+
+### Time and compute
+
+![Model seconds per question, one model against the loop](docs/img/cost.svg)
+
+| | |
+|---|---|
+| GPU time, all 48 runs | 4.85 h on one laptop RTX 3060, 6,724 model calls |
+| GPU energy | about 0.35 kWh of board power (logged every 5 s by `compute_logger.py` for the last runs, estimated before) |
+| Largest experiment | the grid: 1.59 h for 14 configurations on 104 questions |
+| Peak memory | 4.1 GB VRAM, 12.8 GB system RAM |
+
+Per run, per model and for the Claude Code session that built and ran everything:
+[`reports/compute.md`](reports/compute.md).
 
 ## Running it yourself
 
@@ -179,7 +237,9 @@ python scripts/run_experiment.py --cases tests/cases_hard.jsonl --prompts prompt
 python scripts/autoscore.py --run runs/<folder> --apply              # grade it
 python scripts/report.py --run runs/<folder>                         # rates, intervals, McNemar
 python scripts/run_matrix.py --preset grid                           # every analyst/critic/prompt pair
-python scripts/run_agent_bench.py --model gemma-4-e4b --verifier qwen3-4b
+python scripts/run_agent_bench.py --model gemma-4-e4b --verifier qwen3-4b --retry
+python scripts/compute_logger.py                     # GPU power and load every 5 s (own window)
+python scripts/compute_report.py                     # time, calls and energy per run -> reports/compute.md
 ```
 
 Machine-specific settings (your model folders, a download folder outside the project, a Hugging Face
@@ -206,9 +266,9 @@ docs/img/       illustrations used in this README
 
 ## Limitations
 
-The sets are small (30, 42 and 32 cases), so the confidence intervals are wide and a difference of a
-few answers is not significant. Labels for the starter and hard sets come from an AI labeller (Claude),
-done blind, and the grading rules for the larger grid were written by the same hand, so they are
-checked against the manual labels and the changed answers are read individually. Everything runs on
-one laptop GPU; a phone's GPU may give slightly different text. All prompts and documents are in
+The sets are small: 104 grounded questions, 30 agent tasks and 28 to 300 items per standard benchmark,
+so a difference of a few answers is within chance. Labels come from an AI labeller (Claude) working
+blind and from grading rules written by the same author; the rules were checked against the blind
+labels and an independent review, and every changed answer was read. Everything ran on one laptop GPU
+with greedy decoding, so a phone may produce slightly different text. All prompts and documents are in
 English.

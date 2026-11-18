@@ -1,0 +1,35 @@
+{
+  "bench": "lmeval",
+  "args": {
+    "runtime": "python",
+    "n": 50,
+    "seed": 0,
+    "max_num_tokens": 0,
+    "model": "gemma-4-e4b",
+    "backend": "gpu",
+    "tasks": "gsm8k_cot,ifeval",
+    "num_fewshot": null,
+    "max_gen_toks": 0,
+    "bootstrap_iters": 1000
+  },
+  "generation": {
+    "max_output_tokens": 512,
+    "max_num_tokens": 4096,
+    "greedy": true,
+    "seed": 0,
+    "stream": true,
+    "enable_thinking": false,
+    "strip_think_tags": true,
+    "skip_refine_if_ok": true,
+    "verdict_source": "verdict_line"
+  },
+  "started": "2026-11-18 00:04:08",
+  "stats": {
+    "requests": 100,
+    "clipped": 0,
+    "cut_at_stop": 6,
+    "errors": 0,
+    "seconds": 515.9921598434448
+  },
+  "finished": "2026-11-18 00:15:06"
+}

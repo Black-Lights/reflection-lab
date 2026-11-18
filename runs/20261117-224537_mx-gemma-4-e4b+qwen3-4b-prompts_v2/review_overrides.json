@@ -1,0 +1,18 @@
+{
+ "hn04": {
+  "baseline": "h",
+  "final": "c"
+ },
+ "fn01": {
+  "baseline": "h",
+  "final": "c"
+ },
+ "hn05": {
+  "baseline": "h",
+  "final": "i"
+ },
+ "fn02": {
+  "baseline": "c",
+  "final": "h"
+ }
+}

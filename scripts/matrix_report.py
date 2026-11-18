@@ -38,6 +38,8 @@ def summarise(run: Path) -> dict | None:
         s["final"][f] = s["final"].get(f, 0) + 1
         s["fixed"] += b != "c" and f == "c"
         s["broke"] += b == "c" and f != "c"
+        s["h_removed"] = s.get("h_removed", 0) + (b == "h" and f != "h")
+        s["h_added"] = s.get("h_added", 0) + (b != "h" and f == "h")
         s["refined"] += bool(state.get(cid, {}).get("refined"))
         s["flagged"] += state.get(cid, {}).get("audit_verdict") in ("ISSUES", "UNPARSED")
     secs = [sum(v.get("timings", {}).values()) for v in state.values()]
@@ -65,7 +67,8 @@ def main() -> None:
          "'loop' = after critic + refine. fixed/broke = answers the loop made correct / not correct.", ""]
     for setname in ("all", "starter", "hard", "fresh"):
         L += [f"## {setname}", "", "| analyst | critic | prompts | n | single c | loop c | single h | loop h | "
-              "fixed | broke | p (McNemar) | flagged | s/case |", "|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
+              "fixed | broke | p (McNemar) | h removed | h added | p (h) | flagged | s/case |",
+              "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
         for r in rows:
             parts = [v for k, v in r["sets"].items() if setname in ("all", k)]
             if not parts:
@@ -74,6 +77,7 @@ def main() -> None:
             n, fixed, broke = g("n"), g("fixed"), g("broke")
             L.append(f"| {r['analyst']} | {r['critic']} | {r['prompts']} | {n} | {g('base', 'c')} | {g('final', 'c')} | "
                      f"{g('base', 'h')} | {g('final', 'h')} | {fixed} | {broke} | {mcnemar_exact(fixed, broke):.3f} | "
+                     f"{g('h_removed')} | {g('h_added')} | {mcnemar_exact(g('h_removed'), g('h_added')):.3f} | "
                      f"{g('flagged')} | {r['sec_per_case']:.1f} |")
         L.append("")
     text = "\n".join(L)

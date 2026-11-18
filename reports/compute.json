@@ -1,0 +1,1996 @@
+{
+  "energy": {
+    "reference_power_w": 72.22876701665481,
+    "sample_step_s": 5.0,
+    "n_samples": 1238,
+    "samples_from": "2026-11-18 01:55:21",
+    "samples_to": "2026-11-18 03:38:28"
+  },
+  "claude": {
+    "main": {
+      "tool_calls": 427,
+      "responses": 334,
+      "input_tokens": 730,
+      "output_tokens": 523693,
+      "cache_creation_input_tokens": 912063,
+      "cache_read_input_tokens": 129980154,
+      "models": {
+        "claude-opus-5-5": 334
+      },
+      "active_h": 3.3070708333333334,
+      "span_h": 7.2333533333333335,
+      "first": "2026-11-17 20:24:30",
+      "last": "2026-11-18 03:38:30"
+    },
+    "subagents": {
+      "tool_calls": 156,
+      "responses": 145,
+      "input_tokens": 292,
+      "output_tokens": 234114,
+      "cache_creation_input_tokens": 879995,
+      "cache_read_input_tokens": 17456910,
+      "models": {
+        "claude-opus-5-5": 145
+      },
+      "active_h": 0.99295,
+      "span_h": 6.188510833333333,
+      "first": "2026-11-17 21:27:13",
+      "last": "2026-11-18 03:38:31"
+    },
+    "n_sessions": 1,
+    "n_subagents": 6
+  },
+  "runs": [
+    {
+      "name": "20261117-203657_fake",
+      "calls": 8,
+      "call_s": 1.45,
+      "loads": 3,
+      "load_s": 0.9020290374755859,
+      "out_chars": 441,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 5,
+          "call_s": 0.9099999999999999,
+          "loads": 2,
+          "load_s": 0.6014299392700195,
+          "out_chars": 278
+        },
+        "qwen3-1.7b": {
+          "calls": 3,
+          "call_s": 0.54,
+          "loads": 1,
+          "load_s": 0.3005990982055664,
+          "out_chars": 163
+        }
+      },
+      "peak_vram_mb": 97.0,
+      "peak_ram_gb": 13.83,
+      "category": "dev",
+      "fake": true,
+      "stages": {
+        "1": [
+          3,
+          0.55
+        ],
+        "2": [
+          3,
+          0.54
+        ],
+        "3": [
+          2,
+          0.36
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-1.7b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 2.0,
+      "coverage": 0.0,
+      "energy_wh": 0.04012709278703045,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 20:36:57",
+      "end": "2026-11-17 20:36:59"
+    },
+    {
+      "name": "20261117-205632_smoke",
+      "calls": 6,
+      "call_s": 11.34,
+      "loads": 3,
+      "load_s": 33.1578004360199,
+      "out_chars": 929,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 4,
+          "call_s": 8.59,
+          "loads": 2,
+          "load_s": 21.609967470169067,
+          "out_chars": 340
+        },
+        "qwen3-1.7b": {
+          "calls": 2,
+          "call_s": 2.75,
+          "loads": 1,
+          "load_s": 11.54783296585083,
+          "out_chars": 589
+        }
+      },
+      "peak_vram_mb": 3063.0,
+      "peak_ram_gb": 12.83,
+      "category": "dev",
+      "fake": false,
+      "stages": {
+        "1": [
+          2,
+          4.92
+        ],
+        "2": [
+          2,
+          2.75
+        ],
+        "3": [
+          2,
+          3.67
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-1.7b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 48.0,
+      "coverage": 0.0,
+      "energy_wh": 0.9630502268887309,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 20:56:32",
+      "end": "2026-11-17 20:57:20"
+    },
+    {
+      "name": "20261117-205818_pilot",
+      "calls": 90,
+      "call_s": 78.39,
+      "loads": 3,
+      "load_s": 13.321601867675781,
+      "out_chars": 14113,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 60,
+          "call_s": 49.54,
+          "loads": 2,
+          "load_s": 8.30557632446289,
+          "out_chars": 7071
+        },
+        "qwen3-1.7b": {
+          "calls": 30,
+          "call_s": 28.85,
+          "loads": 1,
+          "load_s": 5.016025543212891,
+          "out_chars": 7042
+        }
+      },
+      "peak_vram_mb": 3027.0,
+      "peak_ram_gb": 12.05,
+      "category": "dev",
+      "fake": false,
+      "stages": {
+        "1": [
+          30,
+          22.009999999999998
+        ],
+        "2": [
+          30,
+          28.85
+        ],
+        "3": [
+          30,
+          27.53
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-1.7b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 92.0,
+      "coverage": 0.0,
+      "energy_wh": 1.845846268203401,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 20:58:18",
+      "end": "2026-11-17 20:59:50"
+    },
+    {
+      "name": "20261117-210715_pilot2",
+      "calls": 75,
+      "call_s": 66.67,
+      "loads": 3,
+      "load_s": 12.382619142532349,
+      "out_chars": 12878,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 45,
+          "call_s": 37.97,
+          "loads": 2,
+          "load_s": 7.84810996055603,
+          "out_chars": 5836
+        },
+        "qwen3-1.7b": {
+          "calls": 30,
+          "call_s": 28.7,
+          "loads": 1,
+          "load_s": 4.534509181976318,
+          "out_chars": 7042
+        }
+      },
+      "peak_vram_mb": 3027.0,
+      "peak_ram_gb": 11.57,
+      "category": "dev",
+      "fake": false,
+      "stages": {
+        "1": [
+          30,
+          21.050000000000004
+        ],
+        "2": [
+          30,
+          28.7
+        ],
+        "3": [
+          15,
+          16.919999999999998
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-1.7b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 80.0,
+      "coverage": 0.0,
+      "energy_wh": 1.6050837114812182,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 21:07:15",
+      "end": "2026-11-17 21:08:35"
+    },
+    {
+      "name": "20261117-211143_logcheck",
+      "calls": 2,
+      "call_s": 4.07,
+      "loads": 2,
+      "load_s": 9.372271537780762,
+      "out_chars": 625,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 1,
+          "call_s": 2.59,
+          "loads": 1,
+          "load_s": 4.89775276184082,
+          "out_chars": 140
+        },
+        "qwen3-1.7b": {
+          "calls": 1,
+          "call_s": 1.48,
+          "loads": 1,
+          "load_s": 4.474518775939941,
+          "out_chars": 485
+        }
+      },
+      "peak_vram_mb": 3023.0,
+      "peak_ram_gb": 11.42,
+      "category": "dev",
+      "fake": false,
+      "stages": {
+        "1": [
+          1,
+          2.59
+        ],
+        "2": [
+          1,
+          1.48
+        ],
+        "3": [
+          0,
+          0.0
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-1.7b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 15.0,
+      "coverage": 0.0,
+      "energy_wh": 0.3009531959027284,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 21:11:43",
+      "end": "2026-11-17 21:11:58"
+    },
+    {
+      "name": "20261117-213155_hard",
+      "calls": 119,
+      "call_s": 146.94,
+      "loads": 3,
+      "load_s": 12.609732151031494,
+      "out_chars": 26164,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 77,
+          "call_s": 89.14999999999998,
+          "loads": 2,
+          "load_s": 7.871770143508911,
+          "out_chars": 11248
+        },
+        "qwen3-1.7b": {
+          "calls": 42,
+          "call_s": 57.790000000000006,
+          "loads": 1,
+          "load_s": 4.737962007522583,
+          "out_chars": 14916
+        }
+      },
+      "peak_vram_mb": 3085.0,
+      "peak_ram_gb": 11.3,
+      "category": "dev",
+      "fake": false,
+      "stages": {
+        "1": [
+          42,
+          38.94999999999998
+        ],
+        "2": [
+          42,
+          57.790000000000006
+        ],
+        "3": [
+          35,
+          50.2
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-1.7b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 161.0,
+      "coverage": 0.0,
+      "energy_wh": 3.230230969355951,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 21:31:55",
+      "end": "2026-11-17 21:34:36"
+    },
+    {
+      "name": "20261117-213618_gpucheck",
+      "calls": 17,
+      "call_s": 23.189999999999998,
+      "loads": 3,
+      "load_s": 12.194857835769653,
+      "out_chars": 3256,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 11,
+          "call_s": 15.48,
+          "loads": 2,
+          "load_s": 7.664341688156128,
+          "out_chars": 1301
+        },
+        "qwen3-1.7b": {
+          "calls": 6,
+          "call_s": 7.709999999999999,
+          "loads": 1,
+          "load_s": 4.530516147613525,
+          "out_chars": 1955
+        }
+      },
+      "peak_vram_mb": 3084.0,
+      "peak_ram_gb": 11.35,
+      "category": "dev",
+      "fake": false,
+      "stages": {
+        "1": [
+          6,
+          7.61
+        ],
+        "2": [
+          6,
+          7.709999999999999
+        ],
+        "3": [
+          5,
+          7.869999999999999
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-1.7b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 36.0,
+      "coverage": 0.0,
+      "energy_wh": 0.7222876701665482,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 21:36:18",
+      "end": "2026-11-17 21:36:54"
+    },
+    {
+      "name": "20261117-220255_smoke-q4",
+      "calls": 5,
+      "call_s": 14.03,
+      "loads": 1,
+      "load_s": 14.006571769714355,
+      "out_chars": 1597,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 5,
+          "call_s": 14.03,
+          "loads": 1,
+          "load_s": 14.006571769714355,
+          "out_chars": 1597
+        }
+      },
+      "peak_vram_mb": 4156.0,
+      "peak_ram_gb": 12.47,
+      "category": "dev",
+      "fake": false,
+      "stages": {
+        "1": [
+          2,
+          5.51
+        ],
+        "2": [
+          2,
+          5.26
+        ],
+        "3": [
+          1,
+          3.26
+        ]
+      },
+      "config": {
+        "analyst": "qwen3-4b",
+        "critic": "qwen3-4b",
+        "prompts": "prompts_v2",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 29.0,
+      "coverage": 0.0,
+      "energy_wh": 0.5818428454119415,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:02:55",
+      "end": "2026-11-17 22:03:24"
+    },
+    {
+      "name": "20261117-220336_mx-gemma-4-e4b+gemma-4-e4b-prompts",
+      "calls": 230,
+      "call_s": 185.18000000000004,
+      "loads": 1,
+      "load_s": 4.915091037750244,
+      "out_chars": 22146,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 230,
+          "call_s": 185.18000000000004,
+          "loads": 1,
+          "load_s": 4.915091037750244,
+          "out_chars": 22146
+        }
+      },
+      "peak_vram_mb": 3083.0,
+      "peak_ram_gb": 11.98,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          89.32999999999998
+        ],
+        "2": [
+          104,
+          68.14999999999998
+        ],
+        "3": [
+          22,
+          27.699999999999996
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "gemma-4-e4b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 192.0,
+      "coverage": 0.0,
+      "energy_wh": 3.8522009075549235,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:03:36",
+      "end": "2026-11-17 22:06:48"
+    },
+    {
+      "name": "20261117-220649_mx-gemma-4-e4b+qwen3-4b-prompts",
+      "calls": 260,
+      "call_s": 430.93000000000006,
+      "loads": 3,
+      "load_s": 15.594209671020508,
+      "out_chars": 41589,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 156,
+          "call_s": 175.79000000000005,
+          "loads": 2,
+          "load_s": 7.145806074142456,
+          "out_chars": 22150
+        },
+        "qwen3-4b": {
+          "calls": 104,
+          "call_s": 255.14000000000001,
+          "loads": 1,
+          "load_s": 8.448403596878052,
+          "out_chars": 19439
+        }
+      },
+      "peak_vram_mb": 4162.0,
+      "peak_ram_gb": 12.07,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          101.71999999999997
+        ],
+        "2": [
+          104,
+          255.14000000000001
+        ],
+        "3": [
+          52,
+          74.07
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-4b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 449.0,
+      "coverage": 0.0,
+      "energy_wh": 9.008532330688336,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:06:49",
+      "end": "2026-11-17 22:14:18"
+    },
+    {
+      "name": "20261117-221418_mx-qwen3-4b+gemma-4-e4b-prompts",
+      "calls": 252,
+      "call_s": 408.20000000000005,
+      "loads": 3,
+      "load_s": 20.092787981033325,
+      "out_chars": 38397,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 148,
+          "call_s": 308.2799999999999,
+          "loads": 2,
+          "load_s": 16.377780199050903,
+          "out_chars": 28741
+        },
+        "gemma-4-e4b": {
+          "calls": 104,
+          "call_s": 99.9200000000001,
+          "loads": 1,
+          "load_s": 3.715007781982422,
+          "out_chars": 9656
+        }
+      },
+      "peak_vram_mb": 4158.0,
+      "peak_ram_gb": 12.53,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          199.78000000000006
+        ],
+        "2": [
+          104,
+          99.9200000000001
+        ],
+        "3": [
+          44,
+          108.49999999999999
+        ]
+      },
+      "config": {
+        "analyst": "qwen3-4b",
+        "critic": "gemma-4-e4b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 431.0,
+      "coverage": 0.0,
+      "energy_wh": 8.647388495605062,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:14:18",
+      "end": "2026-11-17 22:21:29"
+    },
+    {
+      "name": "20261117-222129_mx-qwen3-4b+qwen3-4b-prompts",
+      "calls": 264,
+      "call_s": 607.19,
+      "loads": 1,
+      "load_s": 7.846775770187378,
+      "out_chars": 56452,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 264,
+          "call_s": 607.19,
+          "loads": 1,
+          "load_s": 7.846775770187378,
+          "out_chars": 56452
+        }
+      },
+      "peak_vram_mb": 4158.0,
+      "peak_ram_gb": 12.05,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          197.70000000000002
+        ],
+        "2": [
+          104,
+          265.6499999999999
+        ],
+        "3": [
+          56,
+          143.84000000000003
+        ]
+      },
+      "config": {
+        "analyst": "qwen3-4b",
+        "critic": "qwen3-4b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 617.0,
+      "coverage": 0.0,
+      "energy_wh": 12.379208124798895,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:21:29",
+      "end": "2026-11-17 22:31:46"
+    },
+    {
+      "name": "20261117-223147_mx-gemma-4-e4b+qwen3-1.7b-prompts",
+      "calls": 285,
+      "call_s": 337.96999999999997,
+      "loads": 3,
+      "load_s": 13.405279159545898,
+      "out_chars": 59725,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 181,
+          "call_s": 193.54,
+          "loads": 2,
+          "load_s": 8.521833658218384,
+          "out_chars": 25168
+        },
+        "qwen3-1.7b": {
+          "calls": 104,
+          "call_s": 144.42999999999998,
+          "loads": 1,
+          "load_s": 4.883445501327515,
+          "out_chars": 34557
+        }
+      },
+      "peak_vram_mb": 3084.0,
+      "peak_ram_gb": 12.45,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          100.22999999999999
+        ],
+        "2": [
+          104,
+          144.42999999999998
+        ],
+        "3": [
+          77,
+          93.30999999999999
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-1.7b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 354.0,
+      "coverage": 0.0,
+      "energy_wh": 7.10249542330439,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:31:47",
+      "end": "2026-11-17 22:37:41"
+    },
+    {
+      "name": "20261117-223741_mx-qwen3-1.7b+gemma-4-e4b-prompts",
+      "calls": 267,
+      "call_s": 262.02,
+      "loads": 3,
+      "load_s": 14.017344951629639,
+      "out_chars": 42727,
+      "by_model": {
+        "qwen3-1.7b": {
+          "calls": 163,
+          "call_s": 150.42999999999998,
+          "loads": 2,
+          "load_s": 10.045724391937256,
+          "out_chars": 30362
+        },
+        "gemma-4-e4b": {
+          "calls": 104,
+          "call_s": 111.58999999999997,
+          "loads": 1,
+          "load_s": 3.971620559692383,
+          "out_chars": 12365
+        }
+      },
+      "peak_vram_mb": 3084.0,
+      "peak_ram_gb": 11.81,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          91.86
+        ],
+        "2": [
+          104,
+          111.58999999999997
+        ],
+        "3": [
+          59,
+          58.57
+        ]
+      },
+      "config": {
+        "analyst": "qwen3-1.7b",
+        "critic": "gemma-4-e4b",
+        "prompts": "prompts",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 278.0,
+      "coverage": 0.0,
+      "energy_wh": 5.5776658973972335,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:37:41",
+      "end": "2026-11-17 22:42:19"
+    },
+    {
+      "name": "20261117-224220_mx-gemma-4-e4b+gemma-4-e4b-prompts_v2",
+      "calls": 210,
+      "call_s": 189.60999999999996,
+      "loads": 1,
+      "load_s": 4.833850622177124,
+      "out_chars": 17939,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 210,
+          "call_s": 189.60999999999996,
+          "loads": 1,
+          "load_s": 4.833850622177124,
+          "out_chars": 17939
+        }
+      },
+      "peak_vram_mb": 3083.0,
+      "peak_ram_gb": 11.68,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          117.53
+        ],
+        "2": [
+          104,
+          66.85
+        ],
+        "3": [
+          2,
+          5.23
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "gemma-4-e4b",
+        "prompts": "prompts_v2",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 196.0,
+      "coverage": 0.0,
+      "energy_wh": 3.932455093128984,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:42:20",
+      "end": "2026-11-17 22:45:36"
+    },
+    {
+      "name": "20261117-224537_mx-gemma-4-e4b+qwen3-4b-prompts_v2",
+      "calls": 272,
+      "call_s": 534.6300000000003,
+      "loads": 3,
+      "load_s": 15.006752014160156,
+      "out_chars": 60366,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 168,
+          "call_s": 207.09999999999997,
+          "loads": 2,
+          "load_s": 7.053826808929443,
+          "out_chars": 25016
+        },
+        "qwen3-4b": {
+          "calls": 104,
+          "call_s": 327.5300000000003,
+          "loads": 1,
+          "load_s": 7.952925205230713,
+          "out_chars": 35350
+        }
+      },
+      "peak_vram_mb": 4161.0,
+      "peak_ram_gb": 11.84,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          117.56999999999994
+        ],
+        "2": [
+          104,
+          327.5300000000003
+        ],
+        "3": [
+          64,
+          89.53
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-4b",
+        "prompts": "prompts_v2",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 552.0,
+      "coverage": 0.0,
+      "energy_wh": 11.075077609220404,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:45:37",
+      "end": "2026-11-17 22:54:49"
+    },
+    {
+      "name": "20261117-225449_mx-qwen3-4b+gemma-4-e4b-prompts_v2",
+      "calls": 215,
+      "call_s": 336.9,
+      "loads": 3,
+      "load_s": 20.64103388786316,
+      "out_chars": 28222,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 111,
+          "call_s": 259.91999999999996,
+          "loads": 2,
+          "load_s": 16.68638277053833,
+          "out_chars": 24983
+        },
+        "gemma-4-e4b": {
+          "calls": 104,
+          "call_s": 76.98000000000005,
+          "loads": 1,
+          "load_s": 3.954651117324829,
+          "out_chars": 3239
+        }
+      },
+      "peak_vram_mb": 4161.0,
+      "peak_ram_gb": 11.7,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          239.85000000000002
+        ],
+        "2": [
+          104,
+          76.98000000000005
+        ],
+        "3": [
+          7,
+          20.07
+        ]
+      },
+      "config": {
+        "analyst": "qwen3-4b",
+        "critic": "gemma-4-e4b",
+        "prompts": "prompts_v2",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 360.0,
+      "coverage": 0.0,
+      "energy_wh": 7.222876701665481,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:54:49",
+      "end": "2026-11-17 23:00:49"
+    },
+    {
+      "name": "20261117-230049_mx-qwen3-4b+qwen3-4b-prompts_v2",
+      "calls": 260,
+      "call_s": 687.0600000000005,
+      "loads": 1,
+      "load_s": 7.333219766616821,
+      "out_chars": 60558,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 260,
+          "call_s": 687.0600000000005,
+          "loads": 1,
+          "load_s": 7.333219766616821,
+          "out_chars": 60558
+        }
+      },
+      "peak_vram_mb": 4159.0,
+      "peak_ram_gb": 11.48,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          238.83000000000007
+        ],
+        "2": [
+          104,
+          298.05999999999995
+        ],
+        "3": [
+          52,
+          150.17
+        ]
+      },
+      "config": {
+        "analyst": "qwen3-4b",
+        "critic": "qwen3-4b",
+        "prompts": "prompts_v2",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 697.0,
+      "coverage": 0.0,
+      "energy_wh": 13.984291836280113,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:00:49",
+      "end": "2026-11-17 23:12:26"
+    },
+    {
+      "name": "20261117-231226_mx-gemma-4-e4b+qwen3-1.7b-prompts_v2",
+      "calls": 286,
+      "call_s": 326.11,
+      "loads": 3,
+      "load_s": 13.608202695846558,
+      "out_chars": 43144,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 182,
+          "call_s": 227.45000000000002,
+          "loads": 2,
+          "load_s": 8.608396530151367,
+          "out_chars": 28071
+        },
+        "qwen3-1.7b": {
+          "calls": 104,
+          "call_s": 98.66,
+          "loads": 1,
+          "load_s": 4.99980616569519,
+          "out_chars": 15073
+        }
+      },
+      "peak_vram_mb": 3090.0,
+      "peak_ram_gb": 11.92,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          117.56999999999996
+        ],
+        "2": [
+          104,
+          98.66
+        ],
+        "3": [
+          78,
+          109.87999999999995
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "qwen3-1.7b",
+        "prompts": "prompts_v2",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 342.0,
+      "coverage": 0.0,
+      "energy_wh": 6.861732866582207,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:12:26",
+      "end": "2026-11-17 23:18:08"
+    },
+    {
+      "name": "20261117-231809_mx-qwen3-1.7b+gemma-4-e4b-prompts_v2",
+      "calls": 225,
+      "call_s": 242.09000000000003,
+      "loads": 3,
+      "load_s": 14.39124059677124,
+      "out_chars": 42995,
+      "by_model": {
+        "qwen3-1.7b": {
+          "calls": 121,
+          "call_s": 151.42999999999998,
+          "loads": 2,
+          "load_s": 10.25964879989624,
+          "out_chars": 37684
+        },
+        "gemma-4-e4b": {
+          "calls": 104,
+          "call_s": 90.66000000000004,
+          "loads": 1,
+          "load_s": 4.131591796875,
+          "out_chars": 5311
+        }
+      },
+      "peak_vram_mb": 3084.0,
+      "peak_ram_gb": 11.87,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          129.06
+        ],
+        "2": [
+          104,
+          90.66000000000004
+        ],
+        "3": [
+          17,
+          22.37
+        ]
+      },
+      "config": {
+        "analyst": "qwen3-1.7b",
+        "critic": "gemma-4-e4b",
+        "prompts": "prompts_v2",
+        "tools": false
+      },
+      "finished": true,
+      "wall_s": 258.0,
+      "coverage": 0.0,
+      "energy_wh": 5.176394969526928,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:18:09",
+      "end": "2026-11-17 23:22:27"
+    },
+    {
+      "name": "20261117-232245_mx-gemma-4-e4b+gemma-4-e4b-prompts_v2_tools-tools",
+      "calls": 210,
+      "call_s": 222.02999999999963,
+      "loads": 1,
+      "load_s": 4.701635122299194,
+      "out_chars": 17254,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 210,
+          "call_s": 222.02999999999963,
+          "loads": 1,
+          "load_s": 4.701635122299194,
+          "out_chars": 17254
+        }
+      },
+      "peak_vram_mb": 3083.0,
+      "peak_ram_gb": 11.88,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          149.65999999999994
+        ],
+        "2": [
+          104,
+          67.81999999999996
+        ],
+        "3": [
+          2,
+          4.55
+        ]
+      },
+      "config": {
+        "analyst": "gemma-4-e4b",
+        "critic": "gemma-4-e4b",
+        "prompts": "prompts_v2_tools",
+        "tools": true
+      },
+      "finished": true,
+      "wall_s": 229.0,
+      "coverage": 0.0,
+      "energy_wh": 4.594552124114987,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:22:45",
+      "end": "2026-11-17 23:26:34"
+    },
+    {
+      "name": "20261117-232634_mx-qwen3-4b+qwen3-4b-prompts_v2_tools-tools",
+      "calls": 256,
+      "call_s": 768.1900000000003,
+      "loads": 1,
+      "load_s": 9.607957363128662,
+      "out_chars": 62895,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 256,
+          "call_s": 768.1900000000003,
+          "loads": 1,
+          "load_s": 9.607957363128662,
+          "out_chars": 62895
+        }
+      },
+      "peak_vram_mb": 4159.0,
+      "peak_ram_gb": 11.53,
+      "category": "grid",
+      "fake": false,
+      "stages": {
+        "1": [
+          104,
+          303.93000000000006
+        ],
+        "2": [
+          104,
+          302.1199999999999
+        ],
+        "3": [
+          48,
+          162.14000000000001
+        ]
+      },
+      "config": {
+        "analyst": "qwen3-4b",
+        "critic": "qwen3-4b",
+        "prompts": "prompts_v2_tools",
+        "tools": true
+      },
+      "finished": true,
+      "wall_s": 780.0,
+      "coverage": 0.0,
+      "energy_wh": 15.649566186941875,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:26:34",
+      "end": "2026-11-17 23:39:34"
+    },
+    {
+      "name": "agent_20261117-220823_fake-test",
+      "calls": 3,
+      "call_s": 0.0,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 78,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 3,
+          "call_s": 0.0,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 78
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": true,
+      "finished": true,
+      "wall_s": 0.481226,
+      "coverage": 0.0,
+      "energy_wh": 0.009655100176765758,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 22:08:23",
+      "end": "2026-11-17 22:08:23"
+    },
+    {
+      "name": "agent_20261117-233935_gemma-core",
+      "calls": 30,
+      "call_s": 82.31,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 3266,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 30,
+          "call_s": 82.31,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 3266
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 88.302966,
+      "coverage": 0.0,
+      "energy_wh": 1.7716706550259975,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:39:35",
+      "end": "2026-11-17 23:41:03"
+    },
+    {
+      "name": "agent_20261117-234103_qwen4b-core",
+      "calls": 30,
+      "call_s": 129.93,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 4204,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 30,
+          "call_s": 129.93,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 4204
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 139.050955,
+      "coverage": 0.0,
+      "energy_wh": 2.7898552867050976,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:41:03",
+      "end": "2026-11-17 23:43:22"
+    },
+    {
+      "name": "agent_20261117-234322_qwen17-core",
+      "calls": 30,
+      "call_s": 81.53999999999999,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 2520,
+      "by_model": {
+        "qwen3-1.7b": {
+          "calls": 30,
+          "call_s": 81.53999999999999,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 2520
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 87.980514,
+      "coverage": 0.0,
+      "energy_wh": 1.765201124364316,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:43:22",
+      "end": "2026-11-17 23:44:49"
+    },
+    {
+      "name": "agent_20261117-234450_gemma-all",
+      "calls": 30,
+      "call_s": 99.65000000000002,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 3259,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 30,
+          "call_s": 99.65000000000002,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 3259
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 105.832453,
+      "coverage": 0.0,
+      "energy_wh": 2.12337433070502,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:44:50",
+      "end": "2026-11-17 23:46:35"
+    },
+    {
+      "name": "agent_20261117-234636_qwen4b-all",
+      "calls": 30,
+      "call_s": 176.47999999999996,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 4905,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 30,
+          "call_s": 176.47999999999996,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 4905
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 186.239597,
+      "coverage": 0.0,
+      "energy_wh": 3.736626794719079,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:46:36",
+      "end": "2026-11-17 23:49:42"
+    },
+    {
+      "name": "agent_20261117-234942_qwen17-all",
+      "calls": 30,
+      "call_s": 71.56,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 3000,
+      "by_model": {
+        "qwen3-1.7b": {
+          "calls": 30,
+          "call_s": 71.56,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 3000
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 78.382414,
+      "coverage": 0.0,
+      "energy_wh": 1.5726291997247175,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:49:42",
+      "end": "2026-11-17 23:51:00"
+    },
+    {
+      "name": "agent_20261117-235100_gemma+gemma",
+      "calls": 30,
+      "call_s": 82.19,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 3266,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 30,
+          "call_s": 82.19,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 3266
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 118.468109,
+      "coverage": 0.0,
+      "energy_wh": 2.3768904010735183,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:51:00",
+      "end": "2026-11-17 23:52:58"
+    },
+    {
+      "name": "agent_20261117-235258_gemma+qwen4b",
+      "calls": 30,
+      "call_s": 79.84,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 3266,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 30,
+          "call_s": 79.84,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 3266
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 215.583352,
+      "coverage": 0.0,
+      "energy_wh": 4.3253665845215234,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:52:58",
+      "end": "2026-11-17 23:56:33"
+    },
+    {
+      "name": "agent_20261117-235634_qwen4b+gemma",
+      "calls": 30,
+      "call_s": 129.18,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 4204,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 30,
+          "call_s": 129.18,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 4204
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 177.467737,
+      "coverage": 0.0,
+      "energy_wh": 3.5606321746516585,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:56:34",
+      "end": "2026-11-17 23:59:31"
+    },
+    {
+      "name": "agent_20261117-235931_qwen4b+qwen4b",
+      "calls": 30,
+      "call_s": 126.31000000000002,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 4204,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 30,
+          "call_s": 126.31000000000002,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 4204
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 252.655323,
+      "coverage": 0.0,
+      "energy_wh": 5.069161794579075,
+      "energy_kind": "estimated",
+      "start": "2026-11-17 23:59:31",
+      "end": "2026-11-18 00:03:43"
+    },
+    {
+      "name": "agent_20261118-023811_gemma+qwen4b-retry",
+      "calls": 30,
+      "call_s": 79.5,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 3266,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 30,
+          "call_s": 79.5,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 3266
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 263.0,
+      "coverage": 1.0,
+      "mean_power_w": 75.81811320754717,
+      "energy_wh": 5.538934381551363,
+      "energy_kind": "measured",
+      "start": "2026-11-18 02:38:11",
+      "end": "2026-11-18 02:42:34"
+    },
+    {
+      "name": "agent_20261118-024235_qwen4b+qwen4b-retry",
+      "calls": 30,
+      "call_s": 127.85,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 4204,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 30,
+          "call_s": 127.85,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 4204
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "agent",
+      "fake": false,
+      "finished": true,
+      "wall_s": 342.0,
+      "coverage": 1.0,
+      "mean_power_w": 75.27478260869566,
+      "energy_wh": 7.151104347826087,
+      "energy_kind": "measured",
+      "start": "2026-11-18 02:42:35",
+      "end": "2026-11-18 02:48:17"
+    },
+    {
+      "name": "bench_facts_20261118-022257",
+      "calls": 116,
+      "call_s": 509.9599999999999,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 88603,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 116,
+          "call_s": 509.9599999999999,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 88603
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "facts",
+      "fake": false,
+      "finished": true,
+      "wall_s": 522.0,
+      "coverage": 0.9961685823754789,
+      "mean_power_w": 79.16028846153846,
+      "energy_wh": 11.478241826923076,
+      "energy_kind": "measured",
+      "start": "2026-11-18 02:22:57",
+      "end": "2026-11-18 02:31:39"
+    },
+    {
+      "name": "bench_facts_20261118-023139",
+      "calls": 50,
+      "call_s": 364.11,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 59480,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 50,
+          "call_s": 364.11,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 59480
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "facts",
+      "fake": false,
+      "finished": true,
+      "wall_s": 374.0,
+      "coverage": 1.0,
+      "mean_power_w": 75.89213333333333,
+      "energy_wh": 7.884349407407408,
+      "energy_kind": "measured",
+      "start": "2026-11-18 02:31:39",
+      "end": "2026-11-18 02:37:53"
+    },
+    {
+      "name": "bench_hhem_20261118-015131",
+      "calls": 408,
+      "call_s": 671.5500000000014,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 105821,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 408,
+          "call_s": 671.5500000000014,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 105821
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "hhem",
+      "fake": false,
+      "finished": true,
+      "wall_s": 814.0,
+      "coverage": 0.7186732186732187,
+      "energy_wh": 16.331726764321395,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 01:51:31",
+      "end": "2026-11-18 02:05:05"
+    },
+    {
+      "name": "bench_hhem_20261118-020507",
+      "calls": 200,
+      "call_s": 583.3500000000001,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 104108,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 200,
+          "call_s": 583.3500000000001,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 104108
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "hhem",
+      "fake": false,
+      "finished": true,
+      "wall_s": 712.0,
+      "coverage": 0.9971910112359551,
+      "mean_power_w": 68.40985915492958,
+      "energy_wh": 13.529949921752738,
+      "energy_kind": "measured",
+      "start": "2026-11-18 02:05:07",
+      "end": "2026-11-18 02:16:59"
+    },
+    {
+      "name": "bench_hhem_20261118-021701",
+      "calls": 200,
+      "call_s": 233.75000000000006,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 86362,
+      "by_model": {
+        "qwen3-1.7b": {
+          "calls": 200,
+          "call_s": 233.75000000000006,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 86362
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "hhem",
+      "fake": false,
+      "finished": true,
+      "wall_s": 355.0,
+      "coverage": 1.0,
+      "mean_power_w": 60.24277777777778,
+      "energy_wh": 5.94060725308642,
+      "energy_kind": "measured",
+      "start": "2026-11-18 02:17:01",
+      "end": "2026-11-18 02:22:56"
+    },
+    {
+      "name": "bench_lmeval_20261118-000408",
+      "calls": 100,
+      "call_s": 515.97,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 98332,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 100,
+          "call_s": 515.97,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 98332
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "lmeval",
+      "fake": false,
+      "finished": true,
+      "wall_s": 658.0,
+      "coverage": 0.0,
+      "energy_wh": 13.20181352693302,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 00:04:08",
+      "end": "2026-11-18 00:15:06"
+    },
+    {
+      "name": "bench_lmeval_20261118-001507",
+      "calls": 28,
+      "call_s": 274.20000000000005,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 53167,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 28,
+          "call_s": 274.20000000000005,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 53167
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "lmeval",
+      "fake": false,
+      "finished": true,
+      "wall_s": 397.0,
+      "coverage": 0.0,
+      "energy_wh": 7.965227918225545,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 00:15:07",
+      "end": "2026-11-18 00:21:44"
+    },
+    {
+      "name": "bench_lmeval_20261118-002145",
+      "calls": 100,
+      "call_s": 486.74,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 94683,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 100,
+          "call_s": 486.74,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 94683
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "lmeval",
+      "fake": false,
+      "finished": true,
+      "wall_s": 593.0,
+      "coverage": 0.0,
+      "energy_wh": 11.897683011354529,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 00:21:45",
+      "end": "2026-11-18 00:31:38"
+    },
+    {
+      "name": "bench_lmeval_20261118-003139",
+      "calls": 28,
+      "call_s": 161.59,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 23251,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 28,
+          "call_s": 161.59,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 23251
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "lmeval",
+      "fake": false,
+      "finished": true,
+      "wall_s": 264.0,
+      "coverage": 0.0,
+      "energy_wh": 5.29677624788802,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 00:31:39",
+      "end": "2026-11-18 00:36:03"
+    },
+    {
+      "name": "bench_lmeval_20261118-003604",
+      "calls": 100,
+      "call_s": 241.89000000000004,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 89474,
+      "by_model": {
+        "qwen3-1.7b": {
+          "calls": 100,
+          "call_s": 241.89000000000004,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 89474
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "lmeval",
+      "fake": false,
+      "finished": true,
+      "wall_s": 289.0,
+      "coverage": 0.0,
+      "energy_wh": 5.798364907725901,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 00:36:04",
+      "end": "2026-11-18 00:40:53"
+    },
+    {
+      "name": "bench_lmeval_20261118-004054",
+      "calls": 28,
+      "call_s": 70.41000000000001,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 24290,
+      "by_model": {
+        "qwen3-1.7b": {
+          "calls": 28,
+          "call_s": 70.41000000000001,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 24290
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "lmeval",
+      "fake": false,
+      "finished": true,
+      "wall_s": 168.0,
+      "coverage": 0.0,
+      "energy_wh": 3.370675794110558,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 00:40:54",
+      "end": "2026-11-18 00:43:42"
+    },
+    {
+      "name": "bench_ragtruth_20261118-004343",
+      "calls": 300,
+      "call_s": 964.8100000000005,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 356647,
+      "by_model": {
+        "qwen3-1.7b": {
+          "calls": 300,
+          "call_s": 964.8100000000005,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 356647
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "ragtruth",
+      "fake": false,
+      "finished": true,
+      "wall_s": 971.0,
+      "coverage": 0.0,
+      "energy_wh": 19.481703548103283,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 00:43:43",
+      "end": "2026-11-18 00:59:54"
+    },
+    {
+      "name": "bench_ragtruth_20261118-005955",
+      "calls": 300,
+      "call_s": 780.0999999999997,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 248440,
+      "by_model": {
+        "qwen3-1.7b": {
+          "calls": 300,
+          "call_s": 780.0999999999997,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 248440
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "ragtruth",
+      "fake": false,
+      "finished": true,
+      "wall_s": 788.0,
+      "coverage": 0.0,
+      "energy_wh": 15.810074558089998,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 00:59:55",
+      "end": "2026-11-18 01:13:03"
+    },
+    {
+      "name": "bench_ragtruth_20261118-011303",
+      "calls": 300,
+      "call_s": 1598.89,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 199913,
+      "by_model": {
+        "qwen3-4b": {
+          "calls": 300,
+          "call_s": 1598.89,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 199913
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "ragtruth",
+      "fake": false,
+      "finished": true,
+      "wall_s": 1610.0,
+      "coverage": 0.0,
+      "energy_wh": 32.302309693559515,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 01:13:03",
+      "end": "2026-11-18 01:39:53"
+    },
+    {
+      "name": "bench_ragtruth_20261118-013954",
+      "calls": 300,
+      "call_s": 688.26,
+      "loads": 0,
+      "load_s": 0.0,
+      "out_chars": 86265,
+      "by_model": {
+        "gemma-4-e4b": {
+          "calls": 300,
+          "call_s": 688.26,
+          "loads": 0,
+          "load_s": 0.0,
+          "out_chars": 86265
+        }
+      },
+      "peak_vram_mb": null,
+      "peak_ram_gb": null,
+      "category": "ragtruth",
+      "fake": false,
+      "finished": true,
+      "wall_s": 696.0,
+      "coverage": 0.0,
+      "energy_wh": 13.964228289886599,
+      "energy_kind": "estimated",
+      "start": "2026-11-18 01:39:54",
+      "end": "2026-11-18 01:51:30"
+    }
+  ]
+}

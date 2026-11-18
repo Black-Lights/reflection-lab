@@ -1,0 +1,58 @@
+{
+ "m04": {
+  "baseline": "h",
+  "final": "c"
+ },
+ "hf05": {
+  "baseline": "h",
+  "final": "c"
+ },
+ "ft01": {
+  "baseline": "c",
+  "final": "i"
+ },
+ "ft06": {
+  "baseline": "c",
+  "final": "c"
+ },
+ "fm02": {
+  "baseline": "h",
+  "final": "c"
+ },
+ "hn07": {
+  "baseline": "h",
+  "final": "r"
+ },
+ "hm01": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "hm03": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "fn01": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "fn03": {
+  "baseline": "h",
+  "final": "r"
+ },
+ "fn04": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "fn08": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "ff04": {
+  "baseline": "h",
+  "final": "h"
+ },
+ "fm01": {
+  "baseline": "h",
+  "final": "h"
+ }
+}

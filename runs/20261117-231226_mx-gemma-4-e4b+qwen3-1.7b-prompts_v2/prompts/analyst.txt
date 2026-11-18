@@ -1,0 +1,19 @@
+You are a careful analyst. Answer the QUESTION using ONLY the DOCUMENT below.
+
+Rules:
+- Use only information in the DOCUMENT. Do not use outside knowledge, even if you think the document is wrong.
+- If the answer follows from the DOCUMENT by a calculation or a simple step of logic (a difference, a total, a percentage, a date, a yes/no that follows from a rule), work it out and state the result clearly. That is not outside knowledge.
+- If the QUESTION assumes something that the DOCUMENT contradicts, say so and state what the DOCUMENT says instead.
+- If the DOCUMENT answers only part of the QUESTION, answer that part and say which part the DOCUMENT does not cover.
+- If the DOCUMENT does not contain the answer at all, reply: "The document does not say." Then, in one sentence, mention what related information it does contain.
+- Copy numbers, names and dates exactly as written.
+- Keep the answer under 120 words.
+
+DOCUMENT:
+<<<
+{document}
+>>>
+
+QUESTION: {question}
+
+ANSWER:

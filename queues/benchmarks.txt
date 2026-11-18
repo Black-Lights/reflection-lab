@@ -1,0 +1,21 @@
+# Standard benchmarks, queued 2026-11-17 (autonomous run). Starts after queues/after_grid.txt has finished.
+WAIT_QUEUE after_grid
+# lm-evaluation-harness: GSM8K (CoT) + IFEval 50 each, MMLU-Pro 28 (2 per subject; long CoT answers)
+scripts/bench_lmeval.py --model gemma-4-e4b --tasks gsm8k_cot,ifeval --n 50
+scripts/bench_lmeval.py --model gemma-4-e4b --tasks mmlu_pro --n 28
+scripts/bench_lmeval.py --model qwen3-4b --tasks gsm8k_cot,ifeval --n 50
+scripts/bench_lmeval.py --model qwen3-4b --tasks mmlu_pro --n 28
+scripts/bench_lmeval.py --model qwen3-1.7b --tasks gsm8k_cot,ifeval --n 50
+scripts/bench_lmeval.py --model qwen3-1.7b --tasks mmlu_pro --n 28
+# RAGTruth: how well each model detects hallucinated responses as a critic (300 balanced)
+scripts/bench_ragtruth.py --critic qwen3-1.7b --prompts prompts
+scripts/bench_ragtruth.py --critic qwen3-1.7b --prompts prompts_v2
+scripts/bench_ragtruth.py --critic qwen3-4b --prompts prompts_v2
+scripts/bench_ragtruth.py --critic gemma-4-e4b --prompts prompts_v2
+# HHEM leaderboard style: summaries of 200 public documents, one model alone
+scripts/bench_hhem.py --model gemma-4-e4b --critic gemma-4-e4b --prompts prompts_v2 --n 200
+scripts/bench_hhem.py --model qwen3-4b --n 200
+scripts/bench_hhem.py --model qwen3-1.7b --n 200
+# FACTS Grounding subset (50 examples that fit 4k tokens): Gemma alone and Gemma checking Gemma (v2, no length cap)
+scripts/bench_facts.py --model gemma-4-e4b --critic gemma-4-e4b --prompts prompts_v2_long --n 50
+scripts/bench_facts.py --model qwen3-4b --n 50

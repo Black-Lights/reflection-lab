@@ -1,0 +1,11 @@
+{
+  "model": "gemma-4-e4b",
+  "verifier": "qwen3-4b",
+  "tools": "core",
+  "max_num_tokens": 4096,
+  "tasks": ".\\tests\\agent_tasks.jsonl",
+  "retry": true,
+  "runtime": "python",
+  "started": "2026-11-18 02:38:11",
+  "finished": "2026-11-18 02:42:34"
+}

@@ -1,0 +1,185 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 608" width="1000" height="608" role="img" aria-label="Correct answers and hallucinations out of 104 cases, one model versus the critic loop, for each analyst and critic pair and prompt version">
+<style>
+  .bg{fill:#fcfcfb} .t1{fill:#0b0b0b;font:600 15px system-ui,-apple-system,'Segoe UI',sans-serif}
+  .t2{fill:#52514e;font:400 12.5px system-ui,-apple-system,'Segoe UI',sans-serif}
+  .t3{fill:#52514e;font:500 12px system-ui,-apple-system,'Segoe UI',sans-serif}
+  .grid{stroke:#e4e3df;stroke-width:1} .axis{stroke:#b9b8b2;stroke-width:1}
+  .s1{fill:#2a78d6} .s2{fill:#eb6834} .link{stroke:#b9b8b2;stroke-width:2} .ring{stroke:#fcfcfb;stroke-width:2}
+  @media (prefers-color-scheme: dark){
+    .bg{fill:#1a1a19} .t1{fill:#f0efec} .t2,.t3{fill:#c3c2b7} .grid{stroke:#2e2e2c} .axis{stroke:#5a5955}
+    .s1{fill:#3987e5} .s2{fill:#d95926} .link{stroke:#5a5955} .ring{stroke:#1a1a19}}
+</style>
+<rect class="bg" x="0" y="0" width="1000" height="608" rx="14"/>
+<text class="t1" x="24" y="34">One model vs the critic loop, same 104 questions</text>
+<circle class="s1" cx="30" cy="56" r="6"/><text class="t2" x="42" y="60">one model (the analyst's draft)</text>
+<circle class="s2" cx="250" cy="56" r="6"/><text class="t2" x="262" y="60">with the loop (critic + rewrite)</text>
+<text class="t2" x="24" y="147.0">Gemma E4B + Gemma E4B</text>
+<text class="t3" x="236" y="147.0" text-anchor="end">v1</text>
+<text class="t2" x="24" y="177.0">Gemma E4B + Qwen3 4B</text>
+<text class="t3" x="236" y="177.0" text-anchor="end">v1</text>
+<text class="t2" x="24" y="207.0">Qwen3 4B + Gemma E4B</text>
+<text class="t3" x="236" y="207.0" text-anchor="end">v1</text>
+<text class="t2" x="24" y="237.0">Qwen3 4B + Qwen3 4B</text>
+<text class="t3" x="236" y="237.0" text-anchor="end">v1</text>
+<text class="t2" x="24" y="267.0">Gemma E4B + Qwen3 1.7B</text>
+<text class="t3" x="236" y="267.0" text-anchor="end">v1</text>
+<text class="t2" x="24" y="297.0">Qwen3 1.7B + Gemma E4B</text>
+<text class="t3" x="236" y="297.0" text-anchor="end">v1</text>
+<text class="t2" x="24" y="327.0">Gemma E4B + Gemma E4B</text>
+<text class="t3" x="236" y="327.0" text-anchor="end">v2</text>
+<line class="axis" x1="24" y1="308" x2="976" y2="308"/>
+<text class="t2" x="24" y="357.0">Gemma E4B + Qwen3 4B</text>
+<text class="t3" x="236" y="357.0" text-anchor="end">v2</text>
+<text class="t2" x="24" y="387.0">Qwen3 4B + Gemma E4B</text>
+<text class="t3" x="236" y="387.0" text-anchor="end">v2</text>
+<text class="t2" x="24" y="417.0">Qwen3 4B + Qwen3 4B</text>
+<text class="t3" x="236" y="417.0" text-anchor="end">v2</text>
+<text class="t2" x="24" y="447.0">Gemma E4B + Qwen3 1.7B</text>
+<text class="t3" x="236" y="447.0" text-anchor="end">v2</text>
+<text class="t2" x="24" y="477.0">Qwen3 1.7B + Gemma E4B</text>
+<text class="t3" x="236" y="477.0" text-anchor="end">v2</text>
+<text class="t2" x="24" y="507.0">Gemma E4B + Gemma E4B</text>
+<text class="t3" x="236" y="507.0" text-anchor="end">v2 + tools</text>
+<line class="axis" x1="24" y1="488" x2="976" y2="488"/>
+<text class="t2" x="24" y="537.0">Qwen3 4B + Qwen3 4B</text>
+<text class="t3" x="236" y="537.0" text-anchor="end">v2 + tools</text>
+<text class="t1" x="250" y="98">Correct answers</text>
+<line class="grid" x1="250.0" y1="120" x2="250.0" y2="544"/>
+<text class="t2" x="250.0" y="116" text-anchor="middle">70</text>
+<line class="grid" x1="308.2" y1="120" x2="308.2" y2="544"/>
+<text class="t2" x="308.2" y="116" text-anchor="middle">76</text>
+<line class="grid" x1="366.5" y1="120" x2="366.5" y2="544"/>
+<text class="t2" x="366.5" y="116" text-anchor="middle">82</text>
+<line class="grid" x1="424.7" y1="120" x2="424.7" y2="544"/>
+<text class="t2" x="424.7" y="116" text-anchor="middle">88</text>
+<line class="grid" x1="482.9" y1="120" x2="482.9" y2="544"/>
+<text class="t2" x="482.9" y="116" text-anchor="middle">94</text>
+<line class="grid" x1="541.2" y1="120" x2="541.2" y2="544"/>
+<text class="t2" x="541.2" y="116" text-anchor="middle">100</text>
+<line class="link" x1="434.4" y1="143.0" x2="444.1" y2="143.0"/>
+<circle class="s1 ring" cx="434.4" cy="143.0" r="6"><title>Gemma E4B + Gemma E4B (v1): one model 89</title></circle>
+<circle class="s2 ring" cx="444.1" cy="143.0" r="6"><title>Gemma E4B + Gemma E4B (v1): with loop 90</title></circle>
+<text class="t3" x="456.1" y="147.0">89 → 90</text>
+<line class="link" x1="434.4" y1="173.0" x2="453.8" y2="173.0"/>
+<circle class="s1 ring" cx="434.4" cy="173.0" r="6"><title>Gemma E4B + Qwen3 4B (v1): one model 89</title></circle>
+<circle class="s2 ring" cx="453.8" cy="173.0" r="6"><title>Gemma E4B + Qwen3 4B (v1): with loop 91</title></circle>
+<text class="t3" x="465.8" y="177.0">89 → 91</text>
+<line class="link" x1="463.5" y1="203.0" x2="395.6" y2="203.0"/>
+<circle class="s1 ring" cx="463.5" cy="203.0" r="6"><title>Qwen3 4B + Gemma E4B (v1): one model 92</title></circle>
+<circle class="s2 ring" cx="395.6" cy="203.0" r="6"><title>Qwen3 4B + Gemma E4B (v1): with loop 85</title></circle>
+<text class="t3" x="475.5" y="207.0">92 → 85</text>
+<line class="link" x1="463.5" y1="233.0" x2="453.8" y2="233.0"/>
+<circle class="s1 ring" cx="463.5" cy="233.0" r="6"><title>Qwen3 4B + Qwen3 4B (v1): one model 92</title></circle>
+<circle class="s2 ring" cx="453.8" cy="233.0" r="6"><title>Qwen3 4B + Qwen3 4B (v1): with loop 91</title></circle>
+<text class="t3" x="475.5" y="237.0">92 → 91</text>
+<line class="link" x1="434.4" y1="263.0" x2="356.8" y2="263.0"/>
+<circle class="s1 ring" cx="434.4" cy="263.0" r="6"><title>Gemma E4B + Qwen3 1.7B (v1): one model 89</title></circle>
+<circle class="s2 ring" cx="356.8" cy="263.0" r="6"><title>Gemma E4B + Qwen3 1.7B (v1): with loop 81</title></circle>
+<text class="t3" x="446.4" y="267.0">89 → 81</text>
+<line class="link" x1="288.8" y1="293.0" x2="347.1" y2="293.0"/>
+<circle class="s1 ring" cx="288.8" cy="293.0" r="6"><title>Qwen3 1.7B + Gemma E4B (v1): one model 74</title></circle>
+<circle class="s2 ring" cx="347.1" cy="293.0" r="6"><title>Qwen3 1.7B + Gemma E4B (v1): with loop 80</title></circle>
+<text class="t3" x="359.1" y="297.0">74 → 80</text>
+<line class="link" x1="512.1" y1="323.0" x2="531.5" y2="323.0"/>
+<circle class="s1 ring" cx="512.1" cy="323.0" r="6"><title>Gemma E4B + Gemma E4B (v2): one model 97</title></circle>
+<circle class="s2 ring" cx="531.5" cy="323.0" r="6"><title>Gemma E4B + Gemma E4B (v2): with loop 99</title></circle>
+<text class="t3" x="543.5" y="327.0">97 → 99</text>
+<line class="link" x1="512.1" y1="353.0" x2="512.1" y2="353.0"/>
+<circle class="s1 ring" cx="512.1" cy="353.0" r="6"><title>Gemma E4B + Qwen3 4B (v2): one model 97</title></circle>
+<circle class="s2 ring" cx="512.1" cy="353.0" r="6"><title>Gemma E4B + Qwen3 4B (v2): with loop 97</title></circle>
+<text class="t3" x="524.1" y="357.0">97 → 97</text>
+<line class="link" x1="512.1" y1="383.0" x2="521.8" y2="383.0"/>
+<circle class="s1 ring" cx="512.1" cy="383.0" r="6"><title>Qwen3 4B + Gemma E4B (v2): one model 97</title></circle>
+<circle class="s2 ring" cx="521.8" cy="383.0" r="6"><title>Qwen3 4B + Gemma E4B (v2): with loop 98</title></circle>
+<text class="t3" x="533.8" y="387.0">97 → 98</text>
+<line class="link" x1="512.1" y1="413.0" x2="531.5" y2="413.0"/>
+<circle class="s1 ring" cx="512.1" cy="413.0" r="6"><title>Qwen3 4B + Qwen3 4B (v2): one model 97</title></circle>
+<circle class="s2 ring" cx="531.5" cy="413.0" r="6"><title>Qwen3 4B + Qwen3 4B (v2): with loop 99</title></circle>
+<text class="t3" x="543.5" y="417.0">97 → 99</text>
+<line class="link" x1="512.1" y1="443.0" x2="521.8" y2="443.0"/>
+<circle class="s1 ring" cx="512.1" cy="443.0" r="6"><title>Gemma E4B + Qwen3 1.7B (v2): one model 97</title></circle>
+<circle class="s2 ring" cx="521.8" cy="443.0" r="6"><title>Gemma E4B + Qwen3 1.7B (v2): with loop 98</title></circle>
+<text class="t3" x="533.8" y="447.0">97 → 98</text>
+<line class="link" x1="444.1" y1="473.0" x2="463.5" y2="473.0"/>
+<circle class="s1 ring" cx="444.1" cy="473.0" r="6"><title>Qwen3 1.7B + Gemma E4B (v2): one model 90</title></circle>
+<circle class="s2 ring" cx="463.5" cy="473.0" r="6"><title>Qwen3 1.7B + Gemma E4B (v2): with loop 92</title></circle>
+<text class="t3" x="475.5" y="477.0">90 → 92</text>
+<line class="link" x1="550.9" y1="503.0" x2="560.6" y2="503.0"/>
+<circle class="s1 ring" cx="550.9" cy="503.0" r="6"><title>Gemma E4B + Gemma E4B (v2 + tools): one model 101</title></circle>
+<circle class="s2 ring" cx="560.6" cy="503.0" r="6"><title>Gemma E4B + Gemma E4B (v2 + tools): with loop 102</title></circle>
+<text class="t3" x="572.6" y="507.0">101 → 102</text>
+<line class="link" x1="463.5" y1="533.0" x2="482.9" y2="533.0"/>
+<circle class="s1 ring" cx="463.5" cy="533.0" r="6"><title>Qwen3 4B + Qwen3 4B (v2 + tools): one model 92</title></circle>
+<circle class="s2 ring" cx="482.9" cy="533.0" r="6"><title>Qwen3 4B + Qwen3 4B (v2 + tools): with loop 94</title></circle>
+<text class="t3" x="494.9" y="537.0">92 → 94</text>
+<text class="t1" x="670" y="98">Hallucinations (lower is better)</text>
+<line class="grid" x1="670.0" y1="120" x2="670.0" y2="544"/>
+<text class="t2" x="670.0" y="116" text-anchor="middle">0</text>
+<line class="grid" x1="718.0" y1="120" x2="718.0" y2="544"/>
+<text class="t2" x="718.0" y="116" text-anchor="middle">3</text>
+<line class="grid" x1="766.0" y1="120" x2="766.0" y2="544"/>
+<text class="t2" x="766.0" y="116" text-anchor="middle">6</text>
+<line class="grid" x1="814.0" y1="120" x2="814.0" y2="544"/>
+<text class="t2" x="814.0" y="116" text-anchor="middle">9</text>
+<line class="grid" x1="862.0" y1="120" x2="862.0" y2="544"/>
+<text class="t2" x="862.0" y="116" text-anchor="middle">12</text>
+<line class="grid" x1="910.0" y1="120" x2="910.0" y2="544"/>
+<text class="t2" x="910.0" y="116" text-anchor="middle">15</text>
+<line class="link" x1="718.0" y1="143.0" x2="686.0" y2="143.0"/>
+<circle class="s1 ring" cx="718.0" cy="143.0" r="6"><title>Gemma E4B + Gemma E4B (v1): one model 3</title></circle>
+<circle class="s2 ring" cx="686.0" cy="143.0" r="6"><title>Gemma E4B + Gemma E4B (v1): with loop 1</title></circle>
+<text class="t3" x="730.0" y="147.0">3 → 1</text>
+<line class="link" x1="718.0" y1="173.0" x2="686.0" y2="173.0"/>
+<circle class="s1 ring" cx="718.0" cy="173.0" r="6"><title>Gemma E4B + Qwen3 4B (v1): one model 3</title></circle>
+<circle class="s2 ring" cx="686.0" cy="173.0" r="6"><title>Gemma E4B + Qwen3 4B (v1): with loop 1</title></circle>
+<text class="t3" x="730.0" y="177.0">3 → 1</text>
+<line class="link" x1="766.0" y1="203.0" x2="766.0" y2="203.0"/>
+<circle class="s1 ring" cx="766.0" cy="203.0" r="6"><title>Qwen3 4B + Gemma E4B (v1): one model 6</title></circle>
+<circle class="s2 ring" cx="766.0" cy="203.0" r="6"><title>Qwen3 4B + Gemma E4B (v1): with loop 6</title></circle>
+<text class="t3" x="778.0" y="207.0">6 → 6</text>
+<line class="link" x1="766.0" y1="233.0" x2="766.0" y2="233.0"/>
+<circle class="s1 ring" cx="766.0" cy="233.0" r="6"><title>Qwen3 4B + Qwen3 4B (v1): one model 6</title></circle>
+<circle class="s2 ring" cx="766.0" cy="233.0" r="6"><title>Qwen3 4B + Qwen3 4B (v1): with loop 6</title></circle>
+<text class="t3" x="778.0" y="237.0">6 → 6</text>
+<line class="link" x1="718.0" y1="263.0" x2="686.0" y2="263.0"/>
+<circle class="s1 ring" cx="718.0" cy="263.0" r="6"><title>Gemma E4B + Qwen3 1.7B (v1): one model 3</title></circle>
+<circle class="s2 ring" cx="686.0" cy="263.0" r="6"><title>Gemma E4B + Qwen3 1.7B (v1): with loop 1</title></circle>
+<text class="t3" x="730.0" y="267.0">3 → 1</text>
+<line class="link" x1="894.0" y1="293.0" x2="798.0" y2="293.0"/>
+<circle class="s1 ring" cx="894.0" cy="293.0" r="6"><title>Qwen3 1.7B + Gemma E4B (v1): one model 14</title></circle>
+<circle class="s2 ring" cx="798.0" cy="293.0" r="6"><title>Qwen3 1.7B + Gemma E4B (v1): with loop 8</title></circle>
+<text class="t3" x="906.0" y="297.0">14 → 8</text>
+<line class="link" x1="766.0" y1="323.0" x2="734.0" y2="323.0"/>
+<circle class="s1 ring" cx="766.0" cy="323.0" r="6"><title>Gemma E4B + Gemma E4B (v2): one model 6</title></circle>
+<circle class="s2 ring" cx="734.0" cy="323.0" r="6"><title>Gemma E4B + Gemma E4B (v2): with loop 4</title></circle>
+<text class="t3" x="778.0" y="327.0">6 → 4</text>
+<line class="link" x1="766.0" y1="353.0" x2="718.0" y2="353.0"/>
+<circle class="s1 ring" cx="766.0" cy="353.0" r="6"><title>Gemma E4B + Qwen3 4B (v2): one model 6</title></circle>
+<circle class="s2 ring" cx="718.0" cy="353.0" r="6"><title>Gemma E4B + Qwen3 4B (v2): with loop 3</title></circle>
+<text class="t3" x="778.0" y="357.0">6 → 3</text>
+<line class="link" x1="782.0" y1="383.0" x2="766.0" y2="383.0"/>
+<circle class="s1 ring" cx="782.0" cy="383.0" r="6"><title>Qwen3 4B + Gemma E4B (v2): one model 7</title></circle>
+<circle class="s2 ring" cx="766.0" cy="383.0" r="6"><title>Qwen3 4B + Gemma E4B (v2): with loop 6</title></circle>
+<text class="t3" x="794.0" y="387.0">7 → 6</text>
+<line class="link" x1="782.0" y1="413.0" x2="750.0" y2="413.0"/>
+<circle class="s1 ring" cx="782.0" cy="413.0" r="6"><title>Qwen3 4B + Qwen3 4B (v2): one model 7</title></circle>
+<circle class="s2 ring" cx="750.0" cy="413.0" r="6"><title>Qwen3 4B + Qwen3 4B (v2): with loop 5</title></circle>
+<text class="t3" x="794.0" y="417.0">7 → 5</text>
+<line class="link" x1="766.0" y1="443.0" x2="734.0" y2="443.0"/>
+<circle class="s1 ring" cx="766.0" cy="443.0" r="6"><title>Gemma E4B + Qwen3 1.7B (v2): one model 6</title></circle>
+<circle class="s2 ring" cx="734.0" cy="443.0" r="6"><title>Gemma E4B + Qwen3 1.7B (v2): with loop 4</title></circle>
+<text class="t3" x="778.0" y="447.0">6 → 4</text>
+<line class="link" x1="862.0" y1="473.0" x2="830.0" y2="473.0"/>
+<circle class="s1 ring" cx="862.0" cy="473.0" r="6"><title>Qwen3 1.7B + Gemma E4B (v2): one model 12</title></circle>
+<circle class="s2 ring" cx="830.0" cy="473.0" r="6"><title>Qwen3 1.7B + Gemma E4B (v2): with loop 10</title></circle>
+<text class="t3" x="874.0" y="477.0">12 → 10</text>
+<line class="link" x1="702.0" y1="503.0" x2="686.0" y2="503.0"/>
+<circle class="s1 ring" cx="702.0" cy="503.0" r="6"><title>Gemma E4B + Gemma E4B (v2 + tools): one model 2</title></circle>
+<circle class="s2 ring" cx="686.0" cy="503.0" r="6"><title>Gemma E4B + Gemma E4B (v2 + tools): with loop 1</title></circle>
+<text class="t3" x="714.0" y="507.0">2 → 1</text>
+<line class="link" x1="750.0" y1="533.0" x2="734.0" y2="533.0"/>
+<circle class="s1 ring" cx="750.0" cy="533.0" r="6"><title>Qwen3 4B + Qwen3 4B (v2 + tools): one model 5</title></circle>
+<circle class="s2 ring" cx="734.0" cy="533.0" r="6"><title>Qwen3 4B + Qwen3 4B (v2 + tools): with loop 4</title></circle>
+<text class="t3" x="762.0" y="537.0">5 → 4</text>
+<text class="t2" x="24" y="588">Gemma 4 E4B, Qwen3 4B and Qwen3 1.7B on LiteRT-LM (GPU, greedy). v1 and v2 are the prompt versions in prompts/ and prompts_v2/.</text>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "model": "qwen3-4b",
+  "verifier": "qwen3-4b",
+  "tools": "core",
+  "max_num_tokens": 4096,
+  "tasks": ".\\tests\\agent_tasks.jsonl",
+  "retry": true,
+  "runtime": "python",
+  "started": "2026-11-18 02:42:35",
+  "finished": "2026-11-18 02:48:17"
+}

@@ -133,5 +133,8 @@
       "backend": "gpu",
       "path": "<models>\\qwen3_4b_mixed_int4.litertlm"
     }
-  }
+  },
+  "finished": "2026-11-17 22:31:46",
+  "peak_vram_mb": 4158.0,
+  "peak_ram_used_gb": 12.05
 }

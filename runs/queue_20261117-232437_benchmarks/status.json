@@ -1,0 +1,137 @@
+{
+  "queue": "queues\\benchmarks.txt",
+  "jobs": [
+    "WAIT_QUEUE after_grid",
+    "scripts/bench_lmeval.py --model gemma-4-e4b --tasks gsm8k_cot,ifeval --n 50",
+    "scripts/bench_lmeval.py --model gemma-4-e4b --tasks mmlu_pro --n 28",
+    "scripts/bench_lmeval.py --model qwen3-4b --tasks gsm8k_cot,ifeval --n 50",
+    "scripts/bench_lmeval.py --model qwen3-4b --tasks mmlu_pro --n 28",
+    "scripts/bench_lmeval.py --model qwen3-1.7b --tasks gsm8k_cot,ifeval --n 50",
+    "scripts/bench_lmeval.py --model qwen3-1.7b --tasks mmlu_pro --n 28",
+    "scripts/bench_ragtruth.py --critic qwen3-1.7b --prompts prompts",
+    "scripts/bench_ragtruth.py --critic qwen3-1.7b --prompts prompts_v2",
+    "scripts/bench_ragtruth.py --critic qwen3-4b --prompts prompts_v2",
+    "scripts/bench_ragtruth.py --critic gemma-4-e4b --prompts prompts_v2",
+    "scripts/bench_hhem.py --model gemma-4-e4b --critic gemma-4-e4b --prompts prompts_v2 --n 200",
+    "scripts/bench_hhem.py --model qwen3-4b --n 200",
+    "scripts/bench_hhem.py --model qwen3-1.7b --n 200",
+    "scripts/bench_facts.py --model gemma-4-e4b --critic gemma-4-e4b --prompts prompts_v2_long --n 50",
+    "scripts/bench_facts.py --model qwen3-4b --n 50"
+  ],
+  "done": [
+    {
+      "n": 1,
+      "job": "WAIT_QUEUE after_grid",
+      "exit": 0,
+      "minutes": 39.5,
+      "finished": "00:04:07"
+    },
+    {
+      "n": 2,
+      "job": "scripts/bench_lmeval.py --model gemma-4-e4b --tasks gsm8k_cot,ifeval --n 50",
+      "exit": 0,
+      "minutes": 11.0,
+      "finished": "00:15:07"
+    },
+    {
+      "n": 3,
+      "job": "scripts/bench_lmeval.py --model gemma-4-e4b --tasks mmlu_pro --n 28",
+      "exit": 0,
+      "minutes": 6.6,
+      "finished": "00:21:45"
+    },
+    {
+      "n": 4,
+      "job": "scripts/bench_lmeval.py --model qwen3-4b --tasks gsm8k_cot,ifeval --n 50",
+      "exit": 0,
+      "minutes": 9.9,
+      "finished": "00:31:39"
+    },
+    {
+      "n": 5,
+      "job": "scripts/bench_lmeval.py --model qwen3-4b --tasks mmlu_pro --n 28",
+      "exit": 0,
+      "minutes": 4.4,
+      "finished": "00:36:04"
+    },
+    {
+      "n": 6,
+      "job": "scripts/bench_lmeval.py --model qwen3-1.7b --tasks gsm8k_cot,ifeval --n 50",
+      "exit": 0,
+      "minutes": 4.8,
+      "finished": "00:40:54"
+    },
+    {
+      "n": 7,
+      "job": "scripts/bench_lmeval.py --model qwen3-1.7b --tasks mmlu_pro --n 28",
+      "exit": 0,
+      "minutes": 2.8,
+      "finished": "00:43:43"
+    },
+    {
+      "n": 8,
+      "job": "scripts/bench_ragtruth.py --critic qwen3-1.7b --prompts prompts",
+      "exit": 0,
+      "minutes": 16.2,
+      "finished": "00:59:54"
+    },
+    {
+      "n": 9,
+      "job": "scripts/bench_ragtruth.py --critic qwen3-1.7b --prompts prompts_v2",
+      "exit": 0,
+      "minutes": 13.1,
+      "finished": "01:13:03"
+    },
+    {
+      "n": 10,
+      "job": "scripts/bench_ragtruth.py --critic qwen3-4b --prompts prompts_v2",
+      "exit": 0,
+      "minutes": 26.8,
+      "finished": "01:39:54"
+    },
+    {
+      "n": 11,
+      "job": "scripts/bench_ragtruth.py --critic gemma-4-e4b --prompts prompts_v2",
+      "exit": 0,
+      "minutes": 11.6,
+      "finished": "01:51:30"
+    },
+    {
+      "n": 12,
+      "job": "scripts/bench_hhem.py --model gemma-4-e4b --critic gemma-4-e4b --prompts prompts_v2 --n 200",
+      "exit": 0,
+      "minutes": 13.6,
+      "finished": "02:05:06"
+    },
+    {
+      "n": 13,
+      "job": "scripts/bench_hhem.py --model qwen3-4b --n 200",
+      "exit": 0,
+      "minutes": 11.9,
+      "finished": "02:17:00"
+    },
+    {
+      "n": 14,
+      "job": "scripts/bench_hhem.py --model qwen3-1.7b --n 200",
+      "exit": 0,
+      "minutes": 5.9,
+      "finished": "02:22:57"
+    },
+    {
+      "n": 15,
+      "job": "scripts/bench_facts.py --model gemma-4-e4b --critic gemma-4-e4b --prompts prompts_v2_long --n 50",
+      "exit": 0,
+      "minutes": 8.7,
+      "finished": "02:31:39"
+    },
+    {
+      "n": 16,
+      "job": "scripts/bench_facts.py --model qwen3-4b --n 50",
+      "exit": 0,
+      "minutes": 6.2,
+      "finished": "02:37:53"
+    }
+  ],
+  "current": null,
+  "finished": "2026-11-18 02:37:53"
+}

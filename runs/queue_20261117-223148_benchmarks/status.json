@@ -1,0 +1,25 @@
+{
+  "queue": "queues\\benchmarks.txt",
+  "jobs": [
+    "WAIT_QUEUE after_grid",
+    "scripts/bench_lmeval.py --model gemma-4-e4b --tasks gsm8k_cot,ifeval --n 50",
+    "scripts/bench_lmeval.py --model gemma-4-e4b --tasks mmlu_pro --n 28",
+    "scripts/bench_lmeval.py --model qwen3-4b --tasks gsm8k_cot,ifeval --n 50",
+    "scripts/bench_lmeval.py --model qwen3-4b --tasks mmlu_pro --n 28",
+    "scripts/bench_lmeval.py --model qwen3-1.7b --tasks gsm8k_cot,ifeval --n 50",
+    "scripts/bench_lmeval.py --model qwen3-1.7b --tasks mmlu_pro --n 28",
+    "scripts/bench_ragtruth.py --critic qwen3-1.7b --prompts prompts",
+    "scripts/bench_ragtruth.py --critic qwen3-1.7b --prompts prompts_v2",
+    "scripts/bench_ragtruth.py --critic qwen3-4b --prompts prompts_v2",
+    "scripts/bench_ragtruth.py --critic gemma-4-e4b --prompts prompts_v2",
+    "scripts/bench_hhem.py --model gemma-4-e4b --n 200",
+    "scripts/bench_hhem.py --model qwen3-4b --n 200",
+    "scripts/bench_hhem.py --model qwen3-1.7b --n 200"
+  ],
+  "done": [],
+  "current": {
+    "n": 1,
+    "job": "WAIT_QUEUE after_grid",
+    "started": "22:31:48"
+  }
+}

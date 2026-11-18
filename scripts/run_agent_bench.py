@@ -3,6 +3,7 @@
     python scripts/run_agent_bench.py --model gemma-4-e4b                      30 tasks, 10 shop tools
     python scripts/run_agent_bench.py --model qwen3-4b --tools all             + 10 distractor tools
     python scripts/run_agent_bench.py --model gemma-4-e4b --verifier qwen3-4b  agent, then verifier + rewrite
+    python scripts/run_agent_bench.py --model gemma-4-e4b --verifier qwen3-4b --retry   ... + a second tool-using attempt
     python scripts/run_agent_bench.py --model gemma-4-e4b --ids ag18,ag22 --runtime fake
 
 Each task is one conversation with LiteRT-LM automatic tool calling (tools = Python functions from
@@ -106,6 +107,9 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--model", required=True, help="catalog key of the agent")
     ap.add_argument("--verifier", help="catalog key of the verifier (enables the verify + rewrite loop)")
+    ap.add_argument("--retry", action="store_true",
+                    help="with --verifier: on ISSUES the agent redoes the task WITH tools (prompts_agent/retry.txt) "
+                         "instead of only rewriting its answer")
     ap.add_argument("--tools", choices=["core", "all"], default="core")
     ap.add_argument("--tasks", default=str(ROOT / "tests" / "agent_tasks.jsonl"))
     ap.add_argument("--ids", default="")
@@ -114,11 +118,12 @@ def main() -> None:
     ap.add_argument("--name", default="")
     args = ap.parse_args()
 
+    started = time.strftime("%Y-%m-%d %H:%M:%S")
     tasks = read_jsonl(Path(args.tasks))
     if args.ids:
         tasks = [t for t in tasks if t["id"] in {x.strip() for x in args.ids.split(",")}]
     fake = args.runtime == "fake"
-    name = args.name or f"{args.model}{'+' + args.verifier if args.verifier else ''}-{args.tools}"
+    name = args.name or f"{args.model}{'+' + args.verifier if args.verifier else ''}-{args.tools}{'-retry' if args.retry else ''}"
     out = RUNS / f"agent_{stamp()}_{name}"
     out.mkdir(parents=True)
     pa = ROOT / "prompts_agent"
@@ -154,13 +159,29 @@ def main() -> None:
         step(f"Rewrite pass: {args.model}")
         m = Model(args.model, args.max_num_tokens, fake)
         task_by_id = {t["id"]: t for t in tasks}
+        retry_tmpl = (pa / "retry.txt").read_text(encoding="utf-8") if args.retry else ""
         for r in results:
-            if r["verdict"] == "ISSUES":
+            log_all = r["log"]
+            if r["verdict"] == "ISSUES" and args.retry:
+                # second tool-using attempt, guided by the audit; actions already done are listed so they are not repeated
+                done = [f"{c['name']}({json.dumps(c['args'], ensure_ascii=False)}) -> {json.dumps(c['result'], ensure_ascii=False)}"
+                        for c in r["log"] if c["name"] in ("create_refund", "send_email")
+                        and not (isinstance(c["result"], dict) and "error" in c["result"])]
+                tools2, log2 = make_tools(args.tools, task_by_id[r["id"]].get("env"))
+                prompt = (retry_tmpl.replace("{task}", r["task"]).replace("{audit}", r["audit"])
+                          .replace("{answer}", r["answer"] or "(no answer)").replace("{done}", "\n".join(done) or "(none)"))
+                try:
+                    r["final"] = m.ask(prompt, tools=tools2, system=SYSTEM)
+                except Exception as e:  # e.g. context window full
+                    r["final"], r["retry_error"] = r["answer"], f"{type(e).__name__}: {str(e)[:200]}"
+                r["retry_log"] = log2
+                log_all = r["log"] + log2
+            elif r["verdict"] == "ISSUES":
                 r["final"] = m.ask(tmpl["refiner"].replace("{task}", r["task"]).replace("{log}", log_text(r["log"]))
                                    .replace("{answer}", r["answer"] or "(no answer)").replace("{audit}", r["audit"]))
             else:
                 r["final"] = r["answer"]
-            fs = score(task_by_id[r["id"]], r["final"], r["log"])
+            fs = score(task_by_id[r["id"]], r["final"], log_all)
             r["final_success"], r["final_answer_ok"] = fs["success"], fs["answer_ok"]
         m.close()
 
@@ -183,7 +204,9 @@ def main() -> None:
           f"Errors: {sum(bool(r['error']) for r in results)}"]
     (out / "summary.md").write_text("\n".join(L), encoding="utf-8")
     write_json(out / "meta.json", {"model": args.model, "verifier": args.verifier, "tools": args.tools,
-                                   "max_num_tokens": args.max_num_tokens, "tasks": args.tasks})
+                                   "max_num_tokens": args.max_num_tokens, "tasks": args.tasks, "retry": bool(args.retry),
+                                   "runtime": args.runtime, "started": started,
+                                   "finished": time.strftime("%Y-%m-%d %H:%M:%S")})
     console.print("\n".join(L))
     ok(f"wrote {out}")
 

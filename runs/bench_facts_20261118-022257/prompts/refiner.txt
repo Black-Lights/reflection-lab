@@ -1,0 +1,34 @@
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker is often wrong. Apply an audit point ONLY if all three are true:
+1. it quotes a sentence,
+2. that sentence really appears in the DOCUMENT (check it), and
+3. the sentence shows that the draft is wrong or leaves out what the QUESTION asks for.
+Ignore every other point. Never remove a correct calculation, and never replace a correct answer with "The document does not say."
+If no audit point passes all three checks, output the DRAFT ANSWER unchanged, word for word.
+
+Rules for the final answer:
+- Use only information in the DOCUMENT; calculations and simple logic from it are allowed and should be stated.
+- If the QUESTION assumes something the DOCUMENT contradicts, say so and state what the DOCUMENT says.
+- If the DOCUMENT answers only part of the QUESTION, answer that part and say which part it does not cover.
+- If the DOCUMENT does not contain the answer at all: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Keep the length the request needs.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+{document}
+>>>
+
+QUESTION: {question}
+
+DRAFT ANSWER:
+<<<
+{draft}
+>>>
+
+AUDIT:
+<<<
+{audit}
+>>>
+
+FINAL ANSWER:

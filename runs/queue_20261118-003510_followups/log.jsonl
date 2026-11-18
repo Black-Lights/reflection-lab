@@ -1,0 +1,3 @@
+{"n": 1, "job": "WAIT_QUEUE benchmarks", "exit": 0, "minutes": 123.0, "finished": "02:38:11"}
+{"n": 2, "job": "scripts/run_agent_bench.py --model gemma-4-e4b --verifier qwen3-4b --retry --tools core --name gemma+qwen4b-retry", "exit": 0, "minutes": 4.4, "finished": "02:42:34"}
+{"n": 3, "job": "scripts/run_agent_bench.py --model qwen3-4b --verifier qwen3-4b --retry --tools core --name qwen4b+qwen4b-retry", "exit": 0, "minutes": 5.7, "finished": "02:48:17"}

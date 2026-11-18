@@ -2,15 +2,15 @@
 
 Flagged by the rules; check and put corrections in review_overrides.json.
 
-## hp05 · baseline → i (missing part not flagged as not stated;)
+## n04 · baseline → c (expected content unsupported ['10:15'])
 
-Q: When will the council vote on the options, and which option does the council's transport committee recommend?
+Q: At what time do doors open for the Sunday matinee?
 
-Ref: The vote is in February; a committee recommendation is not stated (councillor Pruett personally favours a bridge).
+Ref: 10:15 (45 minutes before 11:00).
 
-> The council will vote on the options in February. The transport committee recommends a bridge, as Transport councillor Anja Pruett favours a bridge at 340 million euros. [UNSURE]
+> Doors open 45 minutes before each concert. The document does not explicitly state the time doors open for the Sunday matinee, but it mentions that concerts start at 19:30 except for the Sunday matinee, which starts at 11:00. Therefore, doors open 45 minutes before 11:00, which is 10:15.
 
-## fm01 · baseline → h (expected content missing; unsupported numbers [4.4])
+## fm01 · baseline → h (wrong value: unsupported [4.4])
 
 Q: A 5-year-old and a 9-year-old ride with one adult who has a RideCard. What do the three pay together for one single trip each?
 

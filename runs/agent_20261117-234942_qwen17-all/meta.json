@@ -1,0 +1,7 @@
+{
+  "model": "qwen3-1.7b",
+  "verifier": null,
+  "tools": "all",
+  "max_num_tokens": 4096,
+  "tasks": ".\\tests\\agent_tasks.jsonl"
+}

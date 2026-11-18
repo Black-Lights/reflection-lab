@@ -2,7 +2,7 @@
 
     python scripts/autoscore.py --run runs/<dir>              write labels_auto.jsonl + review.md
     python scripts/autoscore.py --run runs/<dir> --compare    agreement with the manual labels.jsonl
-    python scripts/autoscore.py --run runs/<dir> --apply      also write labels.jsonl (never over manual labels),
+    python scripts/autoscore.py --run runs/<dir> --apply      also write labels.jsonl (refreshes its own earlier auto labels, never manual ones),
                                                               taking review_overrides.json into account
 
 Rules come from the case's own "check" field, else from tests/rules.json (frozen sets). Rule types:
@@ -27,25 +27,49 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from lab.common import ROOT, console, fail, ok, read_json, read_jsonl, warn  # noqa: E402
 
-VERSION = "auto-rules v1"
+VERSION = "auto-rules v2"
+# v2 (2026-11-17, after an independent review of 133 grid answers): wrong content is checked BEFORE a
+# refusal phrase can excuse it; clock times are compared as times; LaTeX maths is stripped; forbid
+# patterns ignore negated mentions ("net profit is not stated"); tests/rules.json overrides a case's
+# own "check" rule, so frozen case files never need editing.
 REFUSAL = re.compile(
-    r"(does not|doesn't|do not|did not|didn't|does n't)\s+(explicitly\s+)?(say|state|mention|specify|provide|include|"
-    r"contain|give|indicate|report|explain|list)|not (explicitly )?(stated|mentioned|specified|provided|given|scheduled|"
-    r"included|reported|set|available|indicated|known)|\bno (information|mention|figure|date|details?|data|pet deposit|"
-    r"fee)\b|has not been (scheduled|set|decided|given|made)|cannot be determined|is unknown", re.I)
+    r"(does not|doesn't|do not|did not|didn't|does n't)\s+(explicitly\s+|directly\s+)?(say|state|mention|specify|"
+    r"provide|include|contain|give|indicate|report|explain|list|discuss|address)|not (explicitly |directly )?(stated|"
+    r"mentioned|specified|provided|given|scheduled|included|reported|set|available|indicated|known|discussed)|"
+    r"\bno (information|mention|figure|date|details?|data|pet deposit|fee|recommendation)\b|has not been (scheduled|"
+    r"set|decided|given|made)|cannot be determined|is unknown", re.I)
+NEG = re.compile(r"\b(not|no|never|neither|nor|without)\b|n't\b", re.I)
+TIME = re.compile(r"\b([01]?\d|2[0-3]):([0-5]\d)\b")
+CONSTANTS = {100.0, 60.0, 24.0, 365.0, 52.0}  # percent factor, minutes/hours, days, weeks
 
 
 def norm(t: str) -> str:
-    t = (t or "").replace("−", "-").replace(" ", " ").replace(" ", " ")
+    t = (t or "").replace("\u2212", "-").replace("\u00a0", " ").replace("\u202f", " ")
+    t = re.sub(r"\\text\{([^}]*)\}", r"\1", t)  # LaTeX from model output: $22 - 18 = 4$, \times
+    for a, b in (("\\times", "×"), ("\\cdot", "·"), ("\\(", ""), ("\\)", ""), ("\\[", ""), ("\\]", ""), ("$", "")):
+        t = t.replace(a, b)
     return re.sub(r"(?<=\d)[, ](?=\d{3}\b)", "", t)  # 1,250 / 1 250 -> 1250
 
 
+def clock_times(t: str) -> set[str]:
+    return {f"{int(h)}:{m}" for h, m in TIME.findall(norm(t))}
+
+
 def numbers(t: str) -> list[float]:
-    return [float(x) for x in re.findall(r"\d+(?:\.\d+)?", norm(t))]
+    return [float(x) for x in re.findall(r"\d+(?:\.\d+)?", TIME.sub(" ", norm(t)))]
 
 
 def matches(groups, text: str) -> bool:
     return all(any(re.search(p, text, re.I) for p in g) for g in groups)
+
+
+def forbidden(pattern: str, a: str) -> bool:
+    """A forbid pattern counts unless the mention is negated right before or right after it."""
+    for m in re.finditer(pattern, a, re.I):
+        if NEG.search(a[max(0, m.start() - 40):m.start()]) or re.match(r"\s*(not\b|n't\b)", a[m.end():], re.I):
+            continue
+        return True
+    return False
 
 
 def grade(case: dict, rule: dict, answer: str) -> tuple[str, str, bool]:
@@ -54,42 +78,48 @@ def grade(case: dict, rule: dict, answer: str) -> tuple[str, str, bool]:
     if not a.strip():
         return "i", "empty answer", True
     for p in rule.get("forbid", []):
-        if re.search(p, a, re.I):
+        if forbidden(p, a):
             return "h", f"forbidden: {p}", False
-    allowed = set(numbers(case["document"])) | set(numbers(case["question"])) | {float(x) for x in rule.get("allow", [])}
+    src = case["document"] + " " + case["question"]
+    allowed = set(numbers(src)) | {float(x) for x in rule.get("allow", [])} | CONSTANTS
     unsupported = [n for n in numbers(a) if n not in allowed and not (n.is_integer() and n <= 12)]
+    unsupported += sorted(clock_times(a) - clock_times(src) - set(rule.get("allow_times", [])))
     refusal = bool(REFUSAL.search(a))
     hit = matches(rule.get("expect", []), a)
     t = rule.get("type", "answer")
-    us = f" unsupported numbers {unsupported}" if unsupported else ""
+    us = f" unsupported {unsupported}" if unsupported else ""
     # incomplete_if: partial credit when the expected content is missing (e.g. a conditional half-answer)
     if not hit and any(re.search(p, a, re.I) for p in rule.get("incomplete_if", [])):
-        return "i", "partial content (incomplete_if)" + us, bool(unsupported)
+        return ("h" if unsupported else "i"), "partial content (incomplete_if)" + us, bool(unsupported)
     if t == "answer":
         if hit:
             return "c", "expected content" + us, bool(unsupported)
+        if unsupported:
+            return "h", "wrong value:" + us, True
         if refusal:
             return "r", "refused an answerable question", False
-        if unsupported:
-            return "h", "expected content missing;" + us, True
         return "i", "expected content missing", False
     if t == "refuse":
         if unsupported:
-            return "h", "number not in the document;" + us, True
+            return "h", "value not in the document:" + us, True
         if refusal:
             return "c", "says it is not stated", False
         return "h", "no refusal (check)", True
     if t == "premise":
         if hit:
             return "c", "premise corrected" + us, bool(unsupported)
+        if unsupported:
+            return "h", "premise not corrected, value not in the document:" + us, True
         if refusal:
             return "r", "bare refusal, premise not corrected", False
         return "i", "premise not corrected (check)", True
     if t == "partial":
         if hit and refusal:
             return "c", "answerable part + not-stated part" + us, bool(unsupported)
+        if unsupported:
+            return "h", "value not in the document:" + us, True
         if hit:
-            return ("h" if unsupported else "i"), "missing part not flagged as not stated;" + us, True
+            return "i", "missing part not flagged as not stated", True
         if refusal:
             return "r", "answerable part refused", False
         return "i", "answerable part missing (check)", True
@@ -99,7 +129,7 @@ def grade(case: dict, rule: dict, answer: str) -> tuple[str, str, bool]:
 def load_rules(cases_file: Path) -> tuple[dict, dict]:
     cases = {c["id"]: c for c in read_jsonl(cases_file)}
     shared = read_json(ROOT / "tests" / "rules.json", {}) or {}
-    rules = {cid: (c.get("check") or shared.get(cid)) for cid, c in cases.items()}
+    rules = {cid: (shared.get(cid) or c.get("check")) for cid, c in cases.items()}  # rules.json wins
     return cases, rules
 
 
@@ -133,10 +163,12 @@ def main() -> None:
             labels[cond], flags[cond] = lab, {"reason": why, "review": chk}
         if rec["baseline"].strip() == rec["final"].strip():
             flags["final"] = flags["baseline"]
+        raw = dict(labels)  # the rules' own verdict, kept next to any reviewed override
         reviewed = cid in overrides
         if reviewed:
             labels.update(overrides[cid])
-        out.append({"id": cid, "labels": labels, "flags": flags, "identical": rec["baseline"].strip() == rec["final"].strip(),
+        out.append({"id": cid, "labels": labels, "auto_labels": raw, "flags": flags,
+                    "identical": rec["baseline"].strip() == rec["final"].strip(),
                     "labeller": VERSION + (" + Claude review" if reviewed else ""), "critic": "", "comment": ""})
         for cond in ("baseline", "final"):
             if flags[cond]["review"] and not reviewed and not (cond == "final" and out[-1]["identical"]):
@@ -167,8 +199,9 @@ def main() -> None:
         console.print(f"Agreement with manual labels: {agree}/{total}" + (f" = {agree / total:.0%}" if total else ""))
     if args.apply:
         lp = run / "labels.jsonl"
-        if lp.exists() and lp.read_text(encoding="utf-8").strip():
-            fail(f"{lp} already has labels; not overwritten (auto labels are in labels_auto.jsonl)")
+        existing = read_jsonl(lp) if lp.exists() else []
+        if existing and not all(str(r.get("labeller", "")).startswith("auto-rules") for r in existing):
+            fail(f"{lp} has manual labels; not overwritten (auto labels are in labels_auto.jsonl)")
         else:
             lp.write_text("".join(json.dumps(r, ensure_ascii=False) + "\n" for r in out), encoding="utf-8")
             ok(f"wrote {lp}")

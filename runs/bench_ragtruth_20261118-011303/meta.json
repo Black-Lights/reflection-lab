@@ -1,0 +1,28 @@
+{
+  "bench": "ragtruth",
+  "args": {
+    "runtime": "python",
+    "n": 300,
+    "seed": 0,
+    "max_num_tokens": 0,
+    "critic": "qwen3-4b",
+    "critic_backend": "gpu",
+    "prompts": "prompts_v2",
+    "verdict_source": null,
+    "critic_default": true
+  },
+  "generation": {
+    "max_output_tokens": 512,
+    "max_num_tokens": 4096,
+    "greedy": true,
+    "seed": 0,
+    "stream": true,
+    "enable_thinking": false,
+    "strip_think_tags": true,
+    "skip_refine_if_ok": true,
+    "verdict_source": "verdict_line"
+  },
+  "started": "2026-11-18 01:13:03",
+  "sample_size": 300,
+  "finished": "2026-11-18 01:39:53"
+}

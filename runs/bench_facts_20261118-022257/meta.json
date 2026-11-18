@@ -1,0 +1,30 @@
+{
+  "bench": "facts",
+  "args": {
+    "runtime": "python",
+    "n": 50,
+    "seed": 0,
+    "max_num_tokens": 0,
+    "model": "gemma-4-e4b",
+    "backend": "gpu",
+    "critic": "gemma-4-e4b",
+    "critic_backend": "gpu",
+    "prompts": "prompts_v2_long",
+    "subset": ".\\tests\\facts_subset.jsonl",
+    "score": null,
+    "critic_default": false
+  },
+  "generation": {
+    "max_output_tokens": 512,
+    "max_num_tokens": 4096,
+    "greedy": true,
+    "seed": 0,
+    "stream": true,
+    "enable_thinking": false,
+    "strip_think_tags": true,
+    "skip_refine_if_ok": true,
+    "verdict_source": "verdict_line"
+  },
+  "started": "2026-11-18 02:22:57",
+  "finished": "2026-11-18 02:31:39"
+}

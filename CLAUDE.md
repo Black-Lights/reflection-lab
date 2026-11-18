@@ -64,6 +64,9 @@ scripts/autoscore.py     rule-based grading (labels_auto.jsonl, review.md, --com
 scripts/run_matrix.py    many analyst:critic:prompts configs in a row on the merged sets, auto-graded
 scripts/matrix_report.py single vs loop per config and per set (starter / hard / fresh), McNemar
 scripts/run_agent_bench.py  tool-use benchmark, --tools core|all, optional --verifier loop
+scripts/compute_logger.py  GPU power/load, VRAM, CPU, RAM every 5 s -> runs/compute/samples.csv (own window, Ctrl+C)
+scripts/compute_report.py  time + compute per run, per experiment, per model, loop cost per question, GPU energy
+                         (measured where the logger ran, else estimated), Claude session tokens -> reports/compute.md
 lab/common.py            config, paths, console, json helpers (stdlib-only)
 lab/llm.py               runtimes: python (litert_lm), cli (litert-lm command), fake (no model)
 lab/monitor.py           RAM / VRAM / GPU temperature sampler for the live view

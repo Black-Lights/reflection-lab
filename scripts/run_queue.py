@@ -6,6 +6,7 @@
 Queue file: one job per line, `scripts/<name>.py <args>` (run with this venv's python, from the project
 folder). Blank lines and lines starting with # are skipped. Special line:
     WAIT_MATRIX runs/matrix_<stamp>/index.json    wait until every config of that matrix has finished
+    WAIT_QUEUE <queue file stem>                   wait until a run of that queue has finished
 Progress: runs/queue_<stamp>_<file>/status.json (job, exit code, minutes) and log.jsonl. After every job
 the whole project (results included) is committed to git (lab.common.git_snapshot), so nothing is lost.
 """
@@ -32,6 +33,15 @@ def matrix_done(index: Path) -> bool:
     return bool(idx) and all(c in runs and (from_root(runs[c]) / "outputs.jsonl").exists() for c in idx.get("configs", []))
 
 
+def queue_finished(stem: str, after: float) -> bool:
+    """True when a queue run of that queue file, started after `after`, has finished."""
+    for d in sorted(RUNS.glob(f"queue_*_{stem}"), reverse=True):
+        st = read_json(d / "status.json", {})
+        if st.get("finished") and d.stat().st_mtime >= after - 86400:
+            return True
+    return False
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("queue")
@@ -53,6 +63,11 @@ def main() -> None:
         if job.startswith("WAIT_MATRIX"):
             index = ROOT / job.split(maxsplit=1)[1]
             while not matrix_done(index):
+                time.sleep(30)
+            rc = 0
+        elif job.startswith("WAIT_QUEUE"):
+            stem = job.split(maxsplit=1)[1].strip()
+            while not queue_finished(stem, t0):
                 time.sleep(30)
             rc = 0
         else:

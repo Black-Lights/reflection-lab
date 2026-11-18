@@ -1,0 +1,12 @@
+{"n": 1, "job": "WAIT_MATRIX runs/matrix_20261117-220336/index.json", "exit": 0, "minutes": 63.5, "finished": "23:22:44"}
+{"n": 2, "job": "scripts/run_matrix.py --config gemma-4-e4b:gemma-4-e4b:prompts_v2_tools:tools --config qwen3-4b:qwen3-4b:prompts_v2_tools:tools", "exit": 0, "minutes": 16.8, "finished": "23:39:35"}
+{"n": 3, "job": "scripts/run_agent_bench.py --model gemma-4-e4b --tools core --name gemma-core", "exit": 0, "minutes": 1.5, "finished": "23:41:03"}
+{"n": 4, "job": "scripts/run_agent_bench.py --model qwen3-4b --tools core --name qwen4b-core", "exit": 0, "minutes": 2.3, "finished": "23:43:22"}
+{"n": 5, "job": "scripts/run_agent_bench.py --model qwen3-1.7b --tools core --name qwen17-core", "exit": 0, "minutes": 1.5, "finished": "23:44:50"}
+{"n": 6, "job": "scripts/run_agent_bench.py --model gemma-4-e4b --tools all --name gemma-all", "exit": 0, "minutes": 1.8, "finished": "23:46:35"}
+{"n": 7, "job": "scripts/run_agent_bench.py --model qwen3-4b --tools all --name qwen4b-all", "exit": 0, "minutes": 3.1, "finished": "23:49:42"}
+{"n": 8, "job": "scripts/run_agent_bench.py --model qwen3-1.7b --tools all --name qwen17-all", "exit": 0, "minutes": 1.3, "finished": "23:51:00"}
+{"n": 9, "job": "scripts/run_agent_bench.py --model gemma-4-e4b --verifier gemma-4-e4b --tools core --name gemma+gemma", "exit": 0, "minutes": 2.0, "finished": "23:52:58"}
+{"n": 10, "job": "scripts/run_agent_bench.py --model gemma-4-e4b --verifier qwen3-4b --tools core --name gemma+qwen4b", "exit": 0, "minutes": 3.6, "finished": "23:56:33"}
+{"n": 11, "job": "scripts/run_agent_bench.py --model qwen3-4b --verifier gemma-4-e4b --tools core --name qwen4b+gemma", "exit": 0, "minutes": 3.0, "finished": "23:59:31"}
+{"n": 12, "job": "scripts/run_agent_bench.py --model qwen3-4b --verifier qwen3-4b --tools core --name qwen4b+qwen4b", "exit": 0, "minutes": 4.2, "finished": "00:03:43"}

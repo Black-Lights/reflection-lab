@@ -8995,3 +8995,1433 @@ FINAL ANSWER:
 ```text
 The deposit is three months' rent, not including service charges. The document does not explicitly state the amount of the deposit in absolute terms.
 ```
+
+## hn09 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.8s
+
+**Question:** How much buffer W2 is used in total per sample?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Protocol: RNA extraction with kit QX-200. (1) Homogenise up to 30 mg of tissue in 600 µl of lysis buffer. (2) Centrifuge for 3 minutes at 14,000 g. (3) Transfer the supernatant and add one volume of 70% ethanol. (4) Load the mixture onto the spin column in portions of at most 700 µl, centrifuging for 15 seconds at 8,000 g after each portion. (5) Wash once with 700 µl of buffer W1 and twice with 500 µl of buffer W2. (6) Elute in 30–50 µl of RNase-free water. For fatty tissue such as brain or adipose tissue, use 900 µl of lysis buffer in step 1 and incubate for 5 minutes at room temperature before step 2. Do not use the kit for samples above 30 mg; split them into smaller portions instead.
+>>>
+
+QUESTION: How much buffer W2 is used in total per sample?
+
+DRAFT ANSWER:
+<<<
+The document does not explicitly state the total amount of buffer W2 used per sample. It mentions washing once with 700 µl of buffer W1 and twice with 500 µl of buffer W2. Therefore, the total amount of buffer W2 used per sample is 1000 µl (500 µl × 2).
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The document mentions washing once with 700 µl of buffer W1 and twice with 500 µl of buffer W2, but the draft answer incorrectly states the total amount of buffer W2 as 1000 µl (500 µl × 2). The correct total amount of buffer W2 used per sample is 1000 µl. However, the draft answer does not mention the total amount of buffer W2 used per sample, but instead claims the document does not explicitly state it. This is a contradiction. The draft answer should have stated that the document does mention the total amount of buffer W2 used per sample, which is 1000 µl.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document states that buffer W2 is used twice, each time with 500 µl. Therefore, the total amount of buffer W2 used per sample is 1000 µl.
+```
+
+## hf02 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 3.3s
+
+**Question:** Why was the 50 mg dose chosen for the phase III trial?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Summary of a phase II trial of Velmorin for chronic migraine. 312 adults were randomised to Velmorin 50 mg (n = 104), Velmorin 100 mg (n = 106) or placebo (n = 102) for 12 weeks. The primary endpoint was the change in monthly migraine days. The mean reduction was 4.1 days with 100 mg, 3.2 days with 50 mg and 1.9 days with placebo. Only the 100 mg arm differed significantly from placebo (p = 0.003); the 50 mg arm did not reach significance (p = 0.07). Nausea was reported by 14% of participants on 100 mg, 9% on 50 mg and 6% on placebo. Eleven participants left the trial early, seven of them from the 100 mg arm. The trial was not designed to assess long-term safety. A phase III trial is planned with the 100 mg dose only.
+>>>
+
+QUESTION: Why was the 50 mg dose chosen for the phase III trial?
+
+DRAFT ANSWER:
+<<<
+The document does not explicitly state why the 50 mg dose was chosen for the phase III trial. It mentions that a phase III trial is planned with the 100 mg dose only, but does not explain the rationale for selecting 50 mg. The document contains information about the phase II trial results for both 50 mg and 100 mg doses.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for. The DOCUMENT states that a phase III trial is planned with the 100 mg dose only, but the draft claims the trial is planned with the 50 mg dose.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document does not explicitly state why the 50 mg dose was chosen for the phase III trial. It mentions that a phase III trial is planned with the 100 mg dose only, but does not explain the rationale for selecting 50 mg. The document contains information about the phase II trial results for both 50 mg and 100 mg doses.
+```
+
+## hf05 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.3s
+
+**Question:** Why was the code freeze moved to 13 November?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+From: Joanna Pike. To: build team. Date: Monday 9 November 2026. Subject: Atlas release plan. Hi all, the code freeze, originally set for Friday 13 November, moves to Wednesday 18 November because the payment tests are still failing. QA starts the day after the freeze and needs eight working days. The release is planned for the first Tuesday after QA ends. Tomasz is on leave from 23 to 27 November, so Aiyana will write the release notes. The marketing launch is a separate decision owned by Priya and has not been scheduled yet. Please don't merge anything into main after the freeze unless Tomasz or Aiyana approves it. Thanks, Joanna
+>>>
+
+QUESTION: Why was the code freeze moved to 13 November?
+
+DRAFT ANSWER:
+<<<
+The document does not say why the code freeze was moved to 13 November. It only states that the code freeze was originally set for Friday 13 November and was moved to Wednesday 18 November because payment tests were still failing.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for. The DOCUMENT states that the code freeze was originally set for Friday 13 November and was moved to Wednesday 18 November because payment tests were still failing. The draft does not mention the reason for the move, but the DOCUMENT does.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The code freeze was originally set for Friday 13 November and was moved to Wednesday 18 November because payment tests were still failing.
+```
+
+## hf07 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.2s
+
+**Question:** Why do the residents oppose the tunnel?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+At Thursday's public panel on the Velde river crossing, the three speakers disagreed. Transport councillor Anja Pruett said a tunnel would cost 'at least 600 million euros' and take nine years to build; she favours a bridge, which she estimated at 340 million. Engineer Dmitri Sato of the consultancy Halbek called the bridge estimate 'optimistic' and put it closer to 420 million, but did not give a figure for the tunnel. Lea Fontaine, speaking for the residents' association, said residents would accept either option as long as the old ferry keeps running during construction. The council will vote on the options in February. No date has been set for a public consultation.
+>>>
+
+QUESTION: Why do the residents oppose the tunnel?
+
+DRAFT ANSWER:
+<<<
+The document does not say. It states that residents would accept either option as long as the old ferry keeps running during construction.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The document states that residents would accept either option as long as the old ferry keeps running during construction. The draft answer incorrectly states that the residents oppose the tunnel, whereas the document says they would accept either option.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document does not say. It states that residents would accept either option as long as the old ferry keeps running during construction.
+```
+
+## hp01 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.8s
+
+**Question:** When will the dredging work start, and how much will the roof repair cost?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Selvik Harbour Board, minutes of the meeting of 3 March 2026. Present: Ingrid Holm (chair), Lucas Brandt (deputy chair), Pavel Novak, Amara Okafor, Sofia Reyes. Apologies: Henrik Dahl. Item 1, dredging of the eastern basin: the board awarded the contract to Nordkaj Marine for 1.84 million euros, by 5 votes to 0. The original tender estimate had been 2.1 million euros. Work is to start on 1 June and is expected to take nine weeks. Item 2, mooring fees: the board approved, by 4 votes to 1, raising the annual mooring fee for boats under 10 metres from 620 to 680 euros, and for boats of 10 metres and over from 1,150 to 1,290 euros. Pavel Novak voted against, arguing that the increase would hurt local fishermen. The new fees apply from 1 January 2027. Item 3, ferry terminal roof: Lucas Brandt reported that a structural survey had found corrosion in two of the six roof beams. Repair quotes are expected in April. No decision was taken. Item 4, correction: the minutes of 2 February recorded the harbour's 2025 passenger count as 421,000; the correct figure is 412,000. The next meeting will be held on 7 April.
+>>>
+
+QUESTION: When will the dredging work start, and how much will the roof repair cost?
+
+DRAFT ANSWER:
+<<<
+The dredging work is set to start on 1 June 2026. The document does not mention the cost of the roof repair. The document says: "Repair quotes are expected in April." The document does not say.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The dredging work is set to start on 1 June 2026. The document says: "Work is to start on 1 June and is expected to take nine weeks."
+- [MISSING] The document does not mention the cost of the roof repair. The document says: "Repair quotes are expected in April." The document does not say.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The dredging work is set to start on 1 June 2026. The document does not mention the cost of the roof repair. The document says: "Repair quotes are expected in April." The document does not say.
+```
+
+## hp04 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.1s
+
+**Question:** Are pets allowed, and how much is the pet deposit?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Lease summary: flat 4B, Rue des Tanneurs 17. Monthly rent is 1,250 euros, plus 180 euros in service charges. The deposit is three months' rent, not including service charges. The lease runs for an initial fixed term of 12 months from 1 September 2026 and then continues month to month. During the fixed term, the tenant may leave early only by finding a replacement tenant approved by the landlord. After the fixed term, either party may end the lease by giving three months' notice in writing. Pets are allowed with the landlord's written consent; smoking is not allowed anywhere in the flat. The landlord pays the building insurance, and the tenant must take out contents insurance. Once a year the rent may be indexed, at most by the change in the consumer price index.
+>>>
+
+QUESTION: Are pets allowed, and how much is the pet deposit?
+
+DRAFT ANSWER:
+<<<
+Pets are allowed with the landlord's written consent. The document does not mention a pet deposit.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for: the pet deposit amount.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+Pets are allowed with the landlord's written consent. The document does not mention a pet deposit.
+```
+
+## hp05 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.1s
+
+**Question:** When will the council vote on the options, and which option does the council's transport committee recommend?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+At Thursday's public panel on the Velde river crossing, the three speakers disagreed. Transport councillor Anja Pruett said a tunnel would cost 'at least 600 million euros' and take nine years to build; she favours a bridge, which she estimated at 340 million. Engineer Dmitri Sato of the consultancy Halbek called the bridge estimate 'optimistic' and put it closer to 420 million, but did not give a figure for the tunnel. Lea Fontaine, speaking for the residents' association, said residents would accept either option as long as the old ferry keeps running during construction. The council will vote on the options in February. No date has been set for a public consultation.
+>>>
+
+QUESTION: When will the council vote on the options, and which option does the council's transport committee recommend?
+
+DRAFT ANSWER:
+<<<
+The council will vote on the options in February. The transport committee recommends a bridge, as Transport councillor Anja Pruett favours a bridge at 340 million euros. [UNSURE]
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The council's transport committee does not recommend a bridge; the document states that Transport councillor Anja Pruett favours a bridge, but it does not state that the transport committee recommends it. The document mentions that the council will vote on the options in February, but does not mention the transport committee's recommendation.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The council will vote on the options in February. The document does not state the transport committee's recommendation.
+```
+
+## hc01 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 1.6s
+
+**Question:** According to the field guide, which parent incubates the egg, and for how long?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Field guide excerpt: The emperor penguin is the smallest living penguin species, standing about 40 cm tall. Unlike most penguins, it breeds in the Arctic, on sea ice off northern Greenland, during the summer months. The female incubates the single egg for about two weeks while the male hunts at sea. Adults can dive to about 50 m.
+>>>
+
+QUESTION: According to the field guide, which parent incubates the egg, and for how long?
+
+DRAFT ANSWER:
+<<<
+According to the field guide, the female incubates the egg for about two weeks.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for: the parent that incubates the egg (the female) and the duration (about two weeks). The draft only mentions the duration.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+According to the field guide, the female incubates the egg for about two weeks.
+```
+
+## hc02 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 1.8s
+
+**Question:** According to the field guide, where and when do emperor penguins breed?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Field guide excerpt: The emperor penguin is the smallest living penguin species, standing about 40 cm tall. Unlike most penguins, it breeds in the Arctic, on sea ice off northern Greenland, during the summer months. The female incubates the single egg for about two weeks while the male hunts at sea. Adults can dive to about 50 m.
+>>>
+
+QUESTION: According to the field guide, where and when do emperor penguins breed?
+
+DRAFT ANSWER:
+<<<
+According to the field guide, emperor penguins breed in the Arctic, on sea ice off northern Greenland, during the summer months. The document does not say.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for. The DOCUMENT states that emperor penguins breed in the Arctic, on sea ice off northern Greenland, during the summer months. The draft does not include this information.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+According to the field guide, emperor penguins breed in the Arctic, on sea ice off northern Greenland, during the summer months. The document does not say.
+```
+
+## hc03 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.7s
+
+**Question:** According to the field guide, how tall is the emperor penguin, and how does its size compare with other penguin species?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Field guide excerpt: The emperor penguin is the smallest living penguin species, standing about 40 cm tall. Unlike most penguins, it breeds in the Arctic, on sea ice off northern Greenland, during the summer months. The female incubates the single egg for about two weeks while the male hunts at sea. Adults can dive to about 50 m.
+>>>
+
+QUESTION: According to the field guide, how tall is the emperor penguin, and how does its size compare with other penguin species?
+
+DRAFT ANSWER:
+<<<
+The document states that the emperor penguin is about 40 cm tall and mentions it is the smallest living penguin species. Therefore, it is smaller than other penguin species. 
+
+Answer: The emperor penguin is about 40 cm tall and is the smallest living penguin species.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] the comparison of the emperor penguin's size with other penguin species is not fully addressed in the draft. The draft mentions it is the smallest but does not explicitly state how its size compares with other penguin species.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document states that the emperor penguin is about 40 cm tall and mentions it is the smallest living penguin species. Therefore, it is smaller than other penguin species. 
+
+Answer: The emperor penguin is about 40 cm tall and is the smallest living penguin species.
+```
+
+## hc04 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.9s
+
+**Question:** According to the appendix, who was the first person to walk on the Moon, and when?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Appendix to the alternate-history novel 'Red Harvest Moon': In this timeline the first person to walk on the Moon was Valentina Tereshkova, on 2 March 1971, during the Soviet mission Zarya 4. The American Apollo programme was cancelled in 1967 after budget cuts, and no American landed on the Moon before 1988.
+>>>
+
+QUESTION: According to the appendix, who was the first person to walk on the Moon, and when?
+
+DRAFT ANSWER:
+<<<
+According to the appendix, the first person to walk on the Moon was Valentina Tereshkova, on 2 March 1971, during the Soviet mission Zarya 4.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [UNSUPPORTED] The claim that Valentina Tereshkova was the first person to walk on the Moon is not in the document. The document states that in the alternate-history timeline, the first person to walk on the Moon was Valentina Tereshkova, but the draft answer does not mention the alternate-history context. However, the specific claim about her being the first is directly stated in the document. The issue here is that the draft answer does not mention the alternate-history aspect, but the claim itself is supported. However, the draft answer does not mention the alternate-history aspect, which is part of the question's context. But since the question is about the appendix, and the appendix explicitly states that in this timeline, Valentina Tereshkova was the first, the draft answer is correct in stating that. Therefore, there is no issue with the claim itself. However, the draft answer does not mention the alternate-history aspect, but the question is about the appendix, so the answer is correct. Therefore, there are no issues. Wait, the draft answer is correct in stating the information from the document. The document says "in this timeline" Valentina Tereshkova was the first. The draft answer does not mention "in this timeline," but the question is asking "according to the appendix," so the answer is correct. Therefore, there are no issues. The draft answer is correct. So the verdict is OK.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+According to the appendix, the first person to walk on the Moon was Valentina Tereshkova, on 2 March 1971, during the Soviet mission Zarya 4. The document describes this as part of an alternate-history timeline.
+```
+
+## hm01 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 3.4s
+
+**Question:** An employee stays three nights in a Zurich hotel at 230 euros per night. How much of the hotel bill is reimbursed?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Travel expense policy, revision 3 (effective 1 March 2026). Flights under 6 hours must be booked in economy class. Business class may be booked for flights of 6 hours or more, but only with prior approval from a director. Hotel costs are reimbursed up to 140 euros per night in most cities, and up to 210 euros per night in London, Paris, Zurich and New York. Meals are covered by a daily allowance of 45 euros; on days when a client dinner is paid separately, the allowance is 25 euros. Taxis are reimbursed only when public transport is unavailable or when the trip is between 22:00 and 06:00. Receipts must be submitted within 30 days of returning; later claims are reimbursed only with approval from Finance. Revision 2 of this policy allowed up to 180 euros per night in all capital cities; that rule no longer applies.
+>>>
+
+QUESTION: An employee stays three nights in a Zurich hotel at 230 euros per night. How much of the hotel bill is reimbursed?
+
+DRAFT ANSWER:
+<<<
+The document states that hotel costs are reimbursed up to 210 euros per night in Zurich. The employee stayed three nights at 230 euros per night. Therefore, the reimbursable amount is 3 nights × 210 euros = 630 euros. The remaining 30 euros per night (230 - 210) is not reimbursed.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft does not mention that the policy revision 3 (effective 3 March 2026) overturned the previous rule allowing up to 180 euros per night in all capital cities.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document states that hotel costs are reimbursed up to 210 euros per night in Zurich under revision 3 (effective 3 March 2026). The employee stayed three nights at 230 euros per night. Therefore, the reimbursable amount is 3 nights × 210 euros = 630 euros. The remaining 30 euros per night is not reimbursed.
+```
+
+## hm03 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 3.2s
+
+**Question:** The tenant gives written notice on 15 January 2028. What is the earliest date the lease can end?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Lease summary: flat 4B, Rue des Tanneurs 17. Monthly rent is 1,250 euros, plus 180 euros in service charges. The deposit is three months' rent, not including service charges. The lease runs for an initial fixed term of 12 months from 1 September 2026 and then continues month to month. During the fixed term, the tenant may leave early only by finding a replacement tenant approved by the landlord. After the fixed term, either party may end the lease by giving three months' notice in writing. Pets are allowed with the landlord's written consent; smoking is not allowed anywhere in the flat. The landlord pays the building insurance, and the tenant must take out contents insurance. Once a year the rent may be indexed, at most by the change in the consumer price index.
+>>>
+
+QUESTION: The tenant gives written notice on 15 January 2028. What is the earliest date the lease can end?
+
+DRAFT ANSWER:
+<<<
+The lease can end on 15 May 2028. After the initial 12-month fixed term, either party may end the lease by giving three months' notice in writing. Since the tenant gives written notice on 15 January 2028, the earliest date the lease can end is 15 May 2028.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft does not mention the exact date the lease starts (1 September 2026) or the exact date the tenant gives notice (15 January 2028), which are required to calculate the earliest date the lease can end.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The lease can end on 15 May 2028. After the initial 12-month fixed term, either party may end the lease by giving three months' notice in writing. The lease starts on 1 September 2026, and the tenant gives written notice on 15 January 2028.
+```
+
+## hm04 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 3.3s
+
+**Question:** How much lysis buffer should be used for 20 mg of adipose tissue?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Protocol: RNA extraction with kit QX-200. (1) Homogenise up to 30 mg of tissue in 600 µl of lysis buffer. (2) Centrifuge for 3 minutes at 14,000 g. (3) Transfer the supernatant and add one volume of 70% ethanol. (4) Load the mixture onto the spin column in portions of at most 700 µl, centrifuging for 15 seconds at 8,000 g after each portion. (5) Wash once with 700 µl of buffer W1 and twice with 500 µl of buffer W2. (6) Elute in 30–50 µl of RNase-free water. For fatty tissue such as brain or adipose tissue, use 900 µl of lysis buffer in step 1 and incubate for 5 minutes at room temperature before step 2. Do not use the kit for samples above 30 mg; split them into smaller portions instead.
+>>>
+
+QUESTION: How much lysis buffer should be used for 20 mg of adipose tissue?
+
+DRAFT ANSWER:
+<<<
+The document states that for fatty tissue such as adipose tissue, 900 µl of lysis buffer should be used in step 1. Therefore, 900 µl of lysis buffer should be used for 20 mg of adipose tissue.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for. The DOCUMENT specifies that for fatty tissue such as adipose tissue, 900 µl of lysis buffer should be used in step 1, but the draft does not mention the 20 mg sample size. The answer should specify that 900 µl is used for fatty tissue, regardless of the sample size (as long as it's not above 30 mg). The draft incorrectly implies that the 20 mg sample requires 900 µl, but the document does not specify sample size in the lysis buffer amount for fatty tissue, only that it should be 900 µl for fatty tissue.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document states that for fatty tissue such as adipose tissue, 900 µl of lysis buffer should be used in step 1, regardless of sample size (as long as it's not above 30 mg). Therefore, 900 µl of lysis buffer should be used for 20 mg of adipose tissue.
+```
+
+## fa02 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.4s
+
+**Question:** Where are repairs carried out?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Warranty terms, Lumo P4 projector. The projector has a 24-month warranty from the date of purchase; the lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The warranty does not cover damage from power surges or from using the projector above 2,000 m altitude. Repairs are carried out at the authorised service centre in Ghent within 10 working days of receipt. Customers must register the product within 30 days of purchase to receive a free replacement remote control if theirs fails; unregistered customers pay 19 euros for a replacement.
+>>>
+
+QUESTION: Where are repairs carried out?
+
+DRAFT ANSWER:
+<<<
+Repairs are carried out at the authorised service centre in Ghent. The document does not say where repairs are carried out. The document says repairs are carried out at the authorised service centre in Ghent.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] Where are repairs carried out? The draft misses the information that repairs are carried out at the authorised service centre in Ghent.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+Repairs are carried out at the authorised service centre in Ghent. The document does not say. The document says repairs are carried out at the authorised service centre in Ghent.
+```
+
+## fn01 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 3.0s
+
+**Question:** How many litres of water did the irrigation deliver on Wednesday?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Greenhouse 3 log, week 41. Irrigation runs at 06:00 and 18:00 for 12 minutes each, delivering 3.5 litres per minute. On days above 30 °C an extra midday cycle of 8 minutes is added. Temperatures this week: Monday 27 °C, Tuesday 31 °C, Wednesday 33 °C, Thursday 29 °C, Friday 30 °C. The humidity sensor in bay B failed on Wednesday and was replaced on Friday morning. Tomato yield for the week was 182 kg, down from 205 kg in week 40; the grower attributes the drop to the heat on Tuesday and Wednesday. Fertiliser is added only to the evening cycle.
+>>>
+
+QUESTION: How many litres of water did the irrigation deliver on Wednesday?
+
+DRAFT ANSWER:
+<<<
+The document states that irrigation runs for 12 minutes each at 06:00 and 18:00, delivering 3.5 litres per minute. On Wednesday, the temperature was 33 °C, which is above 30 °C, so an extra midday cycle of 8 minutes was added. Therefore, Wednesday's irrigation included three cycles: 06:00 (12 minutes), 18:00 (12 minutes), and a midday cycle (8 minutes). Total time: 12 + 12 + 8 = 32 minutes. At 3.5 litres per minute, this equals 3.5 × 32 = 112 litres. The document does not explicitly state the total water delivered on Wednesday, but based on the given information, it would be 112 litres.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The document does not mention the total water delivered on Wednesday, but the draft assumes a calculation based on the given information. The draft should state that the total water delivered is calculated as 112 litres based on the provided details.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document does not explicitly state the total water delivered on Wednesday. Based on the given information, irrigation ran for 32 minutes (12 + 12 + 8), delivering 3.5 litres per minute, totaling 112 litres.
+```
+
+## fn02 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.4s
+
+**Question:** On how many days this week did the extra midday cycle run?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Greenhouse 3 log, week 41. Irrigation runs at 06:00 and 18:00 for 12 minutes each, delivering 3.5 litres per minute. On days above 30 °C an extra midday cycle of 8 minutes is added. Temperatures this week: Monday 27 °C, Tuesday 31 °C, Wednesday 33 °C, Thursday 29 °C, Friday 30 °C. The humidity sensor in bay B failed on Wednesday and was replaced on Friday morning. Tomato yield for the week was 182 kg, down from 205 kg in week 40; the grower attributes the drop to the heat on Tuesday and Wednesday. Fertiliser is added only to the evening cycle.
+>>>
+
+QUESTION: On how many days this week did the extra midday cycle run?
+
+DRAFT ANSWER:
+<<<
+The extra midday cycle ran on Wednesday, Thursday, and Friday. This is because the temperature was above 30 °C on those days (Wednesday: 33 °C, Thursday: 29 °C, Friday: 30 °C). The document does not say.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+
+- [WRONG] The extra midday cycle ran on Wednesday, Thursday, and Friday: the document says the extra cycle is added on days above 30 °C. Wednesday was 33 °C, Thursday was 29 °C, and Friday was 30 °C. Only Wednesday met the condition of being above 30 °C. The draft incorrectly includes Thursday and Friday.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The extra midday cycle ran on Wednesday. This is because the temperature was above 30 °C on Wednesday (33 °C). The document does not say.
+```
+
+## fn03 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.8s
+
+**Question:** By what percentage did the tomato yield fall from week 40 to week 41?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Greenhouse 3 log, week 41. Irrigation runs at 06:00 and 18:00 for 12 minutes each, delivering 3.5 litres per minute. On days above 30 °C an extra midday cycle of 8 minutes is added. Temperatures this week: Monday 27 °C, Tuesday 31 °C, Wednesday 33 °C, Thursday 29 °C, Friday 30 °C. The humidity sensor in bay B failed on Wednesday and was replaced on Friday morning. Tomato yield for the week was 182 kg, down from 205 kg in week 40; the grower attributes the drop to the heat on Tuesday and Wednesday. Fertiliser is added only to the evening cycle.
+>>>
+
+QUESTION: By what percentage did the tomato yield fall from week 40 to week 41?
+
+DRAFT ANSWER:
+<<<
+The document does not provide the percentage decrease in tomato yield, but it states that the yield was 182 kg in week 41, down from 205 kg in week 40. The document does not say.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for. The DOCUMENT provides the tomato yields for week 40 (205 kg) and week 41 (182 kg), but the draft does not calculate the percentage decrease.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document states that the tomato yield was 205 kg in week 40 and 182 kg in week 41. The percentage decrease is ((205 - 182)/205) × 100 = 11.22%. The document does not say.
+```
+
+## fn04 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 4.7s
+
+**Question:** How many buses leave Central Station between 06:00 and 08:59 on a weekday?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Line 7 timetable change from 4 January 2027. On weekdays, buses leave Central Station every 15 minutes from 06:00 to 09:00 and every 20 minutes from 09:00 to 19:00; the first bus is at 06:00 and the last at 23:40. On Saturdays the interval is 30 minutes all day. There is no Sunday service. The stop at Old Mill Road is closed until March because of roadworks; passengers should use the temporary stop on Ferry Lane. A single ticket costs 2.80 euros, or 2.20 euros with the RideCard. Children under 6 travel free.
+>>>
+
+QUESTION: How many buses leave Central Station between 06:00 and 08:59 on a weekday?
+
+DRAFT ANSWER:
+<<<
+Between 06:00 and 08:59 on a weekday, buses leave Central Station every 15 minutes from 06:00 to 09:00. The first bus is at 06:00, and the next buses leave at 06:15, 06:30, 06:45, 07:00, 07:15, 07:30, 07:45, 08:00, 08:15, 08:30, and 08:45. That is 11 buses. The document does not explicitly state the number of buses, but based on the schedule, there are 11 buses between 06:00 and 08:59 on a weekday.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for. The DOCUMENT states that buses leave every 15 minutes from 06:00 to 09:00, and the draft correctly lists the buses between 06:00 and 08:59. However, the draft claims the document does not explicitly state the number of buses, but the document actually provides the schedule which allows calculation of the number of buses. The draft's conclusion that there are 11 buses is correct based on the schedule, but the reasoning that the document does not explicitly state the number is not accurate since the document does provide the necessary information to calculate it.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+Between 06:00 and 08:59 on a weekday, buses leave Central Station every 15 minutes from 06:00 to 09:00. The document states the schedule, which allows calculation of 11 buses: 06:00, 06:15, 06:30, 06:45, 07:00, 07:15, 07:30, 07:45, 08:00, 08:15, 08:30, and 08:45. The document does not explicitly state the number of buses, but the schedule provides enough information to calculate it.
+```
+
+## fn05 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.9s
+
+**Question:** How much does a passenger save over 10 single trips by using the RideCard?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Line 7 timetable change from 4 January 2027. On weekdays, buses leave Central Station every 15 minutes from 06:00 to 09:00 and every 20 minutes from 09:00 to 19:00; the first bus is at 06:00 and the last at 23:40. On Saturdays the interval is 30 minutes all day. There is no Sunday service. The stop at Old Mill Road is closed until March because of roadworks; passengers should use the temporary stop on Ferry Lane. A single ticket costs 2.80 euros, or 2.20 euros with the RideCard. Children under 6 travel free.
+>>>
+
+QUESTION: How much does a passenger save over 10 single trips by using the RideCard?
+
+DRAFT ANSWER:
+<<<
+The document does not provide the exact cost of the RideCard or the total savings for 10 single trips. It mentions a single ticket costs 2.80 euros and the RideCard costs 2.20 euros. To calculate the savings, we would need to know the RideCard's cost for 10 trips. The document does not specify this.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for. The DOCUMENT states that a single ticket costs 2.80 euros and the RideCard costs 2.20 euros. The draft does not calculate the savings for 10 single trips, even though the necessary information is present in the DOCUMENT.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document states a single ticket costs 2.80 euros and the RideCard costs 2.20 euros. For 10 trips, the savings using the RideCard would be 10 × (2.80 - 2.20) = 6.00 euros. The document does not say.
+```
+
+## fn06 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.5s
+
+**Question:** How much flour is needed for a 28 cm tin?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Spiced pear cake (one 24 cm tin, 12 slices). 180 g flour, 120 g brown sugar, 3 eggs, 150 ml milk, 2 teaspoons cinnamon, 3 ripe pears. Bake at 175 °C for 45 minutes; with a fan oven, lower the temperature by 20 °C. For a 28 cm tin, use 1.5 times every ingredient and bake 10 minutes longer. The cake keeps for 3 days in an airtight tin.
+>>>
+
+QUESTION: How much flour is needed for a 28 cm tin?
+
+DRAFT ANSWER:
+<<<
+For a 28 cm tin, the amount of flour needed is 1.5 times the original amount, which is 180 g. Therefore, 270 g of flour is required.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The DOCUMENT states that for a 28 cm tin, you should use 1.5 times every ingredient. The DRAFT ANSWER correctly calculates 1.5 times 180 g flour as 270 g, but the DOCUMENT does not explicitly mention the amount of flour needed for a 28 cm tin. The calculation is correct based on the instruction to use 1.5 times every ingredient, but the DRAFT assumes the original amount (180 g) is for a 24 cm tin, which is implied but not explicitly stated in the DOCUMENT.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+For a 28 cm tin, the amount of flour needed is 1.5 times the original amount, which is 180 g. Therefore, 270 g of flour is required.
+```
+
+## fn08 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.6s
+
+**Question:** How long did it take from the first errors to the rollback?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Incident report INC-2291. At 02:14 on 6 October the payment API started returning errors for about 18% of requests. The on-call engineer, Bram, rolled back release 5.12 at 02:51, and the error rate fell below 1% by 03:05. Root cause: a database connection pool limit lowered from 200 to 50 in the release. About 3,400 payments failed; customers were not charged twice. A follow-up to add an alert on pool exhaustion is assigned to the platform team, due 20 October.
+>>>
+
+QUESTION: How long did it take from the first errors to the rollback?
+
+DRAFT ANSWER:
+<<<
+The document does not say. It mentions that errors started at 02:14 on 6 October and the rollback happened at 02:51, but does not explicitly state the duration between the first errors and the rollback. However, based on the times given, it took 37 minutes.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for. The DOCUMENT explicitly states that the first errors occurred at 02:14 on 6 calculation of 37 minutes is not supported by the DOCUMENT. The DOCUMENT does not provide the duration between the first errors and the rollback, but the draft assumes it based on the times given. The DOCUMENT does not mention the duration, so the draft cannot infer it.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document does not say. It mentions that errors started at 02:14 on 6 October and the rollback happened at 02:51, but does not explicitly state the duration between the first errors and the rollback.
+```
+
+## ft06 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.5s
+
+**Question:** According to the council's report, what share of residents oppose removing parking spaces?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Two reports on the Kessling district. The council's transport report (May) found that 38% of residents cycle to work and recommended 4 km of new protected lanes. A residents' group survey (June) put the cycling share at 45% and asked for 9 km of lanes. The council's report did not discuss parking; the residents' survey found that 61% of respondents oppose removing parking spaces.
+>>>
+
+QUESTION: According to the council's report, what share of residents oppose removing parking spaces?
+
+DRAFT ANSWER:
+<<<
+The document does not say. It mentions that the residents' survey found that 61% of respondents oppose removing parking spaces, but it does not provide information from the council's report regarding the share of residents opposing parking space removal.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The council's report did not discuss parking at all, but the draft answer says "the document does not say" when in fact the document explicitly states that "the council's report did not discuss parking; the residents' survey found that 61% of respondents oppose removing parking spaces."
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document does not say. It mentions that the residents' survey found that 61% of respondents oppose removing parking spaces, but it does not provide information from the council's report regarding the share of residents opposing parking space removal.
+```
+
+## ff02 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 1.6s
+
+**Question:** What time does the first Sunday bus leave?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Line 7 timetable change from 4 January 2027. On weekdays, buses leave Central Station every 15 minutes from 06:00 to 09:00 and every 20 minutes from 09:00 to 19:00; the first bus is at 06:00 and the last at 23:40. On Saturdays the interval is 30 minutes all day. There is no Sunday service. The stop at Old Mill Road is closed until March because of roadworks; passengers should use the temporary stop on Ferry Lane. A single ticket costs 2.80 euros, or 2.20 euros with the RideCard. Children under 6 travel free.
+>>>
+
+QUESTION: What time does the first Sunday bus leave?
+
+DRAFT ANSWER:
+<<<
+The document does not say. It states there is no Sunday service.
+>>>
+
+AUDIT:
+<<<
+VERD: OK
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document does not say. It states there is no Sunday service.
+```
+
+## ff04 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.5s
+
+**Question:** Why were customers charged twice?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Incident report INC-2291. At 02:14 on 6 October the payment API started returning errors for about 18% of requests. The on-call engineer, Bram, rolled back release 5.12 at 02:51, and the error rate fell below 1% by 03:05. Root cause: a database connection pool limit lowered from 200 to 50 in the release. About 3,400 payments failed; customers were not charged twice. A follow-up to add an alert on pool exhaustion is assigned to the platform team, due 20 October.
+>>>
+
+QUESTION: Why were customers charged twice?
+
+DRAFT ANSWER:
+<<<
+The document does not say why customers were charged twice. It states that about 3,400 payments failed, but does not mention any charging twice. However, it does say that customers were not charged twice.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The document states that "customers were not charged twice", but the draft answer says "does not say why customers were charged twice" and "does not mention any charging twice", which is incorrect. The document explicitly mentions that customers were not charged twice, so the draft incorrectly implies that the document does not mention this.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document does not say why customers were charged twice. It states that about 3,400 payments failed, but does not mention any charging twice. However, it does say that customers were not charged twice.
+```
+
+## fp02 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 1.9s
+
+**Question:** How long is the lamp covered, and how much does a replacement lamp cost?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Warranty terms, Lumo P4 projector. The projector has a 24-month warranty from the date of purchase; the lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The warranty does not cover damage from power surges or from using the projector above 2,000 m altitude. Repairs are carried out at the authorised service centre in Ghent within 10 working days of receipt. Customers must register the product within 30 days of purchase to receive a free replacement remote control if theirs fails; unregistered customers pay 19 euros for a replacement.
+>>>
+
+QUESTION: How long is the lamp covered, and how much does a replacement lamp cost?
+
+DRAFT ANSWER:
+<<<
+The lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The document does not mention the cost of a replacement lamp.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The cost of a replacement lamp is not mentioned in the document.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The document does not mention the cost of a replacement lamp.
+```
+
+## fp03 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.6s
+
+**Question:** Who rolled back the release, and who approved the rollback?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Incident report INC-2291. At 02:14 on 6 October the payment API started returning errors for about 18% of requests. The on-call engineer, Bram, rolled back release 5.12 at 02:51, and the error rate fell below 1% by 03:05. Root cause: a database connection pool limit lowered from 200 to 50 in the release. About 3,400 payments failed; customers were not charged twice. A follow-up to add an alert on pool exhaustion is assigned to the platform team, due 20 October.
+>>>
+
+QUESTION: Who rolled back the release, and who approved the rollback?
+
+DRAFT ANSWER:
+<<<
+The document does not say who approved the rollback. It states that the on-call engineer, Bram, rolled back release 5.12.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The document does not mention who approved the rollback, but the draft answer states "the document does not say who approved the rollback" which is correct. However, the draft answer does not mention that the question asks for who approved the rollback, and the document does not provide that information. Therefore, the draft correctly states that the document does not mention the approval. However, the draft answer does not explicitly state that the document does not contain the information about the approval, but rather focuses on the fact that the document does not mention it. Since the question asks for who approved the rollback and the document does not provide that information, the draft answer is correct in stating that the document does not say who approved the rollback. Therefore, there are no issues. 
+
+Wait, the initial assessment was incorrect. The draft answer is correct in stating that the document does not mention who approved the rollback. The document only mentions that Bram, the on-call engineer, rolled back the release. There is no mention of approval. Therefore, the draft answer is correct. 
+
+VERDICT: OK
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document does not say who approved the rollback. It states that the on-call engineer, Bram, rolled back release 5.12.
+```
+
+## fp04 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.3s
+
+**Question:** What cycling share did the council's report find, and what share of residents does it say take the bus?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Two reports on the Kessling district. The council's transport report (May) found that 38% of residents cycle to work and recommended 4 km of new protected lanes. A residents' group survey (June) put the cycling share at 45% and asked for 9 km of lanes. The council's report did not discuss parking; the residents' survey found that 61% of respondents oppose removing parking spaces.
+>>>
+
+QUESTION: What cycling share did the council's report find, and what share of residents does it say take the bus?
+
+DRAFT ANSWER:
+<<<
+The document does not say. It mentions that the council's report found 38% of residents cycle to work, but it does not state the percentage of residents who take the bus.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] the council's report found 38% of residents cycle to work, but the draft misses the fact that the document mentions this
+- [MISSING] the draft misses the information that the document does not mention the percentage of residents who take the bus, but the draft incorrectly states "the document does not say" when in fact the document does not provide that information.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The council's report found 38% of residents cycle to work. The document does not mention the percentage of residents who take the bus.
+```
+
+## fc02 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 1.9s
+
+**Question:** According to the leaflet, who built the Great Pyramid of Giza, and when?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Visitor leaflet, 'Inverted Earth' exhibit at the Halden Science Museum. In this exhibit's world, the Sun orbits the Earth once every 24 hours, and water boils at 50 °C at sea level. The exhibit states that the Great Pyramid of Giza was built in 1850 by a Swedish engineering company, Norrland Bygg.
+>>>
+
+QUESTION: According to the leaflet, who built the Great Pyramid of Giza, and when?
+
+DRAFT ANSWER:
+<<<
+According to the leaflet, the Great Pyramid of Giza was built by a Swedish engineering company, Norrland Bygg, in 1850. The document does not say.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] the leaflet states that the Great Pyramid of Giza was built in 1850 by Norrland Bygg, but the draft answer says "the document does not say."
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+According to the leaflet, the Great Pyramid of Giza was built by Norrland Bygg in 1850. The document does not say.
+```
+
+## fm01 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.9s
+
+**Question:** A 5-year-old and a 9-year-old ride with one adult who has a RideCard. What do the three pay together for one single trip each?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Line 7 timetable change from 4 January 2027. On weekdays, buses leave Central Station every 15 minutes from 06:00 to 09:00 and every 20 minutes from 09:00 to 19:00; the first bus is at 06:00 and the last at 23:40. On Saturdays the interval is 30 minutes all day. There is no Sunday service. The stop at Old Mill Road is closed until March because of roadworks; passengers should use the temporary stop on Ferry Lane. A single ticket costs 2.80 euros, or 2.20 euros with the RideCard. Children under 6 travel free.
+>>>
+
+QUESTION: A 5-year-old and a 9-year-old ride with one adult who has a RideCard. What do the three pay together for one single trip each?
+
+DRAFT ANSWER:
+<<<
+The document says a single ticket costs 2.20 euros with the RideCard. Children under 6 travel free. The 5-year-old pays nothing, the 9-year-old pays 2.20 euros, and the adult pays 2.20 euros. Together, they pay 4.40 euros for one single trip each.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information about the specific details of the timetable change on Line 7 from 4 January 2027, which is relevant to the question but not mentioned in the draft answer.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document says a single ticket costs 2.20 euros with the RideCard. Children under 6 travel free. The 5-year-old pays nothing, the 9-year-old pays 2.20 euros, and the adult pays 2.20 euros. Together, they pay 4.40 euros for one single trip each.
+```
+
+## fm02 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 3.4s
+
+**Question:** A lamp fails 4 months after purchase, after 1,150 hours of use. Is it still covered?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Warranty terms, Lumo P4 projector. The projector has a 24-month warranty from the date of purchase; the lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The warranty does not cover damage from power surges or from using the projector above 2,000 m altitude. Repairs are carried out at the authorised service centre in Ghent within 10 working days of receipt. Customers must register the product within 30 days of purchase to receive a free replacement remote control if theirs fails; unregistered customers pay 19 euros for a replacement.
+>>>
+
+QUESTION: A lamp fails 4 months after purchase, after 1,150 hours of use. Is it still covered?
+
+DRAFT ANSWER:
+<<<
+The document states that the lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The lamp failed after 4 months (which is within the 6-month period) and after 1,150 hours of use (which exceeds the 1,000-hour limit). Therefore, the lamp is no longer covered under the warranty. [UNSURE]
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft does not mention that the lamp is covered for 6 months or 1,000 hours of use, whichever comes first. This information is present in the document but not included in the draft answer.
+- [WRONG] The draft states "the lamp is no longer covered under the warranty" but the document indicates that the lamp is covered for 6 months or 1,000 hours, whichever comes first. Since the lamp failed after 4 months (within the 6-month period) and after 1,150 hours (exceeding the 1,000-hour limit), the coverage is determined by the earlier of the two periods. The lamp is covered for 6 months, so it should still be covered. The draft incorrectly concludes that it is no longer covered.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document states that the lamp is covered for 6 months or 1,000 hours of use, whichever comes first. The lamp failed after 4 months (within the 6-month period) and after 1,150 hours (exceeding the 1,000-hour limit). Since the 6-month period has not expired, the lamp is still covered under the warranty.
+```
+
+## fm03 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 2.8s
+
+**Question:** How long should a cake in a 28 cm tin bake?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Spiced pear cake (one 24 cm tin, 12 slices). 180 g flour, 120 g brown sugar, 3 eggs, 150 ml milk, 2 teaspoons cinnamon, 3 ripe pears. Bake at 175 °C for 45 minutes; with a fan oven, lower the temperature by 20 °C. For a 28 cm tin, use 1.5 times every ingredient and bake 10 minutes longer. The cake keeps for 3 days in an airtight tin.
+>>>
+
+QUESTION: How long should a cake in a 28 cm tin bake?
+
+DRAFT ANSWER:
+<<<
+The document states that for a 28 cm tin, the cake should bake 10 minutes longer than the standard 45 minutes. Therefore, the baking time is 55 minutes. The document does not explicitly state the total baking time for a 28 cm tin, but it provides the additional time.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The draft misses information in the DOCUMENT that the QUESTION asks for. The DOCUMENT specifies that for a 28 cm tin, the cake should bake 10 minutes longer than the standard 45 minutes, but the draft does not state the total baking time (55 minutes) as the answer.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The document states that for a 28 cm tin, the cake should bake 10 minutes longer than the standard 45 minutes. Therefore, the baking time is 55 minutes. The document does not explicitly state the total baking time for a 28 cm tin, but it provides the additional time.
+```
+
+## fm04 · Stage 3 · Analyst refine · qwen3-4b [python/gpu] · 1.9s
+
+**Question:** How many more kilometres of lanes did the residents' group ask for than the council recommended?
+
+<details><summary>prompt</summary>
+
+```text
+You wrote the DRAFT ANSWER below. A fact-checker reviewed it against the DOCUMENT and wrote the AUDIT.
+The fact-checker can also be wrong. For each point in the AUDIT, check it against the DOCUMENT yourself and apply it only if the DOCUMENT supports it.
+
+Then write the corrected final answer, following the same rules as before:
+- Use only information stated in the DOCUMENT.
+- If the DOCUMENT does not contain the answer, reply: "The document does not say." plus one sentence on related information it does contain.
+- Copy numbers, names and dates exactly. Under 120 words.
+Output only the final answer, nothing else.
+
+DOCUMENT:
+<<<
+Two reports on the Kessling district. The council's transport report (May) found that 38% of residents cycle to work and recommended 4 km of new protected lanes. A residents' group survey (June) put the cycling share at 45% and asked for 9 km of lanes. The council's report did not discuss parking; the residents' survey found that 61% of respondents oppose removing parking spaces.
+>>>
+
+QUESTION: How many more kilometres of lanes did the residents' group ask for than the council recommended?
+
+DRAFT ANSWER:
+<<<
+The residents' group asked for 9 km of lanes, while the council recommended 4 km. The difference is 5 km. The document does not say.
+>>>
+
+AUDIT:
+<<<
+VERDICT: ISSUES
+- [MISSING] The document does not say that the document does not say. The draft incorrectly states "The document does not say" when in fact the document does provide the necessary information to answer the question.
+>>>
+
+FINAL ANSWER:
+
+```
+</details>
+
+```text
+The residents' group asked for 9 km of lanes, while the council recommended 4 km. The difference is 5 km. The document does not say.
+```

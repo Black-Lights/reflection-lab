@@ -1,0 +1,120 @@
+# Reflection Lab configuration
+# Edit freely. Paths use forward slashes, which work on Windows too.
+
+[scan]
+# Folders searched for model files you already have (read-only scan, nothing is moved).
+# Put your own folders in config.local.toml, e.g. roots = ["<local-path>/ai"] (see config.local.example.toml).
+roots = []
+# Extra folders that must be scanned even if they are outside the roots (warns if missing).
+named_folders = []
+# Also scan the usual model caches (Hugging Face, LM Studio, Ollama, GPT4All, Jan, AI Edge Gallery exports).
+include_default_caches = true
+# Files smaller than this are ignored (except .litertlm / .task, always listed).
+min_size_mb = 20
+skip_dirs = [".git", "node_modules", "__pycache__", ".venv", "venv", "env", "site-packages",
+             "$Recycle.Bin", "System Volume Information", ".tox", ".mypy_cache", ".pytest_cache",
+             "dist-packages", ".next", "build", ".gradle"]
+
+# Which model plays which role. `key` refers to an entry in [[catalog]] below.
+[models.analyst]
+key = "gemma-4-e4b"
+backend = "gpu"        # gpu or cpu
+
+[models.critic]
+key = "qwen3-1.7b"
+backend = "gpu"        # switch to "cpu" if both models do not fit in 6 GB VRAM
+
+[generation]
+max_output_tokens = 512
+max_num_tokens = 4096        # context window per call (prompt + answer); our prompts are < 1500 tokens
+greedy = true                # top_k = 1: same input → same output, needed for fair comparisons
+seed = 0
+stream = true                # show text as it is generated
+enable_thinking = false      # keep off for speed and fair comparison
+strip_think_tags = true      # remove Qwen3 <think>...</think> blocks from outputs
+skip_refine_if_ok = true     # if the critic says "VERDICT: OK", keep the draft unchanged
+verdict_source = "verdict_line"  # verdict_line: the critic's VERDICT line decides (owner's choice 2026-11-17)
+                                 # issue_lines: any [TAG] line turns OK into ISSUES (used by the first pilot)
+
+[run]
+runtime = "python"           # python (litert-lm-api) | cli (litert-lm command) | fake (no model, for testing)
+mode = "swap"                # swap: run stage 1 for all cases, unload, stage 2, unload, stage 3 (safe on 6 GB)
+                             # coresident: both models loaded, each case goes through all 3 stages
+cli_exe = "litert-lm"
+cli_extra_args = []
+cli_output_filter = ""       # regex of runtime log lines to hide when runtime = "cli"
+runtime_log_level = "error"  # LiteRT-LM's own console messages (python runtime): verbose, debug, info,
+                             # warning, error, silent. "error" hides the ~180 harmless lines printed per
+                             # model load; use "warning" or "info" when debugging a GPU/load problem.
+
+[download]
+# Where get_models.py saves new .litertlm files. Relative paths are taken from this project
+# folder. To keep models elsewhere (e.g. next to your other local models), set dir in
+# config.local.toml.
+dir = "models"
+# Dotenv-style file holding HF_TOKEN. Read only at download time; the token is never
+# printed, logged or copied. HF_TOKEN in the environment takes precedence. Empty = none
+# (the public litert-community repos do not need a token).
+hf_token_file = ""
+
+# Optional manual overrides: key = "full path to .litertlm"
+[paths]
+# "gemma-4-e4b" = "<local-path>/gemma-4-E4B-it.litertlm"   (better: put overrides in config.local.toml)
+
+# ---------------------------------------------------------------------------
+# Models the project knows about. `match` is a regex tested against the lowercase
+# full path of local .litertlm files. `file` pins the exact file inside the HF repo;
+# without it, `file_hint` and "smallest non-web file" decide.
+# Gemma: the plain `gemma-4-*-it.litertlm` is the file the Android app loads (model card,
+# checked 2026-11-17); the `-gpu` file is the LiteRT-LM.js web build, `-web` is for the browser.
+[[catalog]]
+key = "gemma-4-e4b"
+role = "analyst"
+required = true
+repo = "litert-community/gemma-4-E4B-it-litert-lm"
+file = "gemma-4-E4B-it.litertlm"
+file_hint = "e4b"
+match = "gemma[-_ ]?4.*e4b"
+approx_gb = 3.4
+
+[[catalog]]
+key = "qwen3-1.7b"
+role = "critic"
+required = true
+repo = "litert-community/Qwen3-1.7B"
+# int8 (dynamic_wi8_afp32, GPU composite ops; GPU needs litert-lm >= 0.19). Chosen by the owner on
+# 2026-11-17 over the int4 Qwen3-1.7B_dynamic_wi4b32_afp32.litertlm (0.9 GB): better quality and a
+# usable CPU fallback; the int4 file is faster on the phone GPU but slow on CPU.
+file = "Qwen3_1.7B.litertlm"
+file_hint = "1.7b"
+match = "qwen[-_ ]?3[-_ ]1[._]7b"
+approx_gb = 1.6
+
+[[catalog]]
+key = "gemma-4-e2b"
+role = "analyst (faster, weaker)"
+required = false
+repo = "litert-community/gemma-4-E2B-it-litert-lm"
+file = "gemma-4-E2B-it.litertlm"
+file_hint = "e2b"
+match = "gemma[-_ ]?4.*e2b"
+approx_gb = 2.58
+
+[[catalog]]
+key = "qwen3-4b"
+role = "critic (stronger, slower)"
+required = false
+repo = "litert-community/Qwen3-4B"
+file = "qwen3_4b_mixed_int4.litertlm"   # 2.27 GB; owner approved the download on 2026-11-17
+file_hint = ""
+match = "qwen[-_ ]?3[-_ ]4b(?!.*(thinking|instruct-2507))"
+approx_gb = 2.5
+
+[[catalog]]
+key = "qwen3-0.6b-nothink"
+role = "critic (tiny, fast fallback)"
+required = false
+repo = "litert-community/Qwen3-0.6B-int4"
+file_hint = "nothink"
+match = "qwen[-_ ]?3[-_ ]0[._]6b.*nothink"
+approx_gb = 0.5
