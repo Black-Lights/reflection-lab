@@ -215,7 +215,7 @@ The corruption also appears outside the rewrite. `scripts/facts_numbers.py` list
 output that appears in none of the texts that call was given (`reports/facts_numbers.md`). Gemma's critic
 misquotes numbers as well ("£149.9.95" for £149.95, "P < 0.00001" for P < 0.001), and so do the first
 drafts ("since May 20202"). The rate rises with prompt length: below 8,000 characters (about 2,000
-tokens) 2 of the 129 numbers Gemma wrote were corrupted, above it 17 of 112. Qwen3 4B wrote 105 numbers
+tokens) 2 of the 133 numbers Gemma wrote were corrupted, above it 20 of9. Qwen3 4B wrote 112 numbers
 from the same documents and corrupted none. The rewrite gets the longest prompts (document, draft and
 audit, median 11,250 characters) and copies the most numbers, so it suffers most; with 16 rewrites the
 data cannot tell whether rewriting adds anything beyond the length. The count misses dropped digits that
@@ -282,7 +282,7 @@ significant reduction in hallucinations, Qwen3 1.7B checked by Gemma, took three
   hallucinations.
 - Check the numbers in every rewrite. On long answers the rewrite corrupted numbers, so a rewrite should
   only be accepted if every number in it appears in the document or the draft. Keep Gemma's prompts
-  short where numbers matter: its copying errors rose from under 2 % to 15 % of the numbers it wrote
+  short where numbers matter: its copying errors rose from under 2 % to 17 % of the numbers it wrote
   once the prompt passed about 2,000 tokens.
 - For agents, a verifier needs the tools. A rewrite from the log fixed nothing; a retry with the tools
   fixed a few tasks and broke one.
@@ -297,7 +297,7 @@ significant reduction in hallucinations, Qwen3 1.7B checked by Gemma, took three
   RAGTruth paper reached F1 79; a 1.7B critic with similar skill would be cheap to run on a phone.
 - A rule-based number check after the rewrite, as described above.
 - Rerun the FACTS calls with corrupted numbers on the CPU backend, to tell a fault in the GPU runtime
-  from one in the model file.
+  from one in the model file (`scripts/facts_rerun.py`, ready to run).
 - Trace inside Qwen3 (circuit tracing) why it flags nearly every answer.
 
 ## Limitations

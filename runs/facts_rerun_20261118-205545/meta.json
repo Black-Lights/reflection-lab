@@ -1,0 +1,48 @@
+{
+  "bench": "facts_rerun",
+  "source_run": "bench_facts_20261118-022257",
+  "args": {
+    "run": "runs\\bench_facts_20261118-022257",
+    "backend": "cpu",
+    "runtime": "fake",
+    "max_num_tokens": 0,
+    "ids": null,
+    "controls": 4,
+    "subset": ".\\tests\\facts_subset.jsonl"
+  },
+  "generation": {
+    "max_output_tokens": 512,
+    "max_num_tokens": 4096,
+    "greedy": true,
+    "seed": 0,
+    "stream": true,
+    "enable_thinking": false,
+    "strip_think_tags": true,
+    "skip_refine_if_ok": true,
+    "verdict_source": "verdict_line"
+  },
+  "calls": [
+    "facts_428:baseline",
+    "facts_534:baseline",
+    "facts_105:audit",
+    "facts_392:audit",
+    "facts_428:audit",
+    "facts_545:audit",
+    "facts_111:final",
+    "facts_351:final",
+    "facts_428:final",
+    "facts_629:final",
+    "facts_656:final",
+    "facts_677:final",
+    "facts_677:audit",
+    "facts_105:final",
+    "facts_545:final"
+  ],
+  "started": "2026-11-18 20:55:45",
+  "totals": {
+    "before": 24,
+    "after": 0,
+    "same": 0
+  },
+  "finished": "2026-11-18 20:55:48"
+}

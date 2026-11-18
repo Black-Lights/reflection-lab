@@ -8,8 +8,8 @@ that is in none of that call's inputs is nearly always a copying error. The inpu
   baseline  the context document (plus system instruction and user request)
   audit     the document and the baseline draft
   final     the document, the draft and the audit
-Integers up to 12 are ignored (list numbering, "three" written as 3). Also counted: malformed figures with
-two decimal points ("149.9.95"), doubled percent signs and doubled words ("the the").
+Integers up to 12 are ignored (list numbering, "three" written as 3). Also counted: doubled percent signs
+and doubled words ("the the"). A number split by a space ("10 0 million") is missed, so counts are lower bounds.
 Reads calls.jsonl (output and prompt length per call) and tests/facts_subset.jsonl (the documents).
 """
 from __future__ import annotations
@@ -24,8 +24,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from lab.common import ROOT  # noqa: E402
 
-NUM = re.compile(r"(?<![\w.])\d+(?:[.,]\d+)*")
-MALFORMED = re.compile(r"\d\.\d+\.\d|%%")
+NUM = re.compile(r"(?<![\d.])\d+(?:[.,]\d+)*")  # digits after letters count too: "FY204"
+MALFORMED = re.compile(r"%%")  # figures with two decimal points are already novel numbers
 DOUBLE_WORD = re.compile(r"\b([A-Za-z]{2,})\s+\1\b", re.I)
 STAGES = ("baseline", "audit", "final")
 

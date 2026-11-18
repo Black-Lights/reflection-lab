@@ -194,8 +194,8 @@ Gemma from 21 to 22 (Qwen3 4B as verifier) and Qwen3 4B from 9 to 13.
 Small samples: the standard error is 5 to 10 points on the lm-eval tasks. Each request was one chat
 message with thinking off, so these are not leaderboard numbers. On FACTS the loop broke five of
 Gemma's long answers, mostly by corrupting numbers in the rewrite ("4444.7%" for 44.7 %). Gemma's
-critic and first drafts do it too, and the rate rises with prompt length: 2 of 129 numbers were
-corrupted below about 2,000 prompt tokens, 17 of 112 above; Qwen3 4B corrupted none
+critic and first drafts do it too, and the rate rises with prompt length: 2 of 133 numbers were
+corrupted below about 2,000 prompt tokens, 20 of9 above; Qwen3 4B corrupted none
 ([`facts_numbers.py`](scripts/facts_numbers.py)). Whether the GPU runtime or the model file causes it
 is still open, and it is the first thing to check on the phone runtime.
 

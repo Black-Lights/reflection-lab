@@ -69,6 +69,8 @@ scripts/compute_report.py  time + compute per run, per experiment, per model, lo
                          (measured where the logger ran, else estimated), Claude session tokens -> reports/compute.md
 scripts/facts_numbers.py   numbers in FACTS outputs that are in none of the call's inputs, by stage and prompt length
                          (no model) -> reports/facts_numbers.md
+scripts/facts_rerun.py     rerun the corrupted FACTS calls on --backend cpu|gpu / --max-num-tokens, compare
+                         -> runs/facts_rerun_<stamp>/report.md
 lab/common.py            config, paths, console, json helpers (stdlib-only)
 lab/llm.py               runtimes: python (litert_lm), cli (litert-lm command), fake (no model)
 lab/monitor.py           RAM / VRAM / GPU temperature sampler for the live view

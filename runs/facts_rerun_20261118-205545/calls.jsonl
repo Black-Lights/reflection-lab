@@ -1,0 +1,15 @@
+{"id": "facts_428:baseline", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.14, "prompt_chars": 9510, "output": "(fake answer) The document does not say.", "error": null}
+{"id": "facts_534:baseline", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.14, "prompt_chars": 4783, "output": "(fake answer) The document does not say.", "error": null}
+{"id": "facts_105:audit", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.24, "prompt_chars": 10995, "output": "VERDICT: ISSUES\n- [UNSUPPORTED] The draft adds a detail not in the document.", "error": null}
+{"id": "facts_392:audit", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.04, "prompt_chars": 11566, "output": "VERDICT: OK", "error": null}
+{"id": "facts_428:audit", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.04, "prompt_chars": 12075, "output": "VERDICT: OK", "error": null}
+{"id": "facts_545:audit", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.04, "prompt_chars": 10130, "output": "VERDICT: OK", "error": null}
+{"id": "facts_111:final", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.19, "prompt_chars": 8453, "output": "(fake refined answer) The document states the relevant fact.", "error": null}
+{"id": "facts_351:final", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.19, "prompt_chars": 10574, "output": "(fake refined answer) The document states the relevant fact.", "error": null}
+{"id": "facts_428:final", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.18, "prompt_chars": 13767, "output": "(fake refined answer) The document states the relevant fact.", "error": null}
+{"id": "facts_629:final", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.18, "prompt_chars": 7921, "output": "(fake refined answer) The document states the relevant fact.", "error": null}
+{"id": "facts_656:final", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.19, "prompt_chars": 8764, "output": "(fake refined answer) The document states the relevant fact.", "error": null}
+{"id": "facts_677:final", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.18, "prompt_chars": 12535, "output": "(fake refined answer) The document states the relevant fact.", "error": null}
+{"id": "facts_677:audit", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.04, "prompt_chars": 12183, "output": "VERDICT: OK", "error": null}
+{"id": "facts_105:final", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.18, "prompt_chars": 11250, "output": "(fake refined answer) The document states the relevant fact.", "error": null}
+{"id": "facts_545:final", "field": "output", "model": "gemma-4-e4b [fake/cpu]", "seconds": 0.18, "prompt_chars": 11080, "output": "(fake refined answer) The document states the relevant fact.", "error": null}
