@@ -1,6 +1,6 @@
 # Time and compute
 
-Generated 2026-11-18 03:38 by `scripts/compute_report.py`. Every model run used one laptop GPU (one model loaded at a time), so GPU time equals the runs' wall time.
+Generated 2026-11-18 04:51 by `scripts/compute_report.py`. Every model run used one laptop GPU (one model loaded at a time), so GPU time equals the runs' wall time.
 
 ## Totals
 
@@ -15,7 +15,7 @@ Generated 2026-11-18 03:38 by `scripts/compute_report.py`. Every model run used 
 | GPU energy | 0.35 kWh (0.05 measured over 6 runs, 0.30 estimated) |
 | Peak VRAM / RAM in a run | 4.1 GB / 12.8 GB |
 
-Energy estimates use 72 W, the mean GPU board power over the measured runs (1,238 samples every 5 s, from 2026-11-18 01:55:21). Runs before the power logger started are estimates.
+Energy estimates use 72 W, the mean GPU board power over the measured runs (2,115 samples every 5 s, from 2026-11-18 01:55:21). Runs before the power logger started are estimates.
 
 ## By experiment
 
@@ -65,16 +65,16 @@ Seconds of model time per question. One model = the analyst's draft only; loop =
 | | Main session | Subagents |
 |---|---|---|
 | Sessions / agents | 1 | 6 |
-| First to last message | 2026-11-17 20:24:30 to 2026-11-18 03:38:30 (7.2 h) | |
-| Active time (gaps over 5 min left out) | 3.3 h | 1.0 h |
-| API responses | 334 | 145 |
-| Tool calls | 427 | 156 |
-| Input tokens (uncached) | 0.7 k | 0.3 k |
-| Input tokens written to cache | 912.1 k | 880.0 k |
-| Input tokens read from cache | 129.98 M | 17.46 M |
-| Output tokens | 523.7 k | 234.1 k |
+| First to last message | 2026-11-17 20:24:30 to 2026-11-18 04:51:51 (8.5 h) | |
+| Active time (gaps over 5 min left out) | 3.9 h | 1.0 h |
+| API responses | 404 | 155 |
+| Tool calls | 504 | 168 |
+| Input tokens (uncached) | 0.9 k | 0.3 k |
+| Input tokens written to cache | 1.09 M | 929.4 k |
+| Input tokens read from cache | 151.65 M | 18.86 M |
+| Output tokens | 615.7 k | 261.7 k |
 
-Models: claude-opus-5-5 (479 responses).
+Models: claude-opus-5-5 (559 responses).
 
 ## Every run
 

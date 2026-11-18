@@ -234,6 +234,9 @@ measured mean power.
 | HHEM | 3 | 31 min | 808 |
 | FACTS Grounding | 2 | 15 min | 166 |
 
+The explainer video of these results (9 minutes, 4K at 60 frames a second) took 45 minutes to render,
+mostly on the CPU (41 % average load; the GPU averaged 15 W, about 11 Wh).
+
 What the loop costs, in model seconds per question on the grid (model loads included):
 
 | Analyst | Critic | Prompts | One model | Loop | Loop / one model | Rewrites |

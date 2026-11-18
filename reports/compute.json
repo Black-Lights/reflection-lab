@@ -2,40 +2,40 @@
   "energy": {
     "reference_power_w": 72.22876701665481,
     "sample_step_s": 5.0,
-    "n_samples": 1238,
+    "n_samples": 2115,
     "samples_from": "2026-11-18 01:55:21",
-    "samples_to": "2026-11-18 03:38:28"
+    "samples_to": "2026-11-18 04:51:33"
   },
   "claude": {
     "main": {
-      "tool_calls": 427,
-      "responses": 334,
-      "input_tokens": 730,
-      "output_tokens": 523693,
-      "cache_creation_input_tokens": 912063,
-      "cache_read_input_tokens": 129980154,
+      "tool_calls": 504,
+      "responses": 404,
+      "input_tokens": 884,
+      "output_tokens": 615748,
+      "cache_creation_input_tokens": 1087748,
+      "cache_read_input_tokens": 151654402,
       "models": {
-        "claude-opus-5-5": 334
+        "claude-opus-5-5": 404
       },
-      "active_h": 3.3070708333333334,
-      "span_h": 7.2333533333333335,
+      "active_h": 3.923306388888889,
+      "span_h": 8.455676944444445,
       "first": "2026-11-17 20:24:30",
-      "last": "2026-11-18 03:38:30"
+      "last": "2026-11-18 04:51:51"
     },
     "subagents": {
-      "tool_calls": 156,
-      "responses": 145,
-      "input_tokens": 292,
-      "output_tokens": 234114,
-      "cache_creation_input_tokens": 879995,
-      "cache_read_input_tokens": 17456910,
+      "tool_calls": 168,
+      "responses": 155,
+      "input_tokens": 312,
+      "output_tokens": 261657,
+      "cache_creation_input_tokens": 929381,
+      "cache_read_input_tokens": 18861113,
       "models": {
-        "claude-opus-5-5": 145
+        "claude-opus-5-5": 155
       },
-      "active_h": 0.99295,
-      "span_h": 6.188510833333333,
+      "active_h": 1.01934,
+      "span_h": 6.214900833333333,
       "first": "2026-11-17 21:27:13",
-      "last": "2026-11-18 03:38:31"
+      "last": "2026-11-18 03:40:06"
     },
     "n_sessions": 1,
     "n_subagents": 6

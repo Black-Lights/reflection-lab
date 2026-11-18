@@ -20,3 +20,6 @@ reports/env_report.*
 # Public export worktree (built by scripts/export_public.py)
 .public/
 .public-blocklist
+
+# local page builds (not part of the project)
+share/
